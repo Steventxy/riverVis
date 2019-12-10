@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2790e9b9-7cb7-4821-af68-8bb775891a44" name="Default Changelist" comment="" />
+    <list default="true" id="2790e9b9-7cb7-4821-af68-8bb775891a44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/riverVis-dao/src/main/java/com/hunau/dao/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/riverVis-entity/src/main/java/com/hunau/entity/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/riverVis-web/src/main/java/com/hunau/controller/.gitignore" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +55,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$/riverVis-common/src/main/java/com" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/riverVis-dao/src/main/java/com/hunau/dao" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -139,6 +144,7 @@
       <workItem from="1575860696790" duration="7013000" />
       <workItem from="1575870466115" duration="57000" />
       <workItem from="1575870986888" duration="30000" />
+      <workItem from="1575945392658" duration="330000" />
     </task>
     <task id="LOCAL-00001" summary="项目基本框架">
       <created>1575773209386</created>
