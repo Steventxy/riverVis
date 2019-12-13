@@ -9,6 +9,7 @@
         <module>riverVis-entity</module>
         <module>riverVis-web</module>
         <module>riverVis-common</module>
+        <module>riverVis-system</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -64,6 +65,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.17</version>
+        </dependency>
+        <!--加入支持JSP的依赖-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
