@@ -314,7 +314,7 @@
  	</insert>-->
 	<!-- 新增终端用户信息 -->
  	<insert id="insertUser" parameterType="pd" > 
- 		insert into <include refid="usersTable"></include> ( 
+ 		insert into <include refid="usersTable"/> (
 				username,
 				loginid,
 				password,
