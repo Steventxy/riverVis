@@ -35,7 +35,7 @@ public class ObjectExcelView extends AbstractExcelView{
 //		headerStyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);
 //		headerStyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);
 		HSSFFont headerFont = workbook.createFont();	//标题字体
-		headerFont.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
+//		headerFont.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
 		headerFont.setFontHeightInPoints((short)11);
 		headerStyle.setFont(headerFont);
 		short width = 20,height=25*20;
