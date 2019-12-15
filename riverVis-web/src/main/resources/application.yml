@@ -9,6 +9,9 @@ spring:
       force: true
       charset: UTF-8
       enabled: false
+  devtools:      #热部署
+    restart:
+      enabled: true
   mvc:
     view:
       prefix: /WEB-INF/jsp/
@@ -21,6 +24,7 @@ spring:
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
+
 
 # MyBatis
 mybatis:
