@@ -10,12 +10,12 @@
 (function(root, factory) {
 
   if (typeof define === 'function' && define.amd) {
-    define(['src/main/WEB-INF/static/ace/js/date-time/moment', 'jquery', 'exports'], function(momentjs, $, exports) {
+    define(['moment', 'jquery', 'exports'], function(momentjs, $, exports) {
       root.daterangepicker = factory(root, exports, momentjs, $);
     });
 
   } else if (typeof exports !== 'undefined') {
-    var momentjs = require('src/main/WEB-INF/static/ace/js/date-time/moment');
+    var momentjs = require('moment');
     var jQuery;
     try {
       jQuery = require('jquery');

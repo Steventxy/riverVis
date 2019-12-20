@@ -30,9 +30,9 @@ THE SOFTWARE.
     'use strict';
     if (typeof define === 'function' && define.amd) {
         // AMD is used - Register as an anonymous module.
-        define(['jquery', 'src/main/WEB-INF/static/ace/js/date-time/moment'], factory);
+        define(['jquery', 'moment'], factory);
     } else if (typeof exports === 'object') {
-        factory(require('jquery'), require('src/main/WEB-INF/static/ace/js/date-time/moment'));
+        factory(require('jquery'), require('moment'));
     }
     else {
         // Neither AMD or CommonJS used. Use global variables.

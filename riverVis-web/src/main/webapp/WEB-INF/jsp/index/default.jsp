@@ -14,7 +14,7 @@
 <base href="<%=basePath%>">
 
 <!-- jsp文件头和头部 -->
-<%@ include file="top.jsp"%>
+<%@ include file="../index/top.jsp"%>
 <!-- 百度echarts -->
 <script src="plugins/echarts/echarts.min.js"></script>
 </head>
@@ -46,7 +46,7 @@
 						<div id="main" style="width: 1137px;height:px;">				
                       <table>
                
-                 <%@ include file="xzm.jsp"%>
+                 <%@ include file="../index/xzm.jsp"%>
                       </table>
                 </marquee>
                           </div>
@@ -74,7 +74,7 @@
 
 	<!-- basic scripts -->
 	<!-- 页面底部js¨ -->
-	<%@ include file="foot.jsp"%>
+	<%@ include file="../index/foot.jsp"%>
 	<!-- ace scripts -->
 	<script src="static/ace/js/ace/ace.js"></script>
 	<!-- inline scripts related to this page -->
