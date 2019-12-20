@@ -21,7 +21,7 @@ function siMenu(id,fid,mname,murl){
 	$("#"+fid).attr("class","active open");
 	$("#"+id).attr("class","active");
 	top.mainFrame.tabAddHandler(id,mname,murl);
-	if(murl != "druid/error.html"){
+	if(murl != "druid/index.html"){
 		jzts();
 	}
 }

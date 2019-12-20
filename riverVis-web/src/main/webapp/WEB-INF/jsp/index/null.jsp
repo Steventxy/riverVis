@@ -14,7 +14,7 @@
 <base href="<%=basePath%>">
 
 <!-- jsp文件头和头部 -->
-<%@ include file="top.jsp"%>
+<%@ include file="../index/top.jsp"%>
 
 </head>
 <body class="no-skin">
@@ -62,7 +62,7 @@
 
 	<!-- basic scripts -->
 	<!-- 页面底部js¨ -->
-	<%@ include file="foot.jsp"%>
+	<%@ include file="../index/foot.jsp"%>
 	<!-- ace scripts -->
 	<script src="static/ace/js/ace/ace.js"></script>
 	<script type="text/javascript">

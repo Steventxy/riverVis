@@ -11,6 +11,7 @@
 
     <artifactId>riverVis-system</artifactId>
     <dependencies>
+
         <dependency>
             <groupId>com.hunau</groupId>
             <artifactId>riverVis-entity</artifactId>
@@ -23,6 +24,7 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>com.hunau</groupId>
             <artifactId>rivervis-web</artifactId>
