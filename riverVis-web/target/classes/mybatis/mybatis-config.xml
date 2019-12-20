@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<settings> 
+        <setting name="cacheEnabled" value="true" /><!-- 全局映射器启用缓存 -->   
+        <setting name="useGeneratedKeys" value="true" /> 
+        <setting name="defaultExecutorType" value="REUSE" /> 
+    </settings>
+
+	<typeAliases>
+		<typeAlias type="com.hunau.entity.Area" alias="Area"/>
+		<typeAlias type="com.hunau.entity.Log" alias="Log"/>
+		<typeAlias type="com.hunau.entity.Menu" alias="Menu"/>
+		<typeAlias type="com.hunau.entity.Role" alias="Role"/>
+		<typeAlias type="com.hunau.entity.Users" alias="Users"/>
+		<typeAlias type="com.hunau.entity.Organization" alias="Organization"/>
+		<typeAlias type="com.hunau.entity.Pow" alias="Pow"/>
+
+		<typeAlias type="com.hunau.entity.Receive" alias="Receive"/>
+		<typeAlias type="com.hunau.entity.Terminal" alias="Terminal"/>
+		<typeAlias type="com.hunau.entity.Traffic" alias="Traffic"/>
+		<typeAlias type="com.hunau.entity.SensorData" alias="SensorData"/>
+		<typeAlias type="com.hunau.entity.WaterStatistics" alias="WaterStatistics"/>
+		<typeAlias type="com.hunau.entity.SanweiData" alias="SanweiData"/>
+		<typeAlias type="com.hunau.entity.RainStatistics" alias="RainStatistics"/>
+		<typeAlias type="com.hunau.entity.River3DVis" alias="River3DVis"/>
+
+
+		<typeAlias type="com.infopublic.util.PageData" alias="pd"/>
+		<!-- 分页 -->
+		<typeAlias type="com.hunau.entity.Page" alias="Page"/>
+	    <typeAlias type="com.hunau.entity.Warn" alias="Warn"/>
+	</typeAliases>
+	
+<!--	<plugins>-->
+<!--		<plugin interceptor="com.hunau.plugin.PagePlugin">-->
+<!--			<property name="dialect" value="mysql"/>-->
+<!--			<property name="pageSqlId" value=".*listPage.*"/>-->
+<!--		</plugin>-->
+<!--	</plugins>-->
+	
+
+</configuration>
