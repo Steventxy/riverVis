@@ -11,7 +11,6 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service("areaService")
 public class AreaService implements AreaManager {
 	@Resource(name = "daoSupport")
