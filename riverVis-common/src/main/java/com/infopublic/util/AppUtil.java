@@ -3,12 +3,13 @@ package com.infopublic.util;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 
 import java.util.Map;
+import java.util.logging.Logger;
 
 /** 接口参数校验
  */
 public class AppUtil  {
 	
-	protected static Logger logger = Logger.getLogger(AppUtil.class);
+	protected static Logger logger = Logger.getLogger(String.valueOf(AppUtil.class));
 	
 //	/**检查参数是否完整
 //	 * @param method
