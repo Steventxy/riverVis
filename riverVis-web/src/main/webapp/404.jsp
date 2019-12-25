@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
 	String path = request.getContextPath();
-	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/static/";
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+ "/WEB-INF/static/";
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,13 +15,13 @@
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="static/ace/css/bootstrap.css" />
-		<link rel="stylesheet" href="static/ace/css/font-awesome.css" />
+		<link rel="stylesheet" href="WEB-INF/static/ace/css/bootstrap.css" />
+		<link rel="stylesheet" href="WEB-INF/static/ace/css/font-awesome.css" />
 		<!-- page specific plugin styles -->
 		<!-- text fonts -->
-		<link rel="stylesheet" href="static/ace/css/ace-fonts.css" />
+		<link rel="stylesheet" href="WEB-INF/static/ace/css/ace-fonts.css" />
 		<!-- ace styles -->
-		<link rel="stylesheet" href="static/ace/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+		<link rel="stylesheet" href="WEB-INF/static/ace/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="static/ace/css/ace-part2.css" class="ace-main-stylesheet" />
 		<![endif]-->
@@ -30,7 +30,7 @@
 		<![endif]-->
 		<!-- inline styles related to this page -->
 		<!-- ace settings handler -->
-		<script src="static/ace/js/ace-extra.js"></script>
+		<script src="WEB-INF/static/ace/js/ace-extra.js"></script>
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 		<!--[if lte IE 8]>
 		<script src="static/ace/js/html5shiv.js"></script>
@@ -114,11 +114,11 @@
 	<script type="text/javascript">
 		if('ontouchstart' in document.documentElement) document.write("<script src='<%=basePath%>static/ace/js/jquery.mobile.custom.js'>"+"<"+"/script>");
 	</script>
-	<script src="static/ace/js/bootstrap.js"></script>
+	<script src="WEB-INF/static/ace/js/bootstrap.js"></script>
 	
 	
 	<!-- ace scripts -->
-	<script src="static/ace/js/ace/ace.js"></script>
+	<script src="WEB-INF/static/ace/js/ace/ace.js"></script>
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
 		$(top.hangge());
