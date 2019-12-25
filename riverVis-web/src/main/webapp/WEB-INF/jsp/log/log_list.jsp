@@ -87,7 +87,7 @@
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.logtype}</td>
 											<td class='center'>${var.username}</td>
-											<td class='center'>${var.function}</td>
+											<td class='center'>${var.functions}</td>
 											<td class='center'>${var.logcontent}</td>
 											<td class='center'>${var.logtime}</td>
 											<td class='center'>${var.ip}</td>
