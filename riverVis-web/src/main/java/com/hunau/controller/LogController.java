@@ -107,7 +107,7 @@ public class LogController extends BaseController{
 				PageData vpd = new PageData();
 				vpd.put("var1", item.get("logtype").toString());		//1
 				vpd.put("var2", item.get("username").toString());		//2
-				vpd.put("var3", item.get("function").toString());			//3
+				vpd.put("var3", item.get("functions").toString());			//3
 				vpd.put("var4", item.get("logcontent").toString());			//3
 				vpd.put("var5", item.get("logtime").toString());			//4
 				vpd.put("var6", item.get("ip").toString());			//4
