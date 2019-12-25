@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="ft"%>
@@ -71,6 +70,8 @@
 									<th class="center">发送时间</th>
 									<th class="center">是否发送</th>														
 									<th class="center">备注</th>
+									<th class="center">删除</th>
+
 									
 							
 									</tr>
@@ -86,8 +87,14 @@
 										<td class='center'>${send.scontent}</td>	
 										<td class='center'>${send.sendtime}</td>	
 										<td class='center'>${send.issend?'已发送':'未发送'}</td> 																																																	
-						                <td class='center'>${send.remark}</td>	
-										
+						                <td class='center'>${send.remark}</td>
+										<td class="center">
+											<div class="hidden-sm hidden-xs btn-group">
+												<a class="btn btn-xs btn-danger" onclick="delMsg(${send.smid});">
+													<i class="ace-icon fa fa-trash-o bigger-120" title="删除"></i>
+												</a>
+											</div>
+
 									</tr>
 									</c:forEach>
 									</c:when>
@@ -140,6 +147,7 @@
 	<!--提示框-->
 	<script type="text/javascript" src="static/js/jquery.tips.js"></script>
 	<script type="text/javascript">
+		$(top.hangge());//关闭加载状态
 		$(document).ready(function(){
 			top.hangge();
 			//下拉框
@@ -161,7 +169,19 @@
 					});
 				});
 			}
-		});	
+		});
+		function delMsg(smid){
+			bootbox.confirm("确定要删除吗?", function(result) {
+				if(result) {
+					top.jzts();
+					var url = "<%=basePath%>smsbroad/deleteMsg.do?smid="+smid;
+					$.get(url,function(data){
+						nextPage(${page.currentPage});
+					});
+				};top.hangge();
+			});
+		}
+
 		//检索
 		function tosearch(){
 			top.jzts();
@@ -173,9 +193,33 @@
 				autoclose : true,
 				todayHighlight : true
 			});
+			  if(!ace.vars['touch']) {
+				  $('.chosen-select').chosen({allow_single_deselect:true});
+				  $(window)
+						  .off('resize.chosen')
+						  .on('resize.chosen', function() {
+							  $('.chosen-select').each(function() {
+								  var $this = $(this);
+								  $this.next().css({'width': $this.parent().width()});
+							  });
+						  }).trigger('resize.chosen');
+				  $(document).on('settings.ace.chosen', function(e, event_name, event_val) {
+					  if(event_name != 'sidebar_collapsed') return;
+					  $('.chosen-select').each(function() {
+						  var $this = $(this);
+						  $this.next().css({'width': $this.parent().width()});
+					  });
+				  });
+				  $('#chosen-multiple-style .btn').on('click', function(e){
+					  var target = $(this).find('input[type=radio]');
+					  var which = parseInt(target.val());
+					  if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+					  else $('#form-field-select-4').removeClass('tag-input-style');
+				  });
+			  }
+
 			
 });
-		
 	</script>
 </body>
 </html>
