@@ -80,6 +80,7 @@
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
 		$(top.hangge());
+
 	</script>
 <script type="text/javascript" src="static/ace/js/jquery.js"></script>
 </body>
