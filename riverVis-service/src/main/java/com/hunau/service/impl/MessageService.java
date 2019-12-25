@@ -1,4 +1,4 @@
-package com.infopublic.service.impl;
+package com.hunau.service.impl;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.infopublic.dao.DaoSupport;
-import com.infopublic.entity.Page;
-import com.infopublic.service.MessageManager;
+import com.hunau.dao.DaoSupport;
+import com.hunau.entity.Page;
+import com.hunau.service.MessageManager;
 import com.infopublic.util.PageData;
 
 @Service("messageService")
