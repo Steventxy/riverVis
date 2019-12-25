@@ -26,8 +26,7 @@ public class UsersService implements UsersManager{
 	 */
 	@Override
 	public Users getUserByNameAndPwd(PageData pd)throws Exception{
-		Users user =(Users)dao.findForObject("UsersMapper.getUserInfo", pd);
-		return user;
+		return (Users)dao.findForObject("UsersMapper.getUserInfo", pd);
 	}
 	/**登陆名是否存在判断
 	 * @param loginid
