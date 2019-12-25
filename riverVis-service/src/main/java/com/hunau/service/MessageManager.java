@@ -1,8 +1,8 @@
-package com.infopublic.service;
+package com.hunau.service;
 
 import java.util.List;
 
-import com.infopublic.entity.Page;
+import com.hunau.entity.Page;
 import com.infopublic.util.PageData;
 
 

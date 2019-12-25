@@ -1,4 +1,4 @@
-package com.infopublic.controller;
+package com.hunau.controller;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -18,20 +18,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.infopublic.entity.Area;
-import com.infopublic.entity.Page;
-import com.infopublic.entity.Terminal;
-import com.infopublic.service.AreaManager;
+import com.hunau.entity.Area;
+import com.hunau.entity.Page;
+import com.hunau.entity.Terminal;
+import com.hunau.service.AreaManager;
 //import com.infopublic.service.DataAnalysisManager;
-import com.infopublic.service.LogManager;
-import com.infopublic.service.MessageManager;
-import com.infopublic.service.TerManager;
-import com.infopublic.service.UsersManager;
+import com.hunau.service.LogManager;
+import com.hunau.service.MessageManager;
+import com.hunau.service.TerManager;
+import com.hunau.service.UsersManager;
 //import com.infopublic.service.impl.DataAnalysisService;
 import com.infopublic.util.AppUtil;
 import com.infopublic.util.Const;
 import com.infopublic.util.DateUtil;
-import com.infopublic.util.Jurisdiction;
+import com.hunau.util.Jurisdiction;
 import com.infopublic.util.PageData;
 //import com.infopublic.util.SmsMain;
 
