@@ -24,7 +24,7 @@ div.audio-player {
     height:47px;
     top: 0px;
     left: 0px;
-    background: url('static/ace/avatars/audio.png') -69px -4px no-repeat;
+    background: url('../../../WEB-INF/static/ace/avatars/audio.png') -69px -4px no-repeat;
     z-index: 1;
 }
 .mejs-controls .mejs-pause button { 
