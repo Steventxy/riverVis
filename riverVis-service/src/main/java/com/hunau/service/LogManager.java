@@ -27,12 +27,12 @@ public interface LogManager {
 	/**
 	 * 保存日志
 	 * @param logtype 操作类别
-	 * @param function 功能模块
+	 * @param functions 功能模块
 	 * @param logcontent 操作
 	 * @param ip ip地址
 	 * @param remark 具体内容
 	 * @throws Exception
 	 */
-	public void saveLog(String logtype, String function, String logcontent, String ip, String remark)throws Exception;
+	public void saveLog(String logtype, String functions, String logcontent, String ip, String remark)throws Exception;
 	
 }
