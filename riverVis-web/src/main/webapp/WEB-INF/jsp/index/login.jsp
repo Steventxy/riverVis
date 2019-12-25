@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="static/login/css/camera.css" />
 <link rel="stylesheet" href="static/login/bootstrap-responsive.min.css" />
 <link rel="stylesheet" href="static/login/matrix-login.css" />
-<link href="static/login/font-awesome.css" rel="stylesheet" />
+<link rel="stylesheet" href="static/login/font-awesome.css"  />
 <script type="text/javascript" src="static/login/js/jquery-1.5.1.min.js"></script>
  <style type="text/css">
     /*
@@ -58,7 +58,7 @@
 			current = (current2)%360;
 			document.body.style.transform = 'rotate('+current+'deg)';
 			current ++;
-			if(current2 == 1){current2 = -1;}else{current2 = 1;}
+			if(current2 === 1){current2 = -1;}else{current2 = 1;}
 			fhi++;
 		};
 	</script>
@@ -98,7 +98,7 @@
 					</div>
 					<div style="float: left;">
 						<input name="form-field-checkbox" id="saveid" type="checkbox"
-							onclick="savePaw();" style="padding-top:0px;" />
+							onclick="savePaw();" style="padding-top:0;" />
 					</div>
 				</div>
 				<div class="form-actions">
@@ -193,7 +193,7 @@
 		});
 
 		$(document).keyup(function(event) {
-			if (event.keyCode == 13) {
+			if (event.keyCode === 13) {
 				$("#to-recover").trigger("click");
 			}
 		});
@@ -210,7 +210,7 @@
 		//客户端校验
 		function check() {
 
-			if ($("#loginname").val() == "") {
+			if ($("#loginname").val() === "") {
 
 				$("#loginname").tips({
 					side : 2,
@@ -225,7 +225,7 @@
 				$("#loginname").val(jQuery.trim($('#loginname').val()));
 			}
 
-			if ($("#password").val() == "") {
+			if ($("#password").val() === "") {
 
 				$("#password").tips({
 					side : 2,
@@ -237,7 +237,7 @@
 				$("#password").focus();
 				return false;
 			}
-			if ($("#code").val() == "") {
+			if ($("#code").val() === "") {
 
 				$("#code").tips({
 					side : 1,
