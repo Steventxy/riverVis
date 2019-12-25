@@ -49,8 +49,8 @@ public class LoginController extends BaseController {
 		PageData pd = new PageData();
 		pd = this.getPageData();
 //		pd.put("SYSNAME", Tools.readTxtFile(Const.SYSNAME)); //读取系统名称
-//		pd.put("SYSNAME", systemService.getBaseAttri("系统名称")); //读取系统名称
-//		pd.put("SYSOWNER", systemService.getBaseAttri("系统所有者"));
+		pd.put("SYSNAME", systemService.getBaseAttri("系统名称")); //读取系统名称
+		pd.put("SYSOWNER", systemService.getBaseAttri("系统所有者"));
 		mv.setViewName("index/login");
 		mv.addObject("pd",pd);
 		return mv;
