@@ -48,5 +48,10 @@ public class LogService implements LogManager{
 	public List<PageData> getLogsByIds(PageData pd) throws Exception {
 		return (List<PageData>) dao.findForList("LogMapper.getLogListByIds", pd);
 	}
+
+	@Override
+	public void deleteLog(String userid) throws Exception {
+		dao.delete("LogMapper.deleteLog",userid);
+	}
 	
 }
