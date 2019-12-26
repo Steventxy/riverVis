@@ -91,13 +91,13 @@
     	<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
         <!-- mapper扫描 -->
-		<property name="mapperLocations" value="classpath:mybatis/mapper/*Mapper.xml"/>
+		<property name="mapperLocations" value="classpath:mybatis/mapper/TerMapper.xml"/>
     </bean>
     <bean id="powSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
     	<property name="dataSource" ref="powdataSource"/>
 		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
         <!-- mapper扫描 -->
-		<property name="mapperLocations" value="classpath:mybatis/mapper/*Mapper.xml"/>
+		<property name="mapperLocations" value="classpath:mybatis/mapper/TerMapper.xml"/>
     </bean>
 	<!-- 配置mybatis -->
 <!-- 	<bean id="infoMsqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> -->
