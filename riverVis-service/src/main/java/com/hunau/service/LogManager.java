@@ -34,5 +34,11 @@ public interface LogManager {
 	 * @throws Exception
 	 */
 	public void saveLog(String logtype, String functions, String logcontent, String ip, String remark)throws Exception;
-	
+
+	/**
+	 * 删除日志
+	 * @param userid
+	 * @throws Exception
+	 */
+	public void deleteLog(String userid) throws Exception;
 }
