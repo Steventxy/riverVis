@@ -55,7 +55,7 @@
 								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastLoginEnd" id="lastLoginEnd"  value="${pd.lastLoginEnd}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title="日志时间结束"/></td>
 								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
-								<c:forEach items="${rolelist}" var="role" varStatus="vs">
+
 									<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-xs btn-danger" onclick="delLog('${pd.userid}');"><i class="ace-icon fa fa-trash-o bigger-120" title="清空所有日志"></i></a>
 
 							</tr>
