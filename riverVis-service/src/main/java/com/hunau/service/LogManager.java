@@ -35,10 +35,18 @@ public interface LogManager {
 	 */
 	public void saveLog(String logtype, String functions, String logcontent, String ip, String remark)throws Exception;
 
-	/**
-	 * 批量删除日志
-	 */
-	public void deleteAllLog(String[] lids)throws Exception;
+//	/**
+//
+//	 * 批量删除日志
+//	 */
+//	public void deleteAllLog(String[] lids)throws Exception;
 
-	
+
+	/**
+	 * 删除日志
+	 * @param userid
+	 * @throws Exception
+	 */
+	public void deleteLog(String userid) throws Exception;
+
 }
