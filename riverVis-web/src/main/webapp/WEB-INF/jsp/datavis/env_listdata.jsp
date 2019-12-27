@@ -13,7 +13,7 @@
 <head>
 
 <base href="<%=basePath%>">
-<meta http-equiv="refresh" content="10">
+<%--<meta http-equiv="refresh" content="10">--%>
 <!-- 下拉框 -->
 <link rel="stylesheet" href="static/ace/css/chosen.css" />
 <!-- jsp文件头和头部 -->

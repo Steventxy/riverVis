@@ -1,94 +1,69 @@
 # 山洪预警课程设计  
-[项目地址](https://github.com/Steventxy/riverVis.git)  
+[项目地址](https://github.com/Steventxy/riverVis-old.git)  
 
 ## 将Java Web项目修改成Spring Boot项目  
-1. 将jsp页面改为HTML文件  
+### 已优化问题：
 
-### 分工及存在问题：  
+#### 唐焕棋
 
-* （唐焕棋）登录界面+首页
+1. 关闭“欢迎使用”提示
 
-  1. 问题1：首页设置在进行选择后，点击切换页面回到首页，页面设置又会返回默认设置  
+![pic thq1](https://Steventxy.github.io/pic/thq1.png)
 
-  ![pic thq1](https://Steventxy.github.io/pic/thq1.png)
+![pic thq2](https://Steventxy.github.io/pic/thq4.png)
 
-  ![pic yhq2](https://steventxy.github.io/pic/thq2.png)
+#### 彭文迪
 
-  2. 提示无法关闭
+1. 实现删除功能并只有管理员才有权限操作
 
-     ![pic thq3](https://steventxy.github.io/pic/thq3.png)
+![pic pwd1](https://Steventxy.github.io/pic/pwd1.png)
 
-* （余颖锋）天气概况+水库水情信息  
+![pic pwd1](https://Steventxy.github.io/pic/pwd2.png)
 
-  1. 天气统计情况页面存在问题，无法打开
+#### 余颖锋
 
-  ![pic yyf1](https://steventxy.github.io/pic/yyf1.png)
+1. 修复系统管理页面
 
-  2. 雨量地图中汉字存在乱码
+![pic yyf6](https://Steventxy.github.io/pic/yyf6.png)
 
-     ![pic yyf3](https://steventxy.github.io/pic/yyf3.png)
+![pic yyf7](https://Steventxy.github.io/pic/yyf7.png)
 
-     ![pic yyf4](https://steventxy.github.io/pic/yyf4.png)
+2. 在系统日志界面添加清空日志表的按钮
 
-     3. 水库地图不能打开
+![pic yyf2](https://Steventxy.github.io/pic/yyf2.png)
 
-        ![pic yyf5](https://steventxy.github.io/pic/yyf5.png)
+![pic yyf1](https://Steventxy.github.io/pic/yyf1.jpg)
 
-        
+#### 唐嵩
 
-* （肖霆锋）河道水情信息
+1. 用户授权界面新增角色不起作用，经分析发现role表中的主键类型为varchar，并设有默认值，所以每次添加都是失败的。将其改为int类型，并将主键设为自动递增
 
-  1.  监测点折现图显示和柱状图显示的文字为乱码，并且文字存在重叠
+![pic ts1](https://Steventxy.github.io/pic/ts1.png)
 
-  ![pic xtf1](https://steventxy.github.io/pic/xtf1.png)
+![pic ts2](https://Steventxy.github.io/pic/ts2.png)
 
-  ![pic xtf2](https://steventxy.github.io/pic/xtf2.png)
+#### 伍文平
 
-  2. 金河镇、果园镇河段三维地图显示不出来
+1. 数据采集展示页面的删除和导出按钮位置不合理，且功能都无法使用
 
-     ![pic xtf3](https://steventxy.github.io/pic/xtf4.png)
+![pic wwp1](https://Steventxy.github.io/pic/wwp1.png)
 
-     
+#### 肖霆锋
 
-* （伍文平）系统管理+预警信息设置  
+1. 数据库关系完整性中缺乏参照完整性
 
-  1. 系统日志下两个子页面都打不开
+>原数据库的表中未定义外键约束，数据库的完整性中缺乏参照完整性。为了确保数据库的各表参照完整性和逻辑一致性，以role表为参照表，给user表中的roleId增加了外键，并且定义了带短语ON DELETE RESTRICT的FR约束。同理以user表为参照表给terminal表和ann_high表也增加了外键约束，增加了参照完整性，完善数据库的完整性。
 
-  ![pic wwp1](https://steventxy.github.io/pic/wwp1.png)
+![pic xtf1](https://Steventxy.github.io/pic/xtf1.png)
 
-  ![pic wwp2](https://steventxy.github.io/pic/wwp2.png)
+![pic xtf2](https://Steventxy.github.io/pic/xtf2.png)
 
-  2. 预警设置信息填好后点击保存,不会提示操作成功
+2. 将终端信息界面的修改和查看按钮合并
 
-     ![pic wwp3](https://steventxy.github.io/pic/wwp3.png)
+![pic xtf3](https://Steventxy.github.io/pic/xtf3.png)
 
-     
+![pic xtf4](https://Steventxy.github.io/pic/xtf4.png)
 
-* （彭文迪）短信管理+流媒体语音直播
+3. 在搜索之后的终端管理页面添加一个显示所有终端的按钮
 
-  1. 在短信管理的发件箱中增加一个删除功能
-
-  ![pic pwd1](https://Steventxy.github.io/pic/pwd1.png)
-
-* （唐嵩） 终端管理+人员管理  
-
-  1. 在终端列表删除一个终端的时候会一直加载，不会提示删除成功
-  
-  ![pic ts1](https://steventxy.github.io/pic/ts1.png)
-  
-  2. 启用批量设置终端之后会卡在操作成功提示的那个界面
-  
-     ![pic ts1](https://steventxy.github.io/pic/ts2.png)
-  
-  3. 终端数据展示子页面无法打开
-  
-     ![pic ts1](https://steventxy.github.io/pic/ts3.png)
-  
-  4. 无法新增角色
-  
-     ![pic ts1](https://steventxy.github.io/pic/ts4.png)
-  
-  5. 用户信息管理界面新增角色，操作成功没有任何提示
-  
-     ![pic ts1](https://steventxy.github.io/pic/ts5.png)
-
+![pic xtf5](https://Steventxy.github.io/pic/xtf5.png)
