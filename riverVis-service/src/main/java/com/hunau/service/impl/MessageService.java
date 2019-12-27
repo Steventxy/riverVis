@@ -1,13 +1,15 @@
 package com.hunau.service.impl;
 
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import com.hunau.dao.DaoSupport;
 import com.hunau.entity.Page;
 import com.hunau.service.MessageManager;
 import com.infopublic.util.PageData;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-import java.util.List;
 
 @Service("messageService")
 public class MessageService implements MessageManager {
@@ -21,11 +23,17 @@ public class MessageService implements MessageManager {
 		// TODO Auto-generated method stub
 		return (List<PageData>)dao.findForList("MessageMapper.getSendMessagePage", page);
 	}
-	
+
+
 	@SuppressWarnings("unchecked")
 	public List<PageData> listReceiveMessage(Page page) throws Exception {
 		// TODO Auto-generated method stub
 		return (List<PageData>)dao.findForList("MessageMapper.getReceiveMessagePage", page);
+	}
+
+	@Override
+	public void deleteMsg(String smid) throws Exception {
+		dao.delete("MessageMapper.deleteMsg", smid);
 	}
 
 	@Override
