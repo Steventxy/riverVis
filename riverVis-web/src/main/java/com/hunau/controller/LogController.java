@@ -6,10 +6,12 @@ import com.hunau.service.AreaManager;
 import com.hunau.service.LogManager;
 import com.hunau.service.UsersManager;
 import com.hunau.util.Jurisdiction;
+import com.infopublic.util.AppUtil;
 import com.infopublic.util.ObjectExcelView;
 import com.infopublic.util.PageData;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -107,7 +109,7 @@ public class LogController extends BaseController{
 				PageData vpd = new PageData();
 				vpd.put("var1", item.get("logtype").toString());		//1
 				vpd.put("var2", item.get("username").toString());		//2
-				vpd.put("var3", item.get("function").toString());			//3
+				vpd.put("var3", item.get("functions").toString());			//3
 				vpd.put("var4", item.get("logcontent").toString());			//3
 				vpd.put("var5", item.get("logtime").toString());			//4
 				vpd.put("var6", item.get("ip").toString());			//4
@@ -122,4 +124,32 @@ public class LogController extends BaseController{
 		}
 		return mv;
 	}
+
+	/**
+	 * 批量删除
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/deleteAllLog")
+	@ResponseBody
+	public Object deleteAllLog() throws Exception {
+		logBefore(logger, Jurisdiction.getUsername()+"批量删除log");
+		PageData pd = new PageData();
+		Map<String,Object> map = new HashMap<String,Object>();
+		pd = this.getPageData();
+		List<PageData> pdList = new ArrayList<PageData>();
+		String lids = pd.getString("lids");
+		if(null != lids && !"".equals(lids)){
+			String Arraylids[] = lids.split(",");
+			logService.deleteAllLog(Arraylids);
+			pd.put("msg", "ok");
+			//插入日志
+			//logService.saveLog(Const.LOGTYPE[1],FUNCTION,"批量删除",this.getRemortIP(),tids);
+		}else{
+			pd.put("msg", "no");
+		}
+		pdList.add(pd);
+		map.put("list", pdList);
+		return AppUtil.returnObject(pd, map);
+	}
+
 }
