@@ -115,11 +115,11 @@
 										<td class='center'>
 											<div class="hidden-sm hidden-xs action-buttons">
 											
-											<a class="blue" href="javascript:editorgnz('${orgnz.tid}');">
-													<i class="ace-icon fa fa-folder-o bigger-130" title="查看"></i>
-												</a>
+<%--											<a class="blue" href="javascript:editorgnz('${orgnz.tid}');">--%>
+<%--												<i class="ace-icon fa fa-folder-o bigger-130" title="查看"></i>--%>
+<%--											</a>--%>
 												<a class="green" href="javascript:editorgnz('${orgnz.tid}');">
-													<i class="ace-icon fa fa-pencil-square-o bigger-130" title="修改"></i>
+													<i class="ace-icon fa fa-pencil-square-o bigger-130" title="修改与查看"></i>
 												</a>
 												<a class="red" href="javascript:delorgnz('${orgnz.tid}','${orgnz.tname }');">
 													<i class="ace-icon fa fa-trash-o bigger-130" title="删除"></i>
@@ -138,14 +138,14 @@
 												
 												<li><a href="javascript:readorgnz('${orgnz.tid }');" class="tooltip-success" data-rel="tooltip" title="Read">
 															<span class="blue">
-																<i class="ace-icon fa fa-folder-o bigger-120" title="查看"></i>
+																<i class="ace-icon fa fa-folder-o bigger-120" title="修改与查看"></i>
 															</span>
 														</a></li>
-														<li><a href="javascript:editorgnz('${orgnz.tid }');" class="tooltip-success" data-rel="tooltip" title="Edit">
-															<span class="green">
-																<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改"></i>
-															</span>
-														</a></li>
+<%--														<li><a href="javascript:editorgnz('${orgnz.tid }');" class="tooltip-success" data-rel="tooltip" title="Edit">--%>
+<%--															<span class="green">--%>
+<%--																<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改"></i>--%>
+<%--															</span>--%>
+<%--														</a></li>--%>
 														<li><a href="javascript:delorgnz('${orgnz.tid }','${orgnz.tname }');" class="tooltip-success" data-rel="tooltip" title="Delete">
 															<span class="red"> 
 																<i class="ace-icon fa fa-trash-o bigger-120"  title="删除"></i>
