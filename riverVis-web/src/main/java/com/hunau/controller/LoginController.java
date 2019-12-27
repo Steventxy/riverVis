@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -107,7 +108,7 @@ public class LoginController extends BaseController {
 					errInfo = "success";					//验证成功
 					logBefore(logger, username+"登录系统");
 					//插入日志
-//					logService.saveLog(Const.LOGTYPE[0],"系统登录","",this.getRemortIP(),username);
+					logService.saveLog(Const.LOGTYPE[0],"系统登录","",this.getRemortIP(),username);
 				}
 			}
 		}else{
@@ -279,23 +280,24 @@ public class LoginController extends BaseController {
 		}	
 		return map;
 	}
-	
+
+
 //	/** 更新登录用户的IP
 //	 * @param USERNAME
 //	 * @throws Exception
 //	 */
-//	public void getRemortIP(String USERNAME) throws Exception {  
+//	public void getRemortIP(String USERNAME) throws Exception {
 //		PageData pd = new PageData();
 //		HttpServletRequest request = this.getRequest();
 //		String ip = "";
-//		if (request.getHeader("x-forwarded-for") == null) {  
-//			ip = request.getRemoteAddr();  
+//		if (request.getHeader("x-forwarded-for") == null) {
+//			ip = request.getRemoteAddr();
 //	    }else{
-//	    	ip = request.getHeader("x-forwarded-for");  
+//	    	ip = request.getHeader("x-forwarded-for");
 //	    }
 //		pd.put("USERNAME", USERNAME);
 //		pd.put("IP", ip);
 //		userService.saveIP(pd);
-//	}  
+//	}
 	
 }

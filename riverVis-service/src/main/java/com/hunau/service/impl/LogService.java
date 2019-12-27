@@ -43,17 +43,26 @@ public class LogService implements LogManager{
 		logpd.put("logtime",df.format(new Date()));	
 		dao.save("LogMapper.saveLog", logpd);
 	}
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<PageData> getLogsByIds(PageData pd) throws Exception {
 		return (List<PageData>) dao.findForList("LogMapper.getLogListByIds", pd);
 	}
 
-	/**批量删除日志
-	 * @param lids
-	 * @throws Exception
-	 */
-	public void deleteAllLog(String[] lids)throws Exception{
-		dao.delete("LogMapper.deleteAllLog", lids);
+
+//	/**批量删除日志
+//	 * @param lids
+//	 * @throws Exception
+//	 */
+//	public void deleteAllLog(String[] lids)throws Exception{
+//		dao.delete("LogMapper.deleteAllLog", lids);
+//	}
+
+	@Override
+	public void deleteLog(String userid) throws Exception {
+		dao.delete("LogMapper.deleteLog",userid);
 	}
+	
+
 }

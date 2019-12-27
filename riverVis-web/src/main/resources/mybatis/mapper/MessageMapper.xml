@@ -106,5 +106,10 @@
              #{issend} ,
              #{remark} )
 	</insert>
+
+	<delete id="deleteMsg" parameterType="String" flushCache="false">
+		delete from <include refid="tableName"></include>
+		where smid = #{smid}
+	</delete>
 	
 </mapper>
