@@ -30,12 +30,12 @@ public class LogService implements LogManager{
 	 * 保存日志信息
 	 */
 	@Override
-	public void saveLog(String logtype, String function, String logcontent,
+	public void saveLog(String logtype, String functions, String logcontent,
 			String ip,String remark) throws Exception {
 		PageData logpd = new PageData();
 		logpd.put("userid",Jurisdiction.getUserid());	
 		logpd.put("logtype",logtype);	
-		logpd.put("function",function);	
+		logpd.put("functions",functions);
 		logpd.put("logcontent",logcontent);	
 		logpd.put("ip",ip);	
 		logpd.put("remark",remark);	
@@ -47,6 +47,11 @@ public class LogService implements LogManager{
 	@Override
 	public List<PageData> getLogsByIds(PageData pd) throws Exception {
 		return (List<PageData>) dao.findForList("LogMapper.getLogListByIds", pd);
+	}
+
+	@Override
+	public void deleteLog(String userid) throws Exception {
+		dao.delete("LogMapper.deleteLog",userid);
 	}
 	
 }

@@ -6,6 +6,7 @@ import com.hunau.service.AreaManager;
 import com.hunau.service.LogManager;
 import com.hunau.service.UsersManager;
 import com.hunau.util.Jurisdiction;
+import com.infopublic.util.Const;
 import com.infopublic.util.ObjectExcelView;
 import com.infopublic.util.PageData;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -107,7 +109,7 @@ public class LogController extends BaseController{
 				PageData vpd = new PageData();
 				vpd.put("var1", item.get("logtype").toString());		//1
 				vpd.put("var2", item.get("username").toString());		//2
-				vpd.put("var3", item.get("function").toString());			//3
+				vpd.put("var3", item.get("functions").toString());			//3
 				vpd.put("var4", item.get("logcontent").toString());			//3
 				vpd.put("var5", item.get("logtime").toString());			//4
 				vpd.put("var6", item.get("ip").toString());			//4
@@ -121,5 +123,20 @@ public class LogController extends BaseController{
 			logger.error(e.toString(), e);
 		}
 		return mv;
+	}
+
+
+	/**删除短信
+	 * @param out
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/deleteLog")
+	public void deleteLog(PrintWriter out) throws Exception{
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		logService.deleteLog(pd.getString("userid")); //要删除的用户id
+		out.write("success");
+		out.close();
+
 	}
 }
