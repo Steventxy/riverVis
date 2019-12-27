@@ -50,12 +50,15 @@
 									<option value="0" <c:if test="${pd.isusekey=='0'}">selected</c:if>>否</option>
 								  	</select>
 								</td>
-								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
-							    <td style="vertical-align:top;padding-left:2px"><a title="批量删除" class="btn btn-xs btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a></td>								
+								<td style="vertical-align:top;padding-left:2px">
+									<a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
+							    <td style="vertical-align:top;padding-left:2px">
+									<a title="批量删除" class="btn btn-xs btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a></td>
 								<td style="vertical-align:top; padding-left:12px">
 										<c:if test="${pd.area!='' }"><a class="btn btn-xs btn-success" onclick="addorgnz('${pd.area.aid}');">新增</a></c:if>
 								        <c:if test="${pd.area=='' }"><a class="btn btn-xs btn-success" onclick="addorgnz('');">新增</a></c:if>
 								        <c:if test="${pd.area!='' }"><a class="btn btn-xs btn-success" onclick="goback();">返回所有终端列表</a></c:if>
+									    <c:if test="${pd.area=='' }"><a class="btn btn-xs btn-success" onclick="goback();">显示终端列表</a></c:if>
 									</td>
 							</tr>
 						</table>
