@@ -42,6 +42,7 @@
 									</span>
 									</div>
 								</td>
+
 								<td style="vertical-align:top;padding-left:2px;">
 								 	<select class="chosen-select form-control" name="logtype" id="logtype" data-placeholder="日志类别" style="vertical-align:top;width: 120px; height: 30px">
 									<option value=""></option>
@@ -54,6 +55,9 @@
 								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastLoginEnd" id="lastLoginEnd"  value="${pd.lastLoginEnd}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title="日志时间结束"/></td>
 								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
+
+									<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-xs btn-danger" onclick="delLog('${pd.userid}');"><i class="ace-icon fa fa-trash-o bigger-120" title="清空所有日志"></i></a>
+
 							</tr>
 						</table>
 						<!-- 检索  -->
@@ -136,6 +140,8 @@
 	<%@ include file="../index/foot.jsp"%>
 	<!-- ace scripts -->
 	<script src="static/ace/js/ace/ace.js"></script>
+	<!-- 删除时确认窗口 -->
+	<script src="static/ace/js/bootbox.js"></script>
 	<!-- 日期框 -->
 	<script src="static/ace/js/date-time/bootstrap-datepicker.js"></script>
 	<!-- 下拉框 -->
@@ -220,6 +226,19 @@ var checkedidlist =[];
 			window.location.href='<%=basePath%>log/excel.do?checkedidlist='+checkedidlist;
 	}
 }
+
+		//删除
+		function delLog(userid){
+			bootbox.confirm("确认清空所有的日志吗?", function(result) {
+				if(result) {
+					top.jzts();
+					var url = "<%=basePath%>log/deleteLog.do?userid="+userid;
+					$.get(url,function(data){
+						nextPage(${page.currentPage});
+					});
+				};
+			});
+		}
 	</script>
 </body>
 </html>

@@ -1,34 +1,51 @@
 package com.hunau.controller;
 
-import com.hunau.entity.Area;
-import com.hunau.entity.Page;
-import com.hunau.entity.Terminal;
-import com.hunau.service.*;
-import com.hunau.util.Jurisdiction;
-import com.infopublic.util.AppUtil;
-import com.infopublic.util.DateUtil;
-import com.infopublic.util.PageData;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.NameValuePair;
-import org.apache.commons.httpclient.methods.PostMethod;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.annotation.Resource;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//import com.hunau.service.DataAnalysisManager;
-//import com.hunau.service.impl.DataAnalysisService;
-//import com.hunau.util.SmsMain;
+import com.infopublic.util.DTree;
 
-/**
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.hunau.entity.Area;
+import com.hunau.entity.Page;
+import com.hunau.entity.Terminal;
+import com.hunau.service.AreaManager;
+//import com.infopublic.service.DataAnalysisManager;
+import com.hunau.service.LogManager;
+import com.hunau.service.MessageManager;
+import com.hunau.service.TerManager;
+import com.hunau.service.UsersManager;
+//import com.infopublic.service.impl.DataAnalysisService;
+import com.infopublic.util.AppUtil;
+import com.infopublic.util.Const;
+import com.infopublic.util.DateUtil;
+import com.hunau.util.Jurisdiction;
+import com.infopublic.util.PageData;
+//import com.infopublic.util.SmsMain;
+
+import java.io.IOException;
+
+import org.apache.commons.httpclient.Header;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.NameValuePair;
+import org.apache.commons.httpclient.cookie.CookiePolicy;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.httpclient.params.HttpClientParams;
+
+/** 
  * 类名称：ProgBroadController
  * @version
  */
@@ -50,7 +67,7 @@ public class SmsBroadController extends BaseController {
 
 	/**
 	 * 去发送短信(同时构建用户列表)
-	 * @param
+	 * @param 
 	 * @return
 	 */
 	@RequestMapping(value="/toSendSms")
@@ -74,7 +91,7 @@ public class SmsBroadController extends BaseController {
 			a = areaService.getAreaByAid(aid);
 			arealist.add(a); //获取当前用户所在区域编号加入当前区域
 			aidlist.add(a.getAid());
-
+			
 		}
 		arealist.addAll(areaService.listAllSubByPAid(aid)); //所有子区域（级联）信息
 		for(Area area:arealist){
@@ -107,10 +124,10 @@ public class SmsBroadController extends BaseController {
 		mv.setViewName("message/sms_send");
 		return mv;
 	}
-
+		
 	/**
 	 * 发送短信
-	 * @param
+	 * @param 
 	 * @return
 	 */
 	@RequestMapping(value="/sendsms")
@@ -136,23 +153,38 @@ public class SmsBroadController extends BaseController {
 			//添加发送短信表
 			messageService.addSendMessage(pd);
 		}
-
-
+		
+		
 		HttpClient client = new HttpClient();
-		PostMethod post = new PostMethod("http://gbk.api.smschinese.cn");
+		PostMethod post = new PostMethod("http://gbk.api.smschinese.cn"); 
 		post.addRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=gbk");//在头文件中设置转码
 		NameValuePair[] data ={ new NameValuePair("Uid", "zhanghongquan"),new NameValuePair("Key", "d41d8cd98f00b204e980"),new NameValuePair("smsMob",phonelist.get(0)),new NameValuePair("smsText",content)};
 		post.setRequestBody(data);
 		client.executeMethod(post);
+		
+		
+		
 
-
-
-
-
+		
 //    	SmsMain.sendSmsAll(phonelist, content);
 //		logService.saveLog(Const.LOGTYPE[1], FUNCTION, "发送短信", this.getRemortIP(), note);
 		map.put("result", "success");
 		return AppUtil.returnObject(new PageData(), map);
+	}
+
+	/**删除短信
+	 * @param out
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/deleteMsg")
+	public void deleteRole(PrintWriter out) throws Exception{
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		messageService.deleteMsg(pd.getString("smid")); //要删除的用户id
+		out.write("success");
+		out.close();
+		//插入日志
+		logService.saveLog(Const.LOGTYPE[1],"收件箱","删除",this.getRemortIP(),pd.getString("smid"));
 	}
 
 
@@ -175,11 +207,11 @@ public class SmsBroadController extends BaseController {
 		}
 		if(lastLoginEnd != null && !"".equals(lastLoginEnd)){
 			pd.put("lastLoginEnd", lastLoginEnd+" 23:59:59");
-		}
-
+		} 
+		
 		List<PageData> sendlist = new ArrayList<PageData>();
 		page.setPd(pd);
-		sendlist = messageService.listSendMessage(page);
+		sendlist = messageService.listSendMessage(page);					
 		mv.addObject("sendlist",sendlist);
 		mv.addObject("pd", pd);
 		mv.setViewName("message/send_list");
