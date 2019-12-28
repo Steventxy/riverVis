@@ -3,9 +3,12 @@ package com.hunau.controller;
 import com.hunau.entity.Page;
 import com.hunau.entity.SensorData;
 import com.hunau.entity.Warn;
+import com.hunau.service.LogManager;
 import com.hunau.service.SensorDataManager;
 import com.hunau.service.WarnManager;
 import com.hunau.service.impl.PowService;
+import com.hunau.util.Jurisdiction;
+import com.infopublic.util.AppUtil;
 import com.infopublic.util.PageData;
 import net.sf.json.JSONArray;
 import org.springframework.stereotype.Controller;
@@ -20,18 +23,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 //传感器采集的数据的跳转与分配
 @Controller
 @RequestMapping(value="/sensordata")
 public class SensorDataController extends BaseController {
+	private static final String FUNCTION ="环境数据管理";
 	@Resource(name="SensorDataService")
 	private SensorDataManager SensorDataService;
 	@Resource(name="warnService")
 	private WarnManager warnService;
 	@Resource(name="powService")
 	private PowService powService;
+	@Resource(name="logService")
+	private LogManager logService;
 	/*static SqlSession session;
 	static SensorDataMapper sd;
 	
@@ -227,6 +234,34 @@ public class SensorDataController extends BaseController {
 		}
 		return mv;
 	}
+
+	/**
+	 * 批量删除
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/deleteAllData")
+	@ResponseBody
+	public Object deleteAllLog() throws Exception {
+		logBefore(logger, Jurisdiction.getUsername()+"批量删除数据");
+		PageData pd = new PageData();
+		Map<String,Object> map = new HashMap<String,Object>();
+		pd = this.getPageData();
+		List<PageData> pdList = new ArrayList<PageData>();
+		String lids = pd.getString("lids");
+		if(null != lids && !"".equals(lids)){
+			String Arraylids[] = lids.split(",");
+			SensorDataService.deleteAllData(Arraylids);
+			pd.put("msg", "ok");
+			//插入日志
+			//logService.saveLog(Const.LOGTYPE[1],FUNCTION,"批量删除",this.getRemortIP(),tids);
+		}else{
+			pd.put("msg", "no");
+		}
+		pdList.add(pd);
+		map.put("list", pdList);
+		return AppUtil.returnObject(pd, map);
+	}
+
 }
 
 
