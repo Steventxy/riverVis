@@ -69,6 +69,8 @@ public class LogController extends BaseController{
 		pd.put("aidlist", aidlist);
 		page.setPd(pd);
 		List<PageData> loglist= logService.getLogs(page);
+		String rid = usersService.getRidByUserid(Jurisdiction.getUserid());
+		mv.addObject("rid", rid);
 		mv.setViewName("log/log_list");
 		mv.addObject("loglist",loglist);
 		mv.addObject("pd",pd);
