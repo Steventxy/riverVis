@@ -71,14 +71,12 @@
 									<th class="center">发送时间</th>
 									<th class="center">是否发送</th>														
 									<th class="center">备注</th>
-<%--									<c:if test="${rid=='1'}">--%>
+									<c:if test="${rid == 1}">
 										<th class="center">删除</th>
-<%--									</c:if>--%>
+									</c:if>
 
-									
-							
-									</tr>
-								</thead>
+								</tr>
+							</thead>
 								<tbody>
 								<c:choose>
 									<c:when test="${not empty sendlist}">
@@ -91,7 +89,7 @@
 										<td class='center'>${send.sendtime}</td>	
 										<td class='center'>${send.issend?'已发送':'未发送'}</td> 																																																	
 						                <td class='center'>${send.remark}</td>
-<%--										<c:if test="${rid==1}">--%>
+										<c:if test="${rid == 1}">
 											<td class="center">
 												<div  class="hidden-sm hidden-xs btn-group">
 													<a class="btn btn-xs btn-danger" onclick="delMsg(${send.smid});">
@@ -99,7 +97,7 @@
 													</a>
 												</div>
 											</td>
-<%--										</c:if>--%>
+										</c:if>
 									</tr>
 									</c:forEach>
 									</c:when>
@@ -179,7 +177,8 @@
 		});
 		//删除
 		function delMsg(smid){
-			// console.log(rid);
+			 // console.log(rid);
+
 			bootbox.confirm("确定要删除吗?", function(result) {
 				if(result) {
 					top.jzts();
@@ -189,6 +188,7 @@
 					});
 				};top.hangge();
 			});
+
 		}
 
 		//检索
