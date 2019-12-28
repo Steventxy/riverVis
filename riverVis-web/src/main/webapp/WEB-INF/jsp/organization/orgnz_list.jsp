@@ -57,41 +57,42 @@
 								<td style="vertical-align:top; padding-left:12px">
 										<c:if test="${pd.area!='' }"><a class="btn btn-xs btn-success" onclick="addorgnz('${pd.area.aid}');">新增</a></c:if>
 								        <c:if test="${pd.area=='' }"><a class="btn btn-xs btn-success" onclick="addorgnz('');">新增</a></c:if>
-								        <c:if test="${pd.area!='' }"><a class="btn btn-xs btn-success" onclick="goback();">返回所有终端列表</a></c:if>
-									    <c:if test="${pd.area=='' }"><a class="btn btn-xs btn-success" onclick="goback();">显示终端列表</a></c:if>
+									    <a class="btn btn-xs btn-success" onclick="goback();">终端列表</a>
+<%--								        <c:if test="${pd.area!='' }"><a class="btn btn-xs btn-success" onclick="goback();">返回所有终端列表</a></c:if>--%>
+
 									</td>
 							</tr>
 						</table>
-				
-							<h1>								
+
+							<h1>
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
 									<c:if test="${pd.area=='' }">所有</c:if>
 									<c:if test="${pd.area!='' }">${pd.area.aname} </c:if>
 									&nbsp;终端列表
-								</small>																					
-								
+								</small>
+
 									</h1>
-							
+
                     </div>
-                    
-				
+
+
 							   <table id="simple-table" class="table table-striped table-bordered table-hover" style="margin-top:5px;">
 								<thead>
-								
+
 								  <tr>
 									<th class="center" style="width:35px;">
 									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
 									</th>
 										<th class="center" style="width: 50px;">序号</th>
 										<th class="center" >IMEI</th>
-										<th class="center" >终端设备名称</th>										
+										<th class="center" >终端设备名称</th>
 										<c:if test="${pd.area=='' }"><th class='center'>所属区域</th></c:if>
 <!-- 										<c:if test="${pd.area=='' }"><th class='center'>所属用户</th></c:if> -->
 <!-- 										<th class="center" >终端地址</th> -->
 <!-- 										<th class="center" >终端创建时间</th> -->
 										<th class="center" >是否启用</th>
-									
+
 										<th class='center' >操作</th>
 									</tr>
 								</thead>
@@ -110,14 +111,14 @@
 										<td class='center'>${orgnz.tid}</td>
 										<td class='center'>${orgnz.tname}</td>
 										<c:if test="${pd.area=='' }"><td class='center'>${orgnz.aname}</td></c:if>
-									 
+
 <!-- 										<td class='center'>${orgnz.address}</td> -->
 <!-- 										<td class='center'>${orgnz.createdtime}</td> -->
-										<td class='center'>${orgnz.isuse?'是':'否'}</td> 
+										<td class='center'>${orgnz.isuse?'是':'否'}</td>
 <!-- 										<td >${orgnz.note}</td> -->
 										<td class='center'>
 											<div class="hidden-sm hidden-xs action-buttons">
-											
+
 <%--											<a class="blue" href="javascript:editorgnz('${orgnz.tid}');">--%>
 <%--												<i class="ace-icon fa fa-folder-o bigger-130" title="查看"></i>--%>
 <%--											</a>--%>
@@ -139,18 +140,18 @@
 
 													<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 												
-												<li><a href="javascript:readorgnz('${orgnz.tid }');" class="tooltip-success" data-rel="tooltip" title="Read">
-															<span class="blue">
-																<i class="ace-icon fa fa-folder-o bigger-120" title="修改与查看"></i>
-															</span>
-														</a></li>
-<%--														<li><a href="javascript:editorgnz('${orgnz.tid }');" class="tooltip-success" data-rel="tooltip" title="Edit">--%>
-<%--															<span class="green">--%>
-<%--																<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改"></i>--%>
+<%--												<li><a href="javascript:readorgnz('${orgnz.tid }');" class="tooltip-success" data-rel="tooltip" title="Read">--%>
+<%--															<span class="blue">--%>
+<%--																<i class="ace-icon fa fa-folder-o bigger-120" title="修改与查看"></i>--%>
 <%--															</span>--%>
 <%--														</a></li>--%>
+														<li><a href="javascript:editorgnz('${orgnz.tid }');" class="tooltip-success" data-rel="tooltip" title="Edit">
+															<span class="green">
+																<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改与查看"></i>
+															</span>
+														</a></li>
 														<li><a href="javascript:delorgnz('${orgnz.tid }','${orgnz.tname }');" class="tooltip-success" data-rel="tooltip" title="Delete">
-															<span class="red"> 
+															<span class="red">
 																<i class="ace-icon fa fa-trash-o bigger-120"  title="删除"></i>
 															</span>
 														</a>
