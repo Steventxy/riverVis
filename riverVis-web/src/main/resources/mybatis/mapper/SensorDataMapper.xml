@@ -74,4 +74,15 @@
 		</where> 
 		order by time desc 
 	</select>
+
+	<!-- 批量删除数据 -->
+	<delete id="deleteAllData" parameterType="String" >
+		delete from <include refid="tableName"></include>
+		where
+		id in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+
 </mapper>
