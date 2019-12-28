@@ -151,6 +151,7 @@
 									<input type="text" name="note" id="note" value="${pd.orgnz.note }" placeholder="这里输入备注" class="col-xs-10 col-sm-5" />
 								</div>
 							</div>
+
 							<div class="form-group">
 								<label class="col-xs-3 control-label no-padding-right" for="form-field-1"> 是否可用 :</label>
 								<div class="col-xs-9">
@@ -158,12 +159,14 @@
 									<label style="margin:5px 0px 5px 5px;"><input name="isuse" type="radio" value="0" <c:if test="${pd.orgnz.isuse=='false'}">checked="checked"</c:if>/>&nbsp;否</label> 
 								</div>
 							</div>
+
 							<div class="clearfix form-actions">
 								<div class="col-md-offset-3 col-md-9">
 									<a class="btn btn-mini btn-primary" onclick="save();">保存</a>&nbsp;&nbsp;
 									<a class="btn btn-mini btn-danger" onclick="goback('${aid}');">取消</a>
 								</div>
 							</div>
+
 							<div class="hr hr-18 dotted hr-double"></div>
 						</form>
 

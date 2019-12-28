@@ -5,6 +5,7 @@ import com.hunau.entity.SensorData;
 import com.hunau.entity.Warn;
 import com.hunau.service.LogManager;
 import com.hunau.service.SensorDataManager;
+import com.hunau.service.UsersManager;
 import com.hunau.service.WarnManager;
 import com.hunau.service.impl.PowService;
 import com.hunau.util.Jurisdiction;
@@ -33,6 +34,8 @@ public class SensorDataController extends BaseController {
 	private static final String FUNCTION ="环境数据管理";
 	@Resource(name="SensorDataService")
 	private SensorDataManager SensorDataService;
+	@Resource(name="usersService")
+	private UsersManager usersService;
 	@Resource(name="warnService")
 	private WarnManager warnService;
 	@Resource(name="powService")
@@ -223,12 +226,17 @@ public class SensorDataController extends BaseController {
 				pd.put("aid", "");
 
 			page.setPd(pd);
-			 orgnzList = SensorDataService.collectdatalistPage(page);
+
+			String rid = usersService.getRidByUserid(Jurisdiction.getUserid());
+			mv.addObject("rid", rid);
+
+			orgnzList = SensorDataService.collectdatalistPage(page);
 			mv.addObject("pd", pd);	//传入父区域所有信息
-			
+
 			mv.addObject("orgnzList", orgnzList);
 			mv.addObject("editQX", true);
 			mv.setViewName("datavis/env_listdata");
+
 		} catch(Exception e){
 			logger.error(e.toString(), e);
 		}
