@@ -208,18 +208,18 @@ public class SmsBroadController extends BaseController {
 		}
 		if(lastLoginEnd != null && !"".equals(lastLoginEnd)){
 			pd.put("lastLoginEnd", lastLoginEnd+" 23:59:59");
-		} 
-		
+		}
+
 		List<PageData> sendlist = new ArrayList<PageData>();
-//		user = usersService.getUserByNameAndPwd(pd);	//根据用户名和密码去读取用户信息
-//		String rid = user.getRoleid();
+
+		String rid = usersService.getRidByUserid(Jurisdiction.getUserid());
+
 		page.setPd(pd);
 		sendlist = messageService.listSendMessage(page);					
 		mv.addObject("sendlist",sendlist);
-//		mv.addObject("rid",rid);
 		mv.addObject("pd", pd);
+		mv.addObject("rid", rid);
 		mv.setViewName("message/send_list");
-
 		return mv;
 	}
 }
