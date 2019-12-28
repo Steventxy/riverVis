@@ -23,5 +23,10 @@ public interface SensorDataManager {
 	public List<SensorData> selectSensorDataByAidLike(HashMap<String, Object> params)throws Exception;
 	
 	public List<SensorData> collectdatalistPage(Page page)throws Exception;
+
+	/**
+	 * 批量删除数据
+	 */
+	public void deleteAllData(String[] tids)throws Exception;
 	
 }
