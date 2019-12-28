@@ -121,6 +121,16 @@
 		)
 	</insert>
 
+
+<!--	&lt;!&ndash; 批量删除日志 &ndash;&gt;-->
+<!--	<delete id="deleteAllLog" parameterType="String" >-->
+<!--		delete from <include refid="tableName"></include>-->
+<!--		where-->
+<!--		lid in-->
+<!--		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">-->
+<!--			#{item}-->
+<!--		</foreach>-->
+<!--	</delete>-->
 	<delete id="deleteLog" parameterType="String" flushCache="false">
 		truncate log;
 	</delete>
