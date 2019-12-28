@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.hunau.entity.Users;
+import com.hunau.service.*;
 import com.infopublic.util.DTree;
 
 import javax.annotation.Resource;
@@ -21,12 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.hunau.entity.Area;
 import com.hunau.entity.Page;
 import com.hunau.entity.Terminal;
-import com.hunau.service.AreaManager;
 //import com.infopublic.service.DataAnalysisManager;
-import com.hunau.service.LogManager;
-import com.hunau.service.MessageManager;
-import com.hunau.service.TerManager;
-import com.hunau.service.UsersManager;
 //import com.infopublic.service.impl.DataAnalysisService;
 import com.infopublic.util.AppUtil;
 import com.infopublic.util.Const;
@@ -64,6 +61,8 @@ public class SmsBroadController extends BaseController {
 	private MessageManager messageService;
 	@Resource(name="usersService")
 	private UsersManager usersService;
+	@Resource(name="roleService")
+	private RoleManager roleService;
 
 	/**
 	 * 去发送短信(同时构建用户列表)
@@ -74,6 +73,7 @@ public class SmsBroadController extends BaseController {
 	public ModelAndView toAddBroad()throws Exception{
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
+
 		pd = this.getPageData();
 		String lastjson = null;
 		List<Area> arealist = new ArrayList<Area>();
@@ -198,6 +198,7 @@ public class SmsBroadController extends BaseController {
 		if(!Jurisdiction.hasJurisdiction("smsbroad/listSendMessage.do")){return null;} //权限校验
 		ModelAndView mv = new ModelAndView();
 		PageData pd = new PageData();
+		Users user = new Users();
 		pd = this.getPageData();
 		pd.put("userid", Jurisdiction.getUserid());
 		String lastLoginStart = pd.getString("lastLoginStart");	//开始时间
@@ -210,11 +211,15 @@ public class SmsBroadController extends BaseController {
 		} 
 		
 		List<PageData> sendlist = new ArrayList<PageData>();
+//		user = usersService.getUserByNameAndPwd(pd);	//根据用户名和密码去读取用户信息
+//		String rid = user.getRoleid();
 		page.setPd(pd);
 		sendlist = messageService.listSendMessage(page);					
 		mv.addObject("sendlist",sendlist);
+//		mv.addObject("rid",rid);
 		mv.addObject("pd", pd);
 		mv.setViewName("message/send_list");
+
 		return mv;
 	}
 }
