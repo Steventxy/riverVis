@@ -132,7 +132,7 @@ public class LoginController extends BaseController {
 			Session session = Jurisdiction.getSession();
 			Users user = (Users)session.getAttribute(Const.SESSION_USER);	//读取session中的用户信息(单独用户信息)
 			String roleRights="";
-			
+
 			List<Menu> allmenuList = new ArrayList<Menu>();
 			if (user != null) {
 				String username = user.getUsername();	
@@ -216,7 +216,7 @@ public class LoginController extends BaseController {
 	}
 	/**
 	 * 用户注销
-	 * @param session
+	 * @param
 	 * @return
 	 */
 	@RequestMapping(value="/logout")
@@ -255,7 +255,7 @@ public class LoginController extends BaseController {
 	}
 	
 	/**获取用户按钮权限
-	 * @param session
+	 * @param
 	 * @return
 	 */
 	public Map<String, String> getUQX(String username){
