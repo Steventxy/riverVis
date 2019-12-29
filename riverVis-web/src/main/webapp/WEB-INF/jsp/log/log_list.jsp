@@ -42,6 +42,7 @@
 									</span>
 									</div>
 								</td>
+
 								<td style="vertical-align:top;padding-left:2px;">
 								 	<select class="chosen-select form-control" name="logtype" id="logtype" data-placeholder="日志类别" style="vertical-align:top;width: 120px; height: 30px">
 									<option value=""></option>
@@ -54,6 +55,10 @@
 								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastLoginEnd" id="lastLoginEnd"  value="${pd.lastLoginEnd}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title="日志时间结束"/></td>
 								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
+<%--								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-sm btn-danger" onclick="deleteAll('确定要删除选定的数据吗');" style="vertical-align:top;height: 30px;">批量删除日志</a></td>--%>
+									<c:if test="${rid == 1}">
+											<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-xs btn-danger" onclick="delLog('${pd.userid}');"><i class="ace-icon fa fa-trash-o bigger-120" title="清空所有日志"></i></a>
+												</c:if>
 							</tr>
 						</table>
 						<!-- 检索  -->
@@ -64,7 +69,8 @@
 								<th class="center" style="width:35px;">
 									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
 									</th>
-									<th class="center" style="width:50px;"></th>
+									<th class="center" style="width:50px;">序号</th>
+									<th class="center">日志编号</th>
 									<th class="center">日志类别</th>
 									<th class="center">操作用户</th>
 									<th class="center">功能模块</th>
@@ -85,9 +91,10 @@
 												<label><input type='checkbox' name='ids'  id="${var.lid }"  class="ace"/><span class="lbl"></span></label>
 											</td>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
+											<td class='center'>${var.lid}</td>
 											<td class='center'>${var.logtype}</td>
 											<td class='center'>${var.username}</td>
-											<td class='center'>${var.function}</td>
+											<td class='center'>${var.functions}</td>
 											<td class='center'>${var.logcontent}</td>
 											<td class='center'>${var.logtime}</td>
 											<td class='center'>${var.ip}</td>
@@ -132,12 +139,17 @@
 	<!-- /.main-container -->
 
 	<!-- basic scripts -->
+
 	<!-- 页面底部js¨ -->
 	<%@ include file="../index/foot.jsp"%>
 	<!-- ace scripts -->
 	<script src="static/ace/js/ace/ace.js"></script>
+	<!-- 删除时确认窗口 -->
+	<script src="static/ace/js/bootbox.js"></script>
 	<!-- 日期框 -->
 	<script src="static/ace/js/date-time/bootstrap-datepicker.js"></script>
+	<!-- 删除时确认窗口 -->
+	<script src="static/ace/js/bootbox.js"></script>
 	<!-- 下拉框 -->
 	<script src="static/ace/js/chosen.jquery.js"></script>
 	<!--提示框-->
@@ -169,6 +181,8 @@
 			}
 		});
 	});
+
+
 	//下拉框
 	if(!ace.vars['touch']) {
 		$('.chosen-select').chosen({allow_single_deselect:true}); 
@@ -220,6 +234,67 @@ var checkedidlist =[];
 			window.location.href='<%=basePath%>log/excel.do?checkedidlist='+checkedidlist;
 	}
 }
+
+<%--function deleteAll(msg){--%>
+<%--	bootbox.confirm(msg, function(result) {--%>
+<%--		if(result) {--%>
+<%--			var lidstr = '';--%>
+<%--			var lnamestr='';--%>
+<%--			for(var i=0;i < document.getElementsByName('ids').length;i++)--%>
+<%--			{--%>
+<%--				if(document.getElementsByName('ids')[i].checked){--%>
+<%--					if(lidstr=='') lidstr += document.getElementsByName('ids')[i].id;--%>
+<%--					else lidstr += ',' + document.getElementsByName('ids')[i].id;--%>
+<%--					if(lnamestr=='') lnamestr += document.getElementsByName('ids')[i].value;--%>
+<%--					else lnamestr += ',' + document.getElementsByName('ids')[i].value;--%>
+<%--				}--%>
+<%--			}--%>
+<%--			if(lidstr==''){--%>
+<%--				bootbox.dialog({--%>
+<%--					message: "<span class='bigger-110'>您没有选择任何内容!</span>",--%>
+<%--					buttons:--%>
+<%--							{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}--%>
+<%--				});--%>
+<%--				$("#zcheckbox").tips({--%>
+<%--					side:3,--%>
+<%--					msg:'点这里全选',--%>
+<%--					bg:'#AE81FF',--%>
+<%--					time:8--%>
+<%--				});--%>
+<%--				$("#zcheckbox").focus();--%>
+<%--				return;--%>
+<%--			}else{--%>
+<%--				top.jzts();--%>
+<%--				$.ajax({--%>
+<%--					type: "POST",--%>
+<%--					url: '<%=basePath%>log/deleteAllLog.do',--%>
+<%--					data: {lids:lidstr,lnames:lnamestr},--%>
+<%--					dataType:'json',--%>
+<%--					//beforeSend: validateData,--%>
+<%--					cache: false,--%>
+<%--					success: function(data){--%>
+<%--						$.each(data.list, function(i, list){--%>
+<%--							nextPage(${page.currentPage});--%>
+<%--						});--%>
+<%--					}--%>
+<%--				});--%>
+<%--			}--%>
+<%--		}--%>
+<%--	});--%>
+<%--}--%>
+
+	//删除
+	function delLog(userid){
+		bootbox.confirm("确认清空所有的日志吗?", function(result) {
+			if(result) {
+				top.jzts();
+				var url = "<%=basePath%>log/deleteLog.do?userid="+userid;
+				$.get(url,function(data){
+					nextPage(${page.currentPage});
+				});
+			};
+		});
+	}
 	</script>
 </body>
 </html>
