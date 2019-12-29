@@ -80,6 +80,16 @@ public class UsersService implements UsersManager{
 		dao.delete("UsersMapper.deleteUI", userid);
 	}
 
+	/**
+	 * 获取角色id
+	 */
+	@Override
+	public String getRidByUserid(String userid) throws Exception {
+		// TODO Auto-generated method stub
+		return (String) dao.findForObject("UsersMapper.getRidByUserid", userid);
+	}
+
+
 	/**修改用户账号可用状态
 	 * @param pd
 	 * @throws Exception
@@ -90,7 +100,7 @@ public class UsersService implements UsersManager{
 	}
 	/**
 	 * 根据用户编号获取其区域下的用户信息(excel导出)
-	 * @param  page
+	 * @param
 	 * @param @throws Exception 
 	 * @return List<PageData>
 	 */
@@ -110,7 +120,7 @@ public class UsersService implements UsersManager{
 		return (List<Users>) dao.findForList("UsersMapper.getUserslistPage", page);
 	}
 	/**通过用户ID获取区域编号
-	 * @param integer
+	 * @param
 	 * @return
 	 * @throws Exception
 	 */
