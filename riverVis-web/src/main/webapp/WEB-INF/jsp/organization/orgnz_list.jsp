@@ -56,8 +56,9 @@
 								<td style="vertical-align:top; padding-left:12px">
 										<c:if test="${pd.area!='' }"><a class="btn btn-xs btn-success" onclick="addorgnz('${pd.area.aid}');">新增</a></c:if>
 								        <c:if test="${pd.area=='' }"><a class="btn btn-xs btn-success" onclick="addorgnz('');">新增</a></c:if>
-									    <a class="btn btn-xs btn-success" onclick="goback();">终端列表</a>
-<%--								        <c:if test="${pd.area!='' }"><a class="btn btn-xs btn-success" onclick="goback();">返回所有终端列表</a></c:if>--%>
+									    <a class="btn btn-xs btn-success" onclick="goback();">返回所有终端列表</a>
+<%--								        <c:if test="${pd.area!='' }"><a class="btn btn-xs btn-success" onclick="goback();">所有终端列表</a></c:if>--%>
+<%--									    <c:if test="${pd.area=='' }"><a class="btn btn-xs btn-success" onclick="goback();">返回所有终端列表</a></c:if>--%>
 
 									</td>
 							</tr>
