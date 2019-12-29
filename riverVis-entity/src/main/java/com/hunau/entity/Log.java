@@ -10,7 +10,7 @@ public class Log {
 	private String lid;//日志编号
 	private String  userid;//用户编号
 	private String logtype;//日志类别：登陆日志，操作日志
-	private String function;//功能模块
+	private String functions;//功能模块
 	private String logcontent;//操作
 	private String logtime;//生成时间
 	private String remark;//备注
@@ -45,10 +45,10 @@ public class Log {
 		this.logtype = logtype;
 	}
 	public String getFunction() {
-		return function;
+		return functions;
 	}
 	public void setFunction(String function) {
-		this.function = function;
+		this.functions = functions;
 	}
 	public String getRemark() {
 		return remark;

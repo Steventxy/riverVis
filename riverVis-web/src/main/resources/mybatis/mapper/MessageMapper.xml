@@ -111,5 +111,7 @@
 		delete from <include refid="tableName"></include>
 		where smid = #{smid}
 	</delete>
+
+
 	
 </mapper>

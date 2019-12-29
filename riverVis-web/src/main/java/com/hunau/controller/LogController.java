@@ -6,13 +6,17 @@ import com.hunau.service.AreaManager;
 import com.hunau.service.LogManager;
 import com.hunau.service.UsersManager;
 import com.hunau.util.Jurisdiction;
+import com.infopublic.util.AppUtil;
+import com.infopublic.util.Const;
 import com.infopublic.util.ObjectExcelView;
 import com.infopublic.util.PageData;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -65,6 +69,8 @@ public class LogController extends BaseController{
 		pd.put("aidlist", aidlist);
 		page.setPd(pd);
 		List<PageData> loglist= logService.getLogs(page);
+		String rid = usersService.getRidByUserid(Jurisdiction.getUserid());
+		mv.addObject("rid", rid);
 		mv.setViewName("log/log_list");
 		mv.addObject("loglist",loglist);
 		mv.addObject("pd",pd);
@@ -121,5 +127,49 @@ public class LogController extends BaseController{
 			logger.error(e.toString(), e);
 		}
 		return mv;
+	}
+
+
+//	/**
+//	 * 批量删除
+//	 * @throws Exception
+//	 */
+//	@RequestMapping(value="/deleteAllLog")
+//	@ResponseBody
+//	public Object deleteAllLog() throws Exception {
+//		logBefore(logger, Jurisdiction.getUsername()+"批量删除log");
+//		PageData pd = new PageData();
+//		Map<String,Object> map = new HashMap<String,Object>();
+//		pd = this.getPageData();
+//		List<PageData> pdList = new ArrayList<PageData>();
+//		String lids = pd.getString("lids");
+//		if(null != lids && !"".equals(lids)){
+//			String Arraylids[] = lids.split(",");
+//			logService.deleteAllLog(Arraylids);
+//			pd.put("msg", "ok");
+//			//插入日志
+//			//logService.saveLog(Const.LOGTYPE[1],FUNCTION,"批量删除",this.getRemortIP(),tids);
+//		}else{
+//			pd.put("msg", "no");
+//		}
+//		pdList.add(pd);
+//		map.put("list", pdList);
+//		return AppUtil.returnObject(pd, map);
+//	}
+
+
+
+	/**删除短信
+	 * @param out
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/deleteLog")
+	public void deleteLog(PrintWriter out) throws Exception{
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		logService.deleteLog(pd.getString("userid")); //要删除的用户id
+		out.write("success");
+		out.close();
+
 	}
 }
