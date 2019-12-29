@@ -36,8 +36,8 @@
 			//
 		//	var str="";
 		/*
-			if(${pd.chartData4!=''}){
-			chartData4= eval(${pd.chartData4})
+			<%--if(${pd.chartData4!=''}){--%>
+			<%--chartData4= eval(${pd.chartData4})--%>
 			
            console.info(chartData4)
 
