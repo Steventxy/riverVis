@@ -40,8 +40,15 @@ public class SensorDataService implements SensorDataManager {
 		// TODO 自动生成的方法存根
 		return  (List<SensorData>) dao.findForList("SensorDataMapper.collectdatalistPage",page);
 	}
-	
-	
+
+	/**批量数据
+	 * @param lids
+	 * @throws Exception
+	 */
+	@Override
+	public void deleteAllData(String[] lids)throws Exception{
+		dao.delete("SensorDataMapper.deleteAllData", lids);
+	}
 	
 }
 
