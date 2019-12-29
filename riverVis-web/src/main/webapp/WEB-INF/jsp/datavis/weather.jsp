@@ -27,8 +27,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    
 <div id="left" style="height:180px;width:150px">
    	   <div style="height:30px;width:80px;border:0px solid #ccc;padding:0px;position:relative;top:18px;left:60px">
-   <p id="p1">2017-10-14 周六</p>
-<!--<p id="p2">实时空气质量:良好</p>--> 
+   <p id="p1">2019-1-1 周三</p>
+           <p id="p2">实时空气质量:良好</p>
 	</div>
    
     <div style="height:70px;width:120px;border:0px solid #ccc;padding:0px;position:relative;top:0px;left:30px">
@@ -39,11 +39,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div style="height:20px;width:80px;border:0px solid #ccc;padding:0px;position:relative;top:-5px;left:65px">
     <p id="p3">16℃(阴天)</p>
     </div>
- <!--     
+
     <div style="height:20px;width:80px;border:0px solid #ccc;padding:0px;position:relative;top:-5px;left:65px">
     <p id="p4">北风1级</p>
 	</div>
- -->	
 </div>
     
    <div id="center" style="height:180px;width:130px;border:0px solid #ccc;padding:0px;position:relative;top:-197px;left:140px">
@@ -59,11 +58,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <p id="p6">14-17℃</p>
     </div>
     
-  <!--  
+
     <div style="height:20px;width:85px;border:0px solid #ccc;padding:0px;position:relative;top:-5px;left:65px">
     <p id="p7">北风2级</p>
 	</div>
-  -->    
+
 	   
    </div>
    
@@ -80,11 +79,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div style="height:20px;width:80px;border:0px solid #ccc;padding:0px;position:relative;top:-5px;left:32px">
     <p id="p9">14-17℃</p>
     </div>
-<!-- 
+<
     <div style="height:20px;width:85px;border:0px solid #ccc;padding:0px;position:relative;top:-5px;left:32px">
     <p id="p10">北风3-4级</p>
 	</div>
- --> 
+
    </div>
    
    
@@ -111,8 +110,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	var y=document.getElementById("p5");y.innerHTML=(month1+1)+"月"+(date1+1)+"日"; //修改标签<P> id="p5"的内容
 	var z=document.getElementById("p8");z.innerHTML=(month1+1)+"月"+(date1+2)+"日"; //修改标签<P> id="p8"的内容
 	
-	//var weatherpic="http://app1.showapi.com/weather/icon/day/"+obj[0].weather_code+".png";
-    //alert("http://app1.showapi.com/weather/icon/day/"+obj[0].weather_code+".png");
+	var weatherpic="http://app1.showapi.com/weather/icon/day/"+obj[0].weather_code+".png";
+    alert("http://app1.showapi.com/weather/icon/day/"+obj[0].weather_code+".png");
     var obj1=${message1};
     var weatherpicf2=weatherpicf2+"http://app1.showapi.com/weather/icon/day/"+obj1.weather_picf2+".png";
     var weatherpicf3=weatherpicf3+"http://app1.showapi.com/weather/icon/day/"+obj1.weather_picf3+".png";
