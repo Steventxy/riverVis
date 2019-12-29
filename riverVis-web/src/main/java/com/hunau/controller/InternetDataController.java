@@ -100,12 +100,12 @@ public class InternetDataController {
 	    JSONObject jsonObj;
 	    jsonObj= JSONObject.fromObject(aqijson);
 	    //用"键"获取值
-//	    String weather_picf2=jsonObj.getString("weather_picf2");
-//	    String weather_picf3=jsonObj.getString("weather_picf3");
-//	    String mintempf2=jsonObj.getString("mintempf2");
-//	    String mintempf3=jsonObj.getString("mintempf3");
-//	    String maxtempf2=jsonObj.getString("maxtempf2");
-//	    String maxtempf3=jsonObj.getString("maxtempf3");
+	    String weather_picf2=jsonObj.getString("weather_picf2");
+	    String weather_picf3=jsonObj.getString("weather_picf3");
+	    String mintempf2=jsonObj.getString("mintempf2");
+	    String mintempf3=jsonObj.getString("mintempf3");
+	    String maxtempf2=jsonObj.getString("maxtempf2");
+	    String maxtempf3=jsonObj.getString("maxtempf3");
 	    mv.addObject("message1",jsonObj);
 		mv.addObject("message",weatherjson);
     	mv.setViewName("datavis/weather");      
