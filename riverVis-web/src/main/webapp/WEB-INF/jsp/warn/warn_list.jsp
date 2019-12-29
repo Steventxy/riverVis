@@ -72,7 +72,6 @@
 									<th class="center">预警级别</th>
 									<th class="center">预警值</th>
 									<th class="center">预警策略</th>
-									
 									<th class="center">操作</th>
 								</tr>
 							</thead>
