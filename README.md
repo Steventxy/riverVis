@@ -30,6 +30,12 @@
 
 ![pic thq7](https://Steventxy.github.io/pic/thq7.png)
 
+6. 雨量地图的水位预警原来为空值，现可显示出当前水位
+
+![pic thq9](https://Steventxy.github.io/pic/thq9.png)
+
+![pic thq7](https://Steventxy.github.io/pic/thq10.png)
+
 #### 彭文迪
 
 1. 实现删除功能并只有管理员才有权限操作
