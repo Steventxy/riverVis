@@ -52,7 +52,7 @@
 											</td>
 										</tr>
 										
-										<tr>
+										<tr>z
 											<td style="width:90px;text-align: right;padding-top: 13px;">预警值:</td>
 											<td><input type="text" value="${warn.data}" id="data"  name="data" title="预警值:" style="width:98%;" /></td>
 										</tr>
