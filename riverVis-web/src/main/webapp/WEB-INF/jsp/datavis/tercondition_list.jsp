@@ -120,9 +120,10 @@
 										<option value="20"  <c:if test="${pd.key3=='30' }">selected</c:if>>30</option>
 										<option value="21"  <c:if test="${pd.key3=='31' }">selected</c:if>>31</option>
 								  	</select>
-								  	</td>																
-								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>								
-							</tr>							
+								  	</td>
+                                <input type="button" name="Submit"  onclick="javascript:history.back(-1);" value="返回上一页">
+                                <td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
+							</tr>
 						</table>						
 							</form>
 <!-- 						</div>												 -->
