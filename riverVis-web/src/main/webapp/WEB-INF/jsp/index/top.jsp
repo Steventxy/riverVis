@@ -6,7 +6,7 @@
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="static/ace/css/bootstrap.css" />
 		<link rel="stylesheet" href="static/ace/css/font-awesome.css" />
-		<!-- page specific plugin styles -->
+		<!-- page specific com.hunau.plugin styles -->
 		<!-- text fonts -->
 		<link rel="stylesheet" href="static/ace/css/ace-fonts.css" />
 		<!-- ace styles -->

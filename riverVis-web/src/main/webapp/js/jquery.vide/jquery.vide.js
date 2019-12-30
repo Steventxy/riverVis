@@ -11,7 +11,7 @@
   'use strict';
 
   /**
-   * Name of the plugin
+   * Name of the com.hunau.plugin
    * @private
    * @const
    * @type {String}
@@ -425,7 +425,7 @@
   };
 
   /**
-   * Special plugin object for instances.
+   * Special com.hunau.plugin object for instances.
    * @public
    * @type {Object}
    */
@@ -446,10 +446,10 @@
     this.each(function() {
       instance = $.data(this, PLUGIN_NAME);
 
-      // Destroy the plugin instance if exists
+      // Destroy the com.hunau.plugin instance if exists
       instance && instance.destroy();
 
-      // Create the plugin instance
+      // Create the com.hunau.plugin instance
       instance = new Vide(this, path, options);
       instance.index = $[PLUGIN_NAME].lookup.push(instance) - 1;
       $.data(this, PLUGIN_NAME, instance);

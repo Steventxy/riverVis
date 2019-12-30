@@ -66,9 +66,9 @@
 						<table id="simple-table" class="table table-striped table-bordered table-hover" style="margin-top:5px;">	
 							<thead>
 								<tr>
-								<th class="center" style="width:35px;">
-									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
-									</th>
+<%--								<th class="center" style="width:35px;">--%>
+<%--									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>--%>
+<%--								</th>--%>
 									<th class="center" style="width:50px;">序号</th>
 									<th class="center">日志编号</th>
 									<th class="center">日志类别</th>
@@ -87,9 +87,9 @@
 								<c:when test="${not empty loglist}">
 									<c:forEach items="${loglist}" var="var" varStatus="vs">
 										<tr>
-										<td class='center' style="width: 30px;">
-												<label><input type='checkbox' name='ids'  id="${var.lid }"  class="ace"/><span class="lbl"></span></label>
-											</td>
+<%--										<td class='center' style="width: 30px;">--%>
+<%--												<label><input type='checkbox' name='ids'  id="${var.lid }"  class="ace"/><span class="lbl"></span></label>--%>
+<%--										</td>--%>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.lid}</td>
 											<td class='center'>${var.logtype}</td>
@@ -216,18 +216,17 @@ var checkedidlist =[];
 				  }
 			}
 			if(checkedidlist==''){
-				$(object).tips({
-					side:3,
-		            msg:'您没有选择任何内容',
-		            bg:'#AE81FF',
-		            time:3
-		        });
+				bootbox.dialog({
+					message: "<span class='bigger-110'>您没有选择任何内容!</span>",
+					buttons:
+							{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
+				});
 				$("#zcheckbox").tips({
-					side:2,
-		            msg:'点这里全选',
-		            bg:'#AE81FF',
-		            time:8
-		        });
+					side:3,
+					msg:'点这里全选',
+					bg:'#AE81FF',
+					time:8
+				});
 				$("#zcheckbox").focus();
 				return;
 			}else{

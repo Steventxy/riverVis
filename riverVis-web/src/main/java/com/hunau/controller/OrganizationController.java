@@ -373,19 +373,19 @@ public class OrganizationController  extends BaseController{
 	 * @param out
 	 */
 	@RequestMapping(value="/showTel")
-	public ModelAndView showTel(Page page)throws Exception{
-		ModelAndView mv = this.getModelAndView();
-		PageData pd = new PageData();
-		pd = this.getPageData();
-		page.setPd(pd);
-		try{
-			List<PageData> tellist = organizationService.getTelByTid(page);	//读取此ID的申请信息
-			mv.addObject("pd", pd);			
-			mv.addObject("tellist", tellist);	
-			mv.setViewName("organization/orgnz_phone");
-		} catch(Exception e){
-			logger.error(e.toString(), e);
-		}
+		public ModelAndView showTel(Page page)throws Exception{
+			ModelAndView mv = this.getModelAndView();
+			PageData pd = new PageData();
+			pd = this.getPageData();
+			page.setPd(pd);
+			try{
+				List<PageData> tellist = organizationService.getTelByTid(page);	//读取此ID的申请信息
+				mv.addObject("pd", pd);
+				mv.addObject("tellist", tellist);
+				mv.setViewName("organization/orgnz_phone");
+			} catch(Exception e){
+				logger.error(e.toString(), e);
+			}
 		return mv;
 	}
 	/**
@@ -461,6 +461,16 @@ public class OrganizationController  extends BaseController{
 		mv.addObject("type",pd.getString("type") );
 		
 		
+		return mv;
+	}
+	/**打开上传EXCEL页面
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/goUploadExcel")
+	public ModelAndView goUploadExcel()throws Exception{
+		ModelAndView mv = this.getModelAndView();
+		mv.setViewName("datavis/excel.jsp");
 		return mv;
 	}
 }

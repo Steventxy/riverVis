@@ -13,6 +13,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="10">
+    <input type="button" name="Submit"  onclick="javascript:history.back(-1);" value="返回上一页">
     
   <!--   <link rel="stylesheet" href="leaflet.css" /> 
 	<script src="leaflet.js"></script>--> 
@@ -340,15 +341,15 @@
             
             
 
-    }    
+    }
 </script>
-  
-  
+
+
 
 <script type="text/javascript">
 		var obj=${message};
 		var level="${warn.leveal}";
-		var data=${warn.data};
+		var data="${warn.data}";
 		$(top.hangge());//关闭加载状态
 		//rain(100,50,70,60,40,24);
 		rain(obj[5].rain,obj[4].rain,obj[3].rain,obj[2].rain,obj[1].rain,obj[0].rain,obj[5].time,obj[4].time,obj[3].time,obj[2].time,obj[1].time,obj[0].time,obj[5].ph,obj[4].ph,obj[3].ph,obj[2].ph,obj[1].ph,obj[0].ph);
@@ -359,12 +360,12 @@
 		});
 		
 		function init1() {
-			
-	  	    
+
+
 			  //alert(3);
-           
-         
-				   
+
+
+
 					function onEachFeature(feature, layer) {
 						layer.on({
 							mouseover: highlightFeature,
@@ -372,45 +373,45 @@
 							click: zoomToFeature
 						});
 					}
-				
+
 					geojson = L.geoJson(statesData, {
 						style: style,
 						onEachFeature: onEachFeature
 					}).addTo(map);
-				
+
 					var legend = L.control({position: 'bottomright'});
-				
+
 					legend.onAdd = function (map1) {
-				
+
 						var div = L.DomUtil.create('div', 'info legend'),
 							grades = [0, 5, 10, 15, 20, 25, 30, 35],
 							labels = [],
 							from, to;
-				
+
 						for (var i = 0; i < grades.length; i++) {
 							from = grades[i];
 							to = grades[i + 1];
-				
+
 							labels.push(
 								'<i style="background:' + getColor(from + 1) + '"></i> ' + '&nbsp;' +
 								from + (to ? '&ndash;' + to : '+') + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 						}
-				
+
 						div.innerHTML = labels.join('<br>');
 						return div;
 					};
-				
-					legend.addTo(map1);   
-	                 
-	  	        
-	  	       	
+
+					legend.addTo(map1);
+
+
+
 		}
 		if(obj[0].rain>data){
 		alert('当前雨量预警级别为:'+level+'。 已超过预警值!请发送预警信息');
 		}
 </script>
 
-  
+
   
   
   

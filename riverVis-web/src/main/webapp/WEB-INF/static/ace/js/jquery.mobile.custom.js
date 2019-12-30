@@ -19,13 +19,13 @@
 		// Browser globals
 		factory( root.jQuery, root, doc );
 	}
-}( this, document, function ( jQuery, window, document, undefined ) {// This plugin is an experiment for abstracting away the touch and mouse
+}( this, document, function ( jQuery, window, document, undefined ) {// This com.hunau.plugin is an experiment for abstracting away the touch and mouse
 // events so that developers don't have to worry about which method of input
 // the device their document is loaded on supports.
 //
 // The idea here is to allow the developer to register listeners for the
 // basic mouse events, such as mousedown, mousemove, mouseup, and click,
-// and the plugin will take care of registering the correct listeners
+// and the com.hunau.plugin will take care of registering the correct listeners
 // behind the scenes to invoke the listener at the fastest possible time
 // for that device, while still retaining the order of event firing in
 // the traditional mouse environment, should multiple handlers be registered
