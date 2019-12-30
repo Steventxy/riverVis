@@ -13,6 +13,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="10">
+    <input type="button" name="Submit"  onclick="javascript:history.back(-1);" value="返回上一页">
     
   <!--   <link rel="stylesheet" href="leaflet.css" /> 
 	<script src="leaflet.js"></script>--> 
