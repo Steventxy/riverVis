@@ -11,13 +11,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <base href="<%=basePath%>">
-
-<!-- 下拉框 -->
-<link rel="stylesheet" href="static/ace/css/chosen.css" />
+<meta charset="utf-8" />
 <!-- jsp文件头和头部 -->
 <%@ include file="../index/top.jsp"%>
+
+<link rel="stylesheet" href="static/ace/css/chosen.css" />
+
 
 <link rel="stylesheet" href="static/js/bootstrap-table.css">
 
@@ -35,19 +35,22 @@
 			<div class="main-content-inner">
 				<div class="page-content">
 				<div class="page-header">
-							<h1>								
+					<div class="row">
+						<div class="col-xs-12">
+							<form action="orgnz/listdata.do" method="post" name="Form" id="Form">
+
+							<h1>
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
 									<c:if test="${pd.area=='' }">所有</c:if>
 									<c:if test="${pd.area!='' }">${pd.area.aname} </c:if>
 									&nbsp;终端列表
 								</small>
-								
+
 							</h1>
                     </div><!-- /.page-header -->
-				<div class="row">
-						<div class="col-xs-12">
-					<form action="orgnz/listdata.do" method="post" name="Form" id="Form">
+
+
 						<input type="hidden" id="parentaid" name="aid" value="${pd.area==''?'':pd.area.aid}">
 						<table style="margin-top:5px;margin-bottom:5px;">
 							<tr>
@@ -56,7 +59,7 @@
 										<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>终端IMEI</option>
 										<option value="aname"  <c:if test="${pd.key1=='aname' }">selected</c:if>>所属分组</option>
 										<option value="IP"  <c:if test="${pd.key1=='IP' }">selected</c:if>>地址</option>
-										<option value="time"  <c:if test="${pd.key1=='time' }">selected</c:if>>采集日期</option>
+										<option value="worktime"  <c:if test="${pd.key1=='worktime' }">selected</c:if>>采集日期</option>
 								  	</select>
 								  </td>
 								<td style="padding-left:2px;">
@@ -69,7 +72,7 @@
 								  		<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>终端IMEI</option>
 										<option value="aname"  <c:if test="${pd.key1=='aname' }">selected</c:if>>所属分组</option>
 										<option value="IP"  <c:if test="${pd.key1=='IP' }">selected</c:if>>地址</option>
-										<option value="time"  <c:if test="${pd.key1=='time' }">selected</c:if>>采集日期</option>								  	</select>
+										<option value="worktime"  <c:if test="${pd.key1=='worktime' }">selected</c:if>>采集日期</option>								  	</select>
 								  	</td>
 								<td style="padding-left:2px;">
 									<div class="nav-search">
@@ -84,7 +87,7 @@
 										<option value="time"  <c:if test="${pd.key1=='time' }">selected</c:if>>采集日期</option>
 								  	</select>
 								  	</td>
-								
+
 								<td style="padding-left:2px;">
 									<div class="nav-search">
 											<input class="nav-search-input" autocomplete="off" id="nav-search-input" type="text" name="val3" value="${pd.val3 }" placeholder="输入内容" style="width: 80px;" />
@@ -112,7 +115,7 @@
 									</th>
 										<th class='center' style="width:300px;">操作</th>
 										<th class="center" >终端IMEI</th>
-										<th class="center" >终端地址</th>										
+										<th class="center" >终端地址</th>
 										<th class='center'>电池1电压</th>
 										<th class="center" >电池组电压</th>
 										<th class="center" >18v1输出电压</th>
@@ -136,7 +139,7 @@
 											</td>
 										<td class='center' style="white-space:nowrap;">
 											<div class="  action-buttons" >
-												
+
 												<c:if test="${editQX }">
 												<a class="red" href="javascript:delorgnz('${orgnz.tid}','${orgnz.tname }');">
 													<i class="ace-icon fa fa-trash-o bigger-130" title="删除"></i>
@@ -155,9 +158,9 @@
 										<td class='center'><a onclick="dataview('extendpow','${orgnz.IMEI}');">${orgnz.extendpow}</a></td>
 										<td class='center'><a onclick="dataview('solarpow','${orgnz.IMEI}');">${orgnz.solarpow}</a></td>
 										<td class='center'>${orgnz.charge}</td>
-										<td class='center'>${orgnz.work?'是':'否'}</td> 
-										<td >${orgnz.time}</td>
-										
+										<td class='center'>${orgnz.workstatus?'是':'否'}</td>
+										<td >${orgnz.worktime}</td>
+
 									</tr>
 									</c:forEach>
 									</c:when>
@@ -173,14 +176,14 @@
 									</c:choose>
 								</tbody>
 							</table>
-							<div class="page-header position-relative"> 
+							<div class="page-header position-relative">
 							<table style="width:100%; margin-top:5px;">
 								<tr>
 									<td style="vertical-align:top">
 										<c:if test="${editQX }">
 										<a title="批量删除" class="btn btn-sm btn-danger" onclick="makeAll('确定要删除选中的数据吗?',this);" ><i class='ace-icon fa fa-trash-o bigger-130'></i></a>
-								
-										
+
+
 								        </c:if>
 								        <a class="btn btn-sm btn-primary" onclick="toExcel(this);">导出</a>
 									 <c:if test="${pd.area!='' }">
@@ -190,13 +193,13 @@
 									<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
 								</tr>
 							</table>
-							</div> 
+							</div>
 							</form>
-							
+
 						</div>
 						<!-- /.col -->
 						</div>
-					
+
 					<!-- /.row -->
 				</div>
 				<!-- /.page-content -->
@@ -234,13 +237,13 @@
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
 		$(document).ready(function(){
-			
+
 			top.hangge();
-//     		$("th").css("white-space","nowrap"); 
+//     		$("th").css("white-space","nowrap");
 // 			setwindow();
 			//下拉框
 			if(!ace.vars['touch']) {
-				$('.chosen-select').chosen({allow_single_deselect:true}); 
+				$('.chosen-select').chosen({allow_single_deselect:true});
 				$(window)
 				.off('resize.chosen')
 				.on('resize.chosen', function() {
@@ -270,8 +273,9 @@
 			}
 		});
 	});
-	
-});	
+
+});
+
       //返回
 		function goback(){
 			window.location.href="<%=basePath%>orgnz/listdata.do";
@@ -293,14 +297,14 @@ function dataview(type,IMEI){
 	 diag.Width = 600;
 	 diag.Height = 500;
 	 diag.CancelEvent = function(){ //关闭事件
-	
+
 		diag.close();
 	 };
 	 diag.show();
 }
-		
 
-		
+
+
 		//批量操作
 function makeAll(msg,object){
 	Dialog.confirm(msg,function(){
@@ -390,7 +394,7 @@ function fromExcel(){
 		diag.close();
 	 };
 	 diag.show();
-}	
+}
 //导出到excel
 function toExcel( object){
 	var checkedidlist =[];

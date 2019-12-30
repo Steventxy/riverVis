@@ -55,6 +55,7 @@
 								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
 								<td style="vertical-align:top; padding-left:12px">
 										<a class="btn btn-sm btn-success" onclick="addUser();" style="vertical-align:top;height: 30px;">新增</a>
+									    <a class="btn btn-xs btn-success" onclick="goback();">返回主页</a>
 									</td>
 							</tr>
 						</table>
@@ -249,6 +250,11 @@ function delUser(userId,msg){
 		};
 	});
 }
+
+//返回
+function goback(){
+			window.location.href="<%=basePath%>users/listAllUsers.do";
+		}
 //修改用户
 function editUser(userid){
 	 top.jzts();

@@ -81,8 +81,12 @@
 				and s.tid = #{pd.tid}
 			</if>
 			<if test="pd.tnamekey != null and pd.tnamekey != ''">
- 				and tname LIKE CONCAT(CONCAT('%', #{pd.tnamekey}),'%')
+ 				and aname LIKE CONCAT(CONCAT('%', #{pd.tnamekey}),'%')
  			</if>
+			<if test="pd.smobilekey != null and pd.smobilekey != ''">
+				and smobile LIKE CONCAT(CONCAT('%', #{pd.smobilekey}),'%')
+			</if>
+
 			<if test="pd.issend != null and pd.issend != ''">
 				and issend =#{pd.issend}
 			</if>	
