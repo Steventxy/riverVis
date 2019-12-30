@@ -20,20 +20,20 @@ import java.util.Map;
 @RestController
 @RequestMapping(value="/api")
 
-public class Organcoldata extends BaseController{
-	@Resource(name="powService")
+public class Organcoldata extends BaseController {
+	@Resource(name = "powService")
 	private PowService powService;
-	@Resource(name="SensorDataService")
+	@Resource(name = "SensorDataService")
 	private SensorDataManager SensorDataService;
-	
-	@RequestMapping(value="/pow")
-	public JSONObject dataview() throws Exception{
+
+	@RequestMapping(value = "/pow")
+	public JSONObject dataview() throws Exception {
 		PageData pd = new PageData();
 		pd = this.getPageData();
 		Organapires res = new Organapires();
-		
+
 		List<Pow> list = powService.getPowlist(pd);
-		Pow pow =powService.getnowPow(pd);
+		Pow pow = powService.getnowPow(pd);
 		res.put("IMEI", pd.getString("id"));
 		res.put("pow1", pow.getPow1());
 		res.put("grouppow", pow.getGrouppow());
@@ -44,57 +44,54 @@ public class Organcoldata extends BaseController{
 		res.put("extendpow", pow.getExtendpow());
 		res.put("solarpow", pow.getSolarpow());
 		res.put("time", pow.getTime());
-		res.put("data",list);
+		res.put("data", list);
 		return JSONObject.fromObject(res);
 	}
-	
-	@RequestMapping(value="/newpow")
-	public JSONObject powbyid() throws Exception{
+
+	@RequestMapping(value = "/newpow")
+	public JSONObject powbyid() throws Exception {
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		
-		Pow pow =powService.getnowPow(pd);
+
+		Pow pow = powService.getnowPow(pd);
 
 		return JSONObject.fromObject(pow);
 	}
-	
-	@RequestMapping(value="/weather")
-	public JSONObject weather() throws Exception{
-		String host = "https://saweather.market.alicloudapi.com";
-	    String path = "/area-to-weather";
-	    String method = "GET";
-	    String appcode = "a153a70c9d6c45248b42b87f8c37ab74";
-	    Map<String, String> headers = new HashMap<String, String>();
-	    //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
-	    headers.put("Authorization", "APPCODE " + appcode);
-	    Map<String, String> querys = new HashMap<String, String>();
-	    querys.put("area", "长沙");
-	    querys.put("areaid", "101250101");
-	    querys.put("need3HourForcast", "0");
-	    querys.put("needAlarm", "0");
-	    querys.put("needHourData", "0");
-	    querys.put("needIndex", "1");
-	    querys.put("needMoreDay", "0");
+
+	@RequestMapping(value = "/weather")
+	public static void main(String[] args) {
+		String host = "http://apifreelat.market.alicloudapi.com";
+		String path = "/whapi/json/aliweather/briefforecast3days";
+		String method = "POST";
+		String appcode = "4b14ee6745e845debf82de7892c5cdbf";
+		Map<String, String> headers = new HashMap<String, String>();
+		//最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
+		headers.put("Authorization", "APPCODE " + appcode);
+		//根据API的要求，定义相对应的Content-Type
+		headers.put("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+		Map<String, String> querys = new HashMap<String, String>();
+		Map<String, String> bodys = new HashMap<String, String>();
+		bodys.put("lat", "39.91488908");
+		bodys.put("lon", "116.40387397");
+		bodys.put("token", "443847fa1ffd4e69d929807d42c2db1b");
 
 
-	    
-	    	/**
-	    	* 重要提示如下:
-	    	* HttpUtils请从
-	    	* https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/src/main/java/com/aliyun/api/gateway/demo/util/HttpUtils.java
-	    	* 下载
-	    	*
-	    	* 相应的依赖请参照
-	    	* https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/pom.xml
-	    	*/
-	    	HttpResponse response = HttpUtils.doGet(host, path, method, headers, querys);
-	    	
-	    	//获取response的body
-	    	return JSONObject.fromObject(EntityUtils.toString(response.getEntity()));
-	    
+		try {
+			/**
+			 * 重要提示如下:
+			 * HttpUtils请从
+			 * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/src/main/java/com/aliyun/api/gateway/demo/util/HttpUtils.java
+			 * 下载
+			 *
+			 * 相应的依赖请参照
+			 * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/pom.xml
+			 */
+			HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+			System.out.println(response.toString());
+			//获取response的body
+			//System.out.println(EntityUtils.toString(response.getEntity()));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}}
 
-		
-	}
-
-	
-}
