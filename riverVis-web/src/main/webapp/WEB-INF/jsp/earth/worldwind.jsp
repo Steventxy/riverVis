@@ -27,6 +27,8 @@
     
     <div class="row">
         <div class="col-sm-3">
+            <input type="button" name="Submit"  onclick="javascript:history.back(-1);" value="返回上一页">
+
             <h4>模式</h4>
             <div class="dropdown" id="projectionDropdown">
             </div>

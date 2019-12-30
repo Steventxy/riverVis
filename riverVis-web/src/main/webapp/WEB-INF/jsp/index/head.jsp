@@ -24,6 +24,7 @@
 					
                  	<a class="navbar-brand">
 						<font size="1">欢迎您，<font color="yellow">${user.username }</font>${var.logtime}</font>
+
 					</a>
 					<!-- /section:basics/navbar.layout.brand -->
 
