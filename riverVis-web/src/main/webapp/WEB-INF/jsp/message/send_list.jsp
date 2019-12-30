@@ -91,8 +91,8 @@
 									<c:forEach items="${sendlist}" var="send" varStatus="vs">
 									<tr >
 										<td class='center'>${vs.index+1}</td>
-										<td class='center'>${send.tname}</td>											
-										<td class='center'>${send.smobile}</td>	
+										<td class='center'>${send.aname}</td>
+										<td class='center'>${send.smobile}</td>
 										<td class='center'>${send.scontent}</td>	
 										<td class='center'>${send.sendtime}</td>	
 										<td class='center'>${send.issend?'已发送':'未发送'}</td> 																																																	
