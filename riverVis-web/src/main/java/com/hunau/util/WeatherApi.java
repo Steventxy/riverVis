@@ -436,8 +436,8 @@ public class WeatherApi {
 		String rareaid=hours24WeatherBody.getAreaid();
 		JSONArray rhourList=hours24WeatherBody.getHourList();
 
-		System.out.println("*********************");
-		System.out.println(rcode+"?"+rerror+"?"+rret_code+"?"+rarea+"?"+rareaid+"?"+rhourList);
+//		System.out.println("*********************");
+//		System.out.println(rcode+"?"+rerror+"?"+rret_code+"?"+rarea+"?"+rareaid+"?"+rhourList);
 
 		//将JSON数组转化成JSON对象
 		String aqihoursjson=rhourList.toString();

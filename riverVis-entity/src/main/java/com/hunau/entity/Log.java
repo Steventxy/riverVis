@@ -1,5 +1,4 @@
 package com.hunau.entity;
-
 /**
  * 日志类
  * @ClassName Log
@@ -47,7 +46,7 @@ public class Log {
 	public String getFunction() {
 		return functions;
 	}
-	public void setFunction(String functions) {
+	public void setFunction(String function) {
 		this.functions = functions;
 	}
 	public String getRemark() {
@@ -56,5 +55,6 @@ public class Log {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	
+
 }
+
