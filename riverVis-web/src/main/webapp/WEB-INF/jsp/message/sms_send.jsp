@@ -59,7 +59,7 @@
 						<div class="col-xs-3" style="padding-left:0px;">
 							<div class="widget-box">
 								<div class="widget-header ">
-									<h5 id="tertitle">用户列表</h5>
+									<h5 id="tertitle">终端所属区域列表</h5>
 								</div>
 								<div class="widget-body">
 									<div class="widget-main">

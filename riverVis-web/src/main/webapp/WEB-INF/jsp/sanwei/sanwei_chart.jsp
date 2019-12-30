@@ -85,7 +85,7 @@
             toolbox: {
                 show : true,
                 feature : {
-                    mark : {show: false},
+                    mark : {show: true},
                     dataView : {show: false, readOnly: false},
                     magicType : {show: true, type: ['line', 'bar']},
                     restore : {show: false},
