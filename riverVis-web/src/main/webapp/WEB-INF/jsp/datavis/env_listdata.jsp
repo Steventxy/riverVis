@@ -357,12 +357,17 @@ function toExcel( object){
 				  }
 			}
 			if(checkedidlist==''){
-				$(object).tips({
-						side:1,
-			            msg:'您没有选择任何内容',
-			            bg:'#AE81FF',
-			            time:2
-			        });
+				bootbox.dialog({
+					message: "<span class='bigger-110'>您没有选择任何内容!</span>",
+					buttons:
+							{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
+				});
+				$("#zcheckbox").tips({
+					side:3,
+					msg:'点这里全选',
+					bg:'#AE81FF',
+					time:8
+				});
 				return;
 			}else{
 					window.location.href='<%=basePath%>orgnz/excel.do?checkedidlist='+checkedidlist;
