@@ -13,6 +13,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="10">
+    <input type="button" name="Submit"  onclick="javascript:history.back(-1);" value="返回上一页">
     
   <!--   <link rel="stylesheet" href="leaflet.css" /> 
 	<script src="leaflet.js"></script>--> 
@@ -348,7 +349,7 @@
 <script type="text/javascript">
 		var obj=${message};
 		var level="${warn.leveal}";
-		var data=${warn.data};
+		var data="${warn.data}";
 		$(top.hangge());//关闭加载状态
 		//rain(100,50,70,60,40,24);
 		rain(obj[5].rain,obj[4].rain,obj[3].rain,obj[2].rain,obj[1].rain,obj[0].rain,obj[5].time,obj[4].time,obj[3].time,obj[2].time,obj[1].time,obj[0].time,obj[5].ph,obj[4].ph,obj[3].ph,obj[2].ph,obj[1].ph,obj[0].ph);
