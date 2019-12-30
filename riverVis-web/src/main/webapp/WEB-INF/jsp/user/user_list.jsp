@@ -97,12 +97,17 @@
 											<td class='center'>${user.rname} </td>
 											<td class='center'>${user.linktel}</td>
 											<td class='center'>${user.linkaddr}</td>
-											<td class='center'>
-												<label id="isuse">
-														<input name="switch-field-1"  onclick="setenable('${user.userid}','${user.username}','${user.isuse }')" class="ace ace-switch ace-switch-3" type="checkbox" <c:if test="${user.isuse }">checked="checked"</c:if> >
-														<span class="lbl"></span>
-													</label>
-											</td>
+											<c:if test="${user.roleid!=1}">
+												<td class='center'>
+													<label id="isuse">
+															<input name="switch-field-1"  onclick="setenable('${user.userid}','${user.username}','${user.isuse }')" class="ace ace-switch ace-switch-3" type="checkbox" <c:if test="${user.isuse }">checked="checked"</c:if> >
+															<span class="lbl"></span>
+														</label>
+												</td>
+											</c:if>
+											<c:if test="${user.roleid==1}">
+												<td class='center'></td>
+											</c:if>
 											<td class='center'>${user.note}</td>
 											
 										<td class="center">

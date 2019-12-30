@@ -284,18 +284,17 @@ var checkedidlist =[];
 				  }
 			}
 			if(checkedidlist==''){
-				$(object).tips({
-					side:3,
-		            msg:'您没有选择任何内容',
-		            bg:'#AE81FF',
-		            time:3
-		        });
+				bootbox.dialog({
+					message: "<span class='bigger-110'>您没有选择任何内容!</span>",
+					buttons:
+							{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
+				});
 				$("#zcheckbox").tips({
-					side:2,
-		            msg:'点这里全选',
-		            bg:'#AE81FF',
-		            time:8
-		        });
+					side:3,
+					msg:'点这里全选',
+					bg:'#AE81FF',
+					time:8
+				});
 				$("#zcheckbox").focus();
 				return;
 			}else{
