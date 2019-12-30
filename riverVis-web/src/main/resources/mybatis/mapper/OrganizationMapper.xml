@@ -59,7 +59,7 @@
 	<!--根据用户编号列表查询节目单及终端 -->
 	<select id="getOrgnzlistPage" parameterType="Page" resultType="Organization">
 		select  DISTINCT
-			tid,
+				tid,
 			o.aid as aid,
 			aname,
 			o.userid as userid,

@@ -1,5 +1,4 @@
 package com.hunau.entity;
-
 /**
  * 日志类
  * @ClassName Log
@@ -56,5 +55,6 @@ public class Log {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	
+
 }
+
