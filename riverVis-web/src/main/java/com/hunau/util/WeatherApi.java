@@ -400,7 +400,9 @@ public class WeatherApi {
 		}
 
 //	          1.创建JSON解析对象(两条规则的提现:大括号用JSONObject,注意传入数据对象)
+
 		JSONObject jObj = new JSONObject(str2);
+
 //	          2.实例化Person对象获取对应的值--->这里是获得外面大括号{}的name值 思考?里面{}如何获得?
 		Hours24Weather hours24weather=new Hours24Weather();
 		String code = jObj.getString("showapi_res_code");
@@ -434,8 +436,8 @@ public class WeatherApi {
 		String rareaid=hours24WeatherBody.getAreaid();
 		JSONArray rhourList=hours24WeatherBody.getHourList();
 
-		//System.out.println("*********************");
-		//System.out.println(rcode+"?"+rerror+"?"+rret_code+"?"+rarea+"?"+rareaid+"?"+rhourList);
+//		System.out.println("*********************");
+//		System.out.println(rcode+"?"+rerror+"?"+rret_code+"?"+rarea+"?"+rareaid+"?"+rhourList);
 
 		//将JSON数组转化成JSON对象
 		String aqihoursjson=rhourList.toString();

@@ -14,8 +14,9 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-    
-    <title>三维场景数据展示</title>
+	<input type="button" name="Submit"  onclick="javascript:history.back(-1);" value="返回上一页">
+
+	<title>三维场景数据展示</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">

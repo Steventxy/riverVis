@@ -21,6 +21,8 @@
     <meta name="description" content="百度地图地点搜索和鼠标点击地点获取经纬度，这些都是地图比较基本" />
     <meta name="keywords" content="百度地图,地点搜索,获取经纬度,改变地图鼠标样式,启用滚轮缩放" />
     <title>百度地图API地点搜索-获取经纬度DEMO</title>
+    <input type="button" name="Submit"  onclick="javascript:history.back(-1);" value="返回上一页">
+
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
     <style type="text/css">*{ font-family: "微软雅黑";} #where,#lonlat,#lonlat2{ width:120px; height:20px; font-size:24px; color:blue;} #but{ width:100px; height:26px; font-size:20px;}</style></head>
   
@@ -34,6 +36,7 @@
         <input id="but" type="button" value="地图查找" onClick="sear(document.getElementById('where').value);" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 经度：
         <input id="lonlat" name="lonlat" type="number" maxlength="10">纬度：
         <input id="lonlat2" name="lonlat2" type="number" maxlength="9"></form></center>
+
   </body>
 </html>
 <script type="text/javascript">
