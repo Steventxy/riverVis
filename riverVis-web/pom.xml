@@ -137,6 +137,16 @@
             <artifactId>spring-web</artifactId>
             <version>4.0.4.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>com.hunau</groupId>
+            <artifactId>riverVis-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
