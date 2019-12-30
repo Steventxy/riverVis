@@ -43,6 +43,12 @@ public interface UsersManager {
 	 * @throws Exception
 	 */
 	public Users findByUserid(PageData pd)throws Exception;
+	/** 获取角色id
+	 * @param pd
+	 * @return
+	 * @throws Exception
+	 */
+	public String getRidByUserid(String userid)throws Exception;
 	/**修改用户
 	 * @param pd
 	 * @throws Exception
@@ -58,6 +64,7 @@ public interface UsersManager {
 	 * @param userid
 	 */
 	public void deleteU(String userid)throws Exception;
+
 	/**修改用户账号可用状态
 	 * @param pd
 	 * @throws Exception

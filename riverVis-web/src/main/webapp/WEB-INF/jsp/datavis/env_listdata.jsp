@@ -105,10 +105,12 @@
 
 								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								<c:if test="${editQX }">
-								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="fromExcel();" title="从EXCEL导入"><i id="nav-search-icon" class="ace-icon fa fa-cloud-upload bigger-110 nav-search-icon blue"></i></a></td>
+									<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="fromExcel();" title="从EXCEL导入"><i id="nav-search-icon" class="ace-icon fa fa-cloud-upload bigger-110 nav-search-icon blue"></i></a></td>
 								</c:if>
 								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
-								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-sm btn-danger" onclick="deleteAll('确定要删除选定的数据吗');" style="vertical-align:top;height: 30px;">批量删除</a></td>
+								<c:if test="${rid == 1}">
+									<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-sm btn-danger" onclick="deleteAll('确定要删除选定的数据吗');" style="vertical-align:top;height: 30px;">批量删除</a></td>
+								</c:if>
 							</tr>
 	                   </table>
 
@@ -356,12 +358,17 @@ function toExcel( object){
 				  }
 			}
 			if(checkedidlist==''){
-				$(object).tips({
-						side:1,
-			            msg:'您没有选择任何内容',
-			            bg:'#AE81FF',
-			            time:2
-			        });
+				bootbox.dialog({
+					message: "<span class='bigger-110'>您没有选择任何内容!</span>",
+					buttons:
+							{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
+				});
+				$("#zcheckbox").tips({
+					side:3,
+					msg:'点这里全选',
+					bg:'#AE81FF',
+					time:8
+				});
 				return;
 			}else{
 					window.location.href='<%=basePath%>orgnz/excel.do?checkedidlist='+checkedidlist;

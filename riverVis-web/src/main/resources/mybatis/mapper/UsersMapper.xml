@@ -59,6 +59,12 @@
 			</if>
 		</where>
 	</select>
+
+	<!-- 获取角色id-->
+	<select id="getRidByUserid" parameterType="String" resultType="String" >
+		SELECT roleid	from <include refid="usersTable"/>
+		where userid = #{userid}
+	</select>
 	
 	<!-- 获取系统管理账号列表(分页) -->
 	<select id="getUserslistPage" parameterType="page" resultType="Users" >

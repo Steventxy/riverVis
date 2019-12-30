@@ -14,8 +14,9 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-    
-    <title>三维场景数据展示</title>
+	<input type="button" name="Submit"  onclick="javascript:history.back(-1);" value="返回上一页">
+
+	<title>三维场景数据展示</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -68,7 +69,7 @@
                 var myChart = ec.init(document.getElementById('main')); 
                 var option = {
     title : {
-        text: '1号监测点',
+        text: '2号监测点',
         //subtext: '纯属虚构'
     },
     tooltip : {

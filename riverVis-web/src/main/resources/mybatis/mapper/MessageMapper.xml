@@ -24,6 +24,8 @@
 	     #{remark}
 
 	</sql>
+
+
 		<!-- 字段 -->
 	<sql id="receiveField">
               rmid,
@@ -54,28 +56,33 @@
 	<sql id="terminaltableName">
 		terminals
 	</sql>
+
+	<sql id="areatableName">
+		area
+	</sql>
 		
 	<!--查询发件箱列表 -->
 	<select id="getSendMessagePage" parameterType="page" resultType="pd" >
 		SELECT 
-		 smid,
-              smobile,
-              s.tid as tid,
-              tname,
-              scontent,
-              sendtime,
-              issend,
-              remark			  
+		 	smid,
+		 	smobile,
+		 	s.tid as tid,
+		 	aname,
+		 	scontent,
+		 	sendtime,
+		 	issend,
+		 	remark
 		from 
 			<include refid="tableName"></include> s
-			 LEFT JOIN <include refid="terminaltableName"></include> t on t.tid=s.tid			
+		     LEFT JOIN <include refid="terminaltableName"></include> t on t.tid=s.tid
+			 LEFT JOIN <include refid="areatableName"></include> a on t.aid=a.aid
 		<where>		
 		     <if test="pd.tid != null and pd.tid != ''">
 				and s.tid = #{pd.tid}
 			</if>
-			<if test="pd.tnamekey != null and pd.tnamekey != ''"> 
+			<if test="pd.tnamekey != null and pd.tnamekey != ''">
  				and tname LIKE CONCAT(CONCAT('%', #{pd.tnamekey}),'%')
- 			</if> 
+ 			</if>
 			<if test="pd.issend != null and pd.issend != ''">
 				and issend =#{pd.issend}
 			</if>	
@@ -111,5 +118,7 @@
 		delete from <include refid="tableName"></include>
 		where smid = #{smid}
 	</delete>
+
+
 	
 </mapper>

@@ -56,9 +56,9 @@
 								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
 <%--								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-sm btn-danger" onclick="deleteAll('确定要删除选定的数据吗');" style="vertical-align:top;height: 30px;">批量删除日志</a></td>--%>
-
-								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-xs btn-danger" onclick="delLog('${pd.userid}');"><i class="ace-icon fa fa-trash-o bigger-120" title="清空所有日志"></i></a>
-
+									<c:if test="${rid == 1}">
+											<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-xs btn-danger" onclick="delLog('${pd.userid}');"><i class="ace-icon fa fa-trash-o bigger-120" title="清空所有日志"></i></a>
+												</c:if>
 							</tr>
 						</table>
 						<!-- 检索  -->
@@ -216,18 +216,17 @@ var checkedidlist =[];
 				  }
 			}
 			if(checkedidlist==''){
-				$(object).tips({
-					side:3,
-		            msg:'您没有选择任何内容',
-		            bg:'#AE81FF',
-		            time:3
-		        });
+				bootbox.dialog({
+					message: "<span class='bigger-110'>您没有选择任何内容!</span>",
+					buttons:
+							{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
+				});
 				$("#zcheckbox").tips({
-					side:2,
-		            msg:'点这里全选',
-		            bg:'#AE81FF',
-		            time:8
-		        });
+					side:3,
+					msg:'点这里全选',
+					bg:'#AE81FF',
+					time:8
+				});
 				$("#zcheckbox").focus();
 				return;
 			}else{
