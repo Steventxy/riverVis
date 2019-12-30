@@ -14,8 +14,9 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-    
-    <title>三维场景数据展示</title>
+	<input type="button" name="Submit"  onclick="javascript:history.back(-1);" value="返回上一页">
+
+	<title>三维场景数据展示</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,13 +24,14 @@
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<meta http-equiv="refresh" content="3600">
-    <!-- <meta charset="utf-8" /> -->
+     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--Step:1 Prepare a dom for ECharts which (must) has size (width & hight)-->
     <!--Step:1 为ECharts准备一个具备大小（宽高）的Dom-->
     <div id="main" style="height:250px;border:1px solid #ccc;padding:10px;"></div>
-   
+
+
 
     <!--Step:2 Import echarts-all.js-->
     <!--Step:2 引入echarts-all.js-->

@@ -91,17 +91,17 @@
 	<!-- 预警测试 -->
 		<!-- 通过wid获取数据 -->
 	<select id="findwid" parameterType="int" resultType="Warn" >
-		SELECT 
-		       w.wid as wid,
-		       w.aid as aid,
-		       w.aname as aname,
-				 content,
-				leveal,
-				w.data as data
-				
-		from <include refid="warnTable"/> w 		
-		LEFT JOIN <include refid="areaTable"/> ra on w.aid = ra.aid
-		where 
-			w.wid = #{wid}
-	</select>
-</mapper>
+SELECT
+w.wid as wid,
+w.aid as aid,
+w.aname as aname,
+content,
+leveal,
+w.data as data
+
+from <include refid="warnTable"/> w
+LEFT JOIN <include refid="areaTable"/> ra on w.aid = ra.aid
+where
+w.wid = #{wid}
+</select>
+		</mapper>
