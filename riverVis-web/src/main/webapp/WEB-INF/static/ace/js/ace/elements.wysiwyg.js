@@ -1,5 +1,5 @@
 /**
- <b>Wysiwyg</b>. A wrapper for Bootstrap wyswiwyg plugin.
+ <b>Wysiwyg</b>. A wrapper for Bootstrap wyswiwyg com.hunau.plugin.
  It's just a wrapper so you still need to include Bootstrap wysiwyg script first.
 */
 (function($ , undefined) {
