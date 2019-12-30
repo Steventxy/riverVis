@@ -152,7 +152,7 @@
   
 
 <script type="text/javascript">
-		var obj="${message}";
+		var obj=${message};
 		var level="${warn.leveal}";
 		var data="${warn.data}";
 		$(top.hangge());//关闭加载状态
@@ -1161,17 +1161,14 @@
 	  	        
 	  	       	
 		}
-		if(obj[0].wlevel>data){
-		alert('当前水位预警级别为:'+level+'。 已超过预警值!请发送预警信息');
+		if(obj[0].wlevel>data)
+		{
+
+		   alert('当前水位预警级别为:'+level+'。 已超过预警值!请发送预警信息');
+
+
 		}
 </script>
-
-  
-  
-  
-  
-  
- 
 
 
 

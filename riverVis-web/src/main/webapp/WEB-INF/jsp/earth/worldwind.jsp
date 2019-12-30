@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -27,6 +26,8 @@
     
     <div class="row">
         <div class="col-sm-3">
+            <input type="button" name="Submit"  onclick="javascript:history.back(-1);" value="返回上一页">
+
             <h4>模式</h4>
             <div class="dropdown" id="projectionDropdown">
             </div>
