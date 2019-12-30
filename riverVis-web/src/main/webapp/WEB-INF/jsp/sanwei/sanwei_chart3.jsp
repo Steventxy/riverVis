@@ -70,7 +70,7 @@
                 var myChart = ec.init(document.getElementById('main')); 
                 var option = {
     title : {
-        text: '1号监测点',
+        text: '3号监测点',
         //subtext: '纯属虚构'
     },
     tooltip : {
