@@ -17,12 +17,12 @@ spring:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
   datasource:
-    url: jdbc:mysql://localhost:3306/rivervis1?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost:3306/rivervis?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
     username: root
 <<<<<<< HEAD
-    password: hn123456Aa
+    password: 12345678
 =======
-    password: wwp1505989419
+    password: 12345678
 
 >>>>>>> aa3ac7ef7149cd729bf6f9b04089bbd2dcd4ea69
     # 使用druid数据源
