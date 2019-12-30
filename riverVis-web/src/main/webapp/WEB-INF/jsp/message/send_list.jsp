@@ -36,7 +36,6 @@
 						<!-- 检索  -->
 						<form action="smsbroad/listSendMessage.do" method="post" name="Form" id="Form">
 						<table style="margin-top:5px;">
-							< t>
 							<td style="vertical-align:top;padding-left:2px;">
 									<div class="nav-search">
 									<span class="input-icon">
