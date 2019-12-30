@@ -24,7 +24,7 @@
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<meta http-equiv="refresh" content="3600">
-    <!-- <meta charset="utf-8" /> -->
+	<meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--Step:1 Prepare a dom for ECharts which (must) has size (width & hight)-->
@@ -38,7 +38,7 @@
     
     <!-- 此处开始添加相应的地图信息 -->
     <script type="text/JavaScript" src="<%=path%>/js/echarts-all.js"></script>
-	
+
 	<script language="javascript" src="<%=path%>/js/jquery-1.3.2.min.js"></script>
 
    
