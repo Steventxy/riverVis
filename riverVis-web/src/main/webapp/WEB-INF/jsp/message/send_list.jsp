@@ -44,13 +44,21 @@
 									</span>
 									</div>
 							</td>
-							<td style="vertical-align:top;padding-left:2px;">
-								<div class="nav-search">
+<%--							<td style="vertical-align:top;padding-left:2px;">--%>
+<%--								<div class="nav-search">--%>
+<%--									<span class="input-icon">--%>
+<%--										<input class="nav-search-input"  autocomplete="off" id="smobilekey" type="text" name="smobilekey" value="${pd.smobilekey }" placeholder="电话查询" />--%>
+<%--											<i class="ace-icon fa fa-search nav-search-icon"></i>--%>
+<%--									</span>--%>
+<%--								</div>--%>
+<%--								</td>--%>
+								<td style="vertical-align:top;padding-left:2px;">
+									<div class="nav-search">
 									<span class="input-icon">
-										<input class="nav-search-input"  autocomplete="off" id="smobilekey" type="text" name="smobilekey" value="${pd.smobilekey }" placeholder="电话查询" />
+										<input class="nav-search-input"  autocomplete="off" id="smobilekey" type="text" name="smobilekey" value="${pd.smobilekey }" placeholder="这里输入手机号码 " />
 											<i class="ace-icon fa fa-search nav-search-icon"></i>
 									</span>
-								</div>
+									</div>
 								</td>
 									<td style="vertical-align:top;padding-left:2px;">
 								  	<select class="chosen-select form-control" name="issend" id="issend" data-placeholder="是否发送" style="vertical-align:top;width: 100px;height: 30px;">

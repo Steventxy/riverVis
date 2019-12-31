@@ -43,7 +43,7 @@ public class Organcoldata extends BaseController {
 		res.put("v28", pow.getV28());
 		res.put("extendpow", pow.getExtendpow());
 		res.put("solarpow", pow.getSolarpow());
-		res.put("time", pow.getTime());
+		res.put("time", pow.getWorktime());
 		res.put("data", list);
 		return JSONObject.fromObject(res);
 	}
