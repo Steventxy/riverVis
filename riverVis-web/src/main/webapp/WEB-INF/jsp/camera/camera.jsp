@@ -25,7 +25,7 @@
 	var VER_AX_LOCALE = "1.1.15.404";//the version of the Activex	版本号
 	var szDevIP="VSTA087784MFPTL:81"; //serial ID or ip of ip Camera   IP地址/序列号
 	var nPort = 81; //the HTTP port of ip camera, if the szDevIP is serial ID, this whill be ignore
-	var szAuthAcc="IPCAM",szAuthPwd="liuyang73";//account of ip camera
+	var szAuthAcc="IPCAM",szAuthPwd="liuyang73";//account of ip camera登录账号密码
 	var nImgW=8000,nImgH=8000//the window size of ip camera.
 	var szDevName="山洪一号监测点";//the caption shown on the video
 	var nDevType=922;
