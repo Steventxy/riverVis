@@ -131,6 +131,11 @@
 <!--			#{item}-->
 <!--		</foreach>-->
 <!--	</delete>-->
+
+
+
+
+<!--	清空日志功能-->
 	<delete id="deleteLog" parameterType="String" flushCache="false">
 		truncate log;
 	</delete>

@@ -26,7 +26,6 @@
 		.table td {white-space:nowrap;}
 </style>
 </head>
-
 <body class="no-skin">
 	<!-- /section:basics/navbar.layout -->
 	<div class="main-container" id="main-container">
@@ -53,45 +52,60 @@
 							<tr>
 								<td style="vertical-align:top;padding-left:5px">
 									<select class="chosen-select form-control" name="key1" id="key1" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
-										<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>终端IMEI</option>
-										<option value="aname"  <c:if test="${pd.key1=='aname' }">selected</c:if>>所属分组</option>
-										<option value="IP"  <c:if test="${pd.key1=='IP' }">selected</c:if>>地址</option>
-										<option value="time"  <c:if test="${pd.key1=='time' }">selected</c:if>>采集日期</option>
+										<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>数据编号</option>
+<%--										<option value="aname"  <c:if test="${pd.key1=='rain' }">selected</c:if>>雨量</option>--%>
+<%--										<option value="IP"  <c:if test="${pd.key1=='temp' }">selected</c:if>>温度</option>--%>
+<%--										<option value="time"  <c:if test="${pd.key1=='hum' }">selected</c:if>>湿度</option>--%>
 								  	</select>
 								  </td>
 
 								<td style="padding-left:2px;">
 									<div class="nav-search">
-											<input class="nav-search-input" autocomplete="off" id="nav-search-input" type="text" name="val1" value="${pd.val1 }" placeholder="输入内容"  style="width: 80px;"/>
+											<input class="nav-search-input" autocomplete="off" id="val1" type="text" name="val1" value="${pd.val1 }" placeholder="输入内容"  style="width: 80px;"/>
 									</div>
 								</td>
 
 								<td style="vertical-align:top;padding-left:5px">
 									<select class="chosen-select form-control" name="key2" id="key2" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
-								  		<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>终端IMEI</option>
-										<option value="aname"  <c:if test="${pd.key1=='aname' }">selected</c:if>>所属分组</option>
-										<option value="IP"  <c:if test="${pd.key1=='IP' }">selected</c:if>>地址</option>
-										<option value="time"  <c:if test="${pd.key1=='time' }">selected</c:if>>采集日期</option>								  	</select>
+<%--								  		<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>IMIE数据编号</option>--%>
+										    <option value="aname"  <c:if test="${pd.key2=='rain' }">selected</c:if>>雨量</option>
+<%--										<option value="IP"  <c:if test="${pd.key2=='temp' }">selected</c:if>>温度</option>--%>
+<%--										<option value="time"  <c:if test="${pd.key2=='hum' }">selected</c:if>>湿度</option>								  	</select>--%>
 								  	</td>
 
 								<td style="padding-left:2px;">
 									<div class="nav-search">
-											<input class="nav-search-input" autocomplete="off" id="nav-search-input" type="text" name="val2" value="${pd.val2 }" placeholder="输入内容" style="width: 80px;" />
+											<input class="nav-search-input" autocomplete="off" id="val2" type="text" name="val2" value="${pd.val2 }" placeholder="输入内容" style="width: 80px;" />
 									</div>
 								</td>
 
 								<td style="vertical-align:top;padding-left:5px">
 									<select class="chosen-select form-control" name="key3" id="key3" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
-										<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>终端IMEI</option>
-										<option value="aname"  <c:if test="${pd.key1=='aname' }">selected</c:if>>所属分组</option>
-										<option value="IP"  <c:if test="${pd.key1=='IP' }">selected</c:if>>地址</option>
-										<option value="time"  <c:if test="${pd.key1=='time' }">selected</c:if>>采集日期</option>
+<%--										<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>数据编号</option>--%>
+<%--										<option value="aname"  <c:if test="${pd.key3=='rain' }">selected</c:if>>雨量</option>--%>
+										    <option value="IP"  <c:if test="${pd.key3=='temp' }">selected</c:if>>温度</option>
+<%--										<option value="time"  <c:if test="${pd.key3=='hum' }">selected</c:if>>湿度</option>--%>
 								  	</select>
 								  	</td>
-								
+
 								<td style="padding-left:2px;">
 									<div class="nav-search">
-											<input class="nav-search-input" autocomplete="off" id="nav-search-input" type="text" name="val3" value="${pd.val3 }" placeholder="输入内容" style="width: 80px;" />
+											<input class="nav-search-input" autocomplete="off" id="val3" type="text" name="val3" value="${pd.val3 }" placeholder="输入内容" style="width: 80px;" />
+									</div>
+								</td>
+
+								<td style="vertical-align:top;padding-left:5px">
+									<select class="chosen-select form-control" name="key3" id="key4" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
+										<%--										<option value="IMEI"  <c:if test="${pd.key4=='IMEI' }">selected</c:if>>数据编号</option>--%>
+										<%--										<option value="aname"  <c:if test="${pd.key4=='rain' }">selected</c:if>>雨量</option>--%>
+<%--											                                    <option value="IP"  <c:if test="${pd.key4=='temp' }">selected</c:if>>温度</option>--%>
+																				    <option value="time"  <c:if test="${pd.key4=='hum' }">selected</c:if>>湿度</option>
+									</select>
+								</td>
+
+								<td style="padding-left:2px;">
+									<div class="nav-search">
+										<input class="nav-search-input" autocomplete="off" id="val4" type="text" name="val4" value="${pd.val4 }" placeholder="输入内容" style="width: 80px;" />
 									</div>
 								</td>
 
@@ -103,11 +117,11 @@
 								  	</select>
 								</td>
 
-								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
+								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon1" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								<c:if test="${editQX }">
-									<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="fromExcel();" title="从EXCEL导入"><i id="nav-search-icon" class="ace-icon fa fa-cloud-upload bigger-110 nav-search-icon blue"></i></a></td>
+									<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="fromExcel();" title="从EXCEL导入"><i id="nav-search-icon2" class="ace-icon fa fa-cloud-upload bigger-110 nav-search-icon blue"></i></a></td>
 								</c:if>
-								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
+								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon3" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
 								<c:if test="${rid == 1}">
 									<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-sm btn-danger" onclick="deleteAll('确定要删除选定的数据吗');" style="vertical-align:top;height: 30px;">批量删除</a></td>
 								</c:if>
@@ -122,7 +136,7 @@
 									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
 									</th>
 <%--										<th class='center' style="width:300px;">操作</th>--%>
-										<th class="center" >终端IMEI</th>
+										<th class="center" >数据编号</th>
 										<th class="center" >雨量</th>										
 										<th class='center'>流量</th>
 										<th class="center" >水位</th>
@@ -152,7 +166,7 @@
 <%--												</c:if>--%>
 <%--											</div>--%>
 <%--										</td>--%>
-										<td class='center'>1111</td>
+										<td class='center'>${orgnz.id}</td>
 										<td class='center'>${orgnz.rain}</td>
 										<td class='center'>${orgnz.flow}</td>
 										<td class='center'>${orgnz.wlevel}</td>
@@ -178,22 +192,22 @@
 									</c:choose>
 								</tbody>
 							</table>
-<%--							<div class="page-header position-relative"> --%>
-<%--							<table style="width:100%; margin-top:5px;">--%>
-<%--								<tr>--%>
-<%--									<td style="vertical-align:top">--%>
+							<div class="page-header position-relative">
+							<table style="width:100%; margin-top:5px;">
+								<tr>
+									<td style="vertical-align:top">
 <%--										<c:if test="${editQX }">--%>
 <%--										<a title="批量删除" class="btn btn-sm btn-danger" onclick="makeAll('确定要删除选中的数据吗?',this);" ><i class='ace-icon fa fa-trash-o bigger-130'></i></a>--%>
 <%--								        </c:if>--%>
 <%--								        <a class="btn btn-sm btn-primary" onclick="toExcel(this);">导出</a>--%>
-<%--									 <c:if test="${pd.area!='' }">--%>
-<%--								       <a class="btn btn-sm btn-success" onclick="goback();">返回所有终端列表</a>--%>
-<%--									</c:if>--%>
-<%--									</td>--%>
-<%--									<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>--%>
-<%--								</tr>--%>
-<%--							</table>--%>
-<%--							</div> --%>
+									 <c:if test="${pd.area!='' }">
+								       <a class="btn btn-sm btn-success" onclick="goback();">返回所有终端列表</a>
+									</c:if>
+									</td>
+									<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
+								</tr>
+							</table>
+							</div>
 							</form>
 							
 						</div>
@@ -358,12 +372,17 @@ function toExcel( object){
 				  }
 			}
 			if(checkedidlist==''){
-				$(object).tips({
-						side:1,
-			            msg:'您没有选择任何内容',
-			            bg:'#AE81FF',
-			            time:2
-			        });
+				bootbox.dialog({
+					message: "<span class='bigger-110'>您没有选择任何内容!</span>",
+					buttons:
+							{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
+				});
+				$("#zcheckbox").tips({
+					side:3,
+					msg:'点这里全选',
+					bg:'#AE81FF',
+					time:8
+				});
 				return;
 			}else{
 					window.location.href='<%=basePath%>orgnz/excel.do?checkedidlist='+checkedidlist;

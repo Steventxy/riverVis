@@ -7,18 +7,18 @@
 %>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	<base href="<%=basePath%>">
-	<!-- jsp文件头和头部 -->
-	<%@ include file="../index/top.jsp"%>
-	<script type="text/javascript" src="static/js/jquery.min.js"></script>
-	<link type="text/css" rel="stylesheet" href="plugins/zTree/3.5/zTreeStyle.css"/>
-	<script type="text/javascript" src="plugins/zTree/3.5/jquery.ztree.core-3.5.js"></script>
-	<script type="text/javascript" src="plugins/zTree/3.5/jquery.ztree.excheck.js"></script>
-	<style type="text/css">
-	footer{height:50px;position:fixed;bottom:0px;left:0px;width:100%;text-align: center;}
-	</style>
-<body>
+<head>
+<base href="<%=basePath%>">
+<!-- jsp文件头和头部 -->
+<%@ include file="../index/top.jsp"%>
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="plugins/zTree/3.5/zTreeStyle.css"/>
+<script type="text/javascript" src="plugins/zTree/3.5/jquery.ztree.core-3.5.js"></script>
+<script type="text/javascript" src="plugins/zTree/3.5/jquery.ztree.excheck.js"></script>
+<style type="text/css">
+footer{height:50px;position:fixed;bottom:0px;left:0px;width:100%;text-align: center;}
+</style>
+
 
 </head>
 <body class="no-skin">

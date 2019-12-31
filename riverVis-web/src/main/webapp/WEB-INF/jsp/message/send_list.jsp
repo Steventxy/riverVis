@@ -36,7 +36,6 @@
 						<!-- 检索  -->
 						<form action="smsbroad/listSendMessage.do" method="post" name="Form" id="Form">
 						<table style="margin-top:5px;">
-							<tr>
 							<td style="vertical-align:top;padding-left:2px;">
 									<div class="nav-search">
 									<span class="input-icon">
@@ -44,7 +43,15 @@
 											<i class="ace-icon fa fa-search nav-search-icon"></i>
 									</span>
 									</div>
-								</td>
+							</td>
+<%--							<td style="vertical-align:top;padding-left:2px;">--%>
+<%--								<div class="nav-search">--%>
+<%--									<span class="input-icon">--%>
+<%--										<input class="nav-search-input"  autocomplete="off" id="smobilekey" type="text" name="smobilekey" value="${pd.smobilekey }" placeholder="电话查询" />--%>
+<%--											<i class="ace-icon fa fa-search nav-search-icon"></i>--%>
+<%--									</span>--%>
+<%--								</div>--%>
+<%--								</td>--%>
 								<td style="vertical-align:top;padding-left:2px;">
 									<div class="nav-search">
 									<span class="input-icon">

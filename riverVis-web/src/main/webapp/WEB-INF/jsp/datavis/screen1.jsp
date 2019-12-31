@@ -146,13 +146,14 @@
         }
     ]
             });
-    }    
+    }
+
 </script>
   
   
 
 <script type="text/javascript">
-		var obj="${message}";
+		var obj=${message};
 		var level="${warn.leveal}";
 		var data="${warn.data}";
 		$(top.hangge());//关闭加载状态
@@ -163,7 +164,11 @@
 		$(document).ready(function() {
 			init1();
 		});
-		
+		if(obj[0].wlevel>data)
+		{
+			alert('当前水位预警级别为:'+obj[0].wlevel+'。 已超过预警值!请发送预警信息');
+		}
+		obj[0].wlevel=0
 		function init1() {
 			
 	  	    
@@ -1161,17 +1166,12 @@
 	  	        
 	  	       	
 		}
-		if(obj[0].wlevel>data){
-		alert('当前水位预警级别为:'+level+'。 已超过预警值!请发送预警信息');
-		}
-</script>
+		// if(obj[0].wlevel>data)
+		// {
+		//    alert('当前水位预警级别为:'+obj[0].wlevel+'。 已超过预警值!请发送预警信息');
+		// }
 
-  
-  
-  
-  
-  
- 
+</script>
 
 
 

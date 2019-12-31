@@ -86,7 +86,6 @@
 			<if test="pd.smobilekey != null and pd.smobilekey != ''">
 				and smobile LIKE CONCAT(CONCAT('%', #{pd.smobilekey}),'%')
 			</if>
-
 			<if test="pd.issend != null and pd.issend != ''">
 				and issend =#{pd.issend}
 			</if>	

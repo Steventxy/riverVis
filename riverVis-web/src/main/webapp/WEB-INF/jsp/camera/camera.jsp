@@ -372,8 +372,8 @@ function setAction(action, time){
 	var VER_AX_LOCALE = "1.1.15.404";//the version of the Activex	版本号
 	var szDevIP="VSTA087784MFPTL"; //serial ID or ip of ip Camera   IP地址/序列号
 	var nPort = 81; //the HTTP port of ip camera, if the szDevIP is serial ID, this whill be ignore
-	var szAuthAcc="IPCAM",szAuthPwd="liuyang73";//account of ip camera
-	var nImgW=8000,nImgH=8000//the window size of ip camera.
+	var szAuthAcc="IPCAM",szAuthPwd="liuyang73";//account of ip camera访问账号密码
+	var nImgW=8000,nImgH=8000//the window size of ip camera.窗口大小
 	var szDevName="山洪六号监测点";//the caption shown on the video
 	var nDevType=922;
 	var bInLan=1;//whether in LAN,1:LAN, 0£ºWAN    判断是否在局域网
@@ -450,7 +450,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote" name="remote" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://cn-download.eyecloud.so/download/application/ipcamax.exe'>here</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
@@ -467,7 +467,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote1" name="remote1" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://cn-download.eyecloud.so/download/application/ipcamax.exe'>here</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
@@ -483,7 +483,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote2" name="remote2" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://cn-download.eyecloud.so/download/application/ipcamax.exe'>here</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
@@ -501,7 +501,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote3" name="remote3" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://cn-download.eyecloud.so/download/application/ipcamax.exe'>here</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
@@ -517,7 +517,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote4" name="remote4" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://cn-download.eyecloud.so/download/application/ipcamax.exe'>here</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
@@ -533,7 +533,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote5" name="remote5" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://cn-download.eyecloud.so/download/application/ipcamax.exe'>here</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
