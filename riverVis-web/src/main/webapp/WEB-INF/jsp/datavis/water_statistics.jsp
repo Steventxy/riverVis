@@ -225,12 +225,12 @@
             //--- 折柱 ---
             var myChart = ec.init(document.getElementById('main'));
             myChart.setOption({
-                 title : {
-       
-        subtext: '',
-        x: 'left',
-        align: 'right'
-    },
+				title : {
+					text: '金井镇过去24小时雨量关系预测图',
+					subtext: '',
+					x: 'left',
+					align: 'right'
+				},
     
     grid: {
         bottom: 80

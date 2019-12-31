@@ -450,7 +450,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote" name="remote" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
@@ -467,7 +467,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote1" name="remote1" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
@@ -483,7 +483,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote2" name="remote2" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
@@ -501,7 +501,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote3" name="remote3" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
@@ -517,7 +517,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote4" name="remote4" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
@@ -533,7 +533,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote5" name="remote5" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://soft.vstarcam.com/application/ipcamax.exe'>点击下载ipcamax.exe</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>
