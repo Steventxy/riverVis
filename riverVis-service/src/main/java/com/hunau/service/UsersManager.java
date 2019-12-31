@@ -81,6 +81,7 @@ public interface UsersManager {
 	 * @throws Exception
 	 */
 	public String getAidByUserid(String userid) throws Exception;
+
 	public List<Users> listUsersByAids(PageData pd) throws Exception;
 	/**通过区域编号列表获取用户
 	 * @param integer
