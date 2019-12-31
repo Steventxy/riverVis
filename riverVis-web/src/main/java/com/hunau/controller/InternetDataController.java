@@ -4,6 +4,7 @@ package com.hunau.controller;
 import com.hunau.util.WeatherApi;
 import net.sf.json.JSONObject;
 import org.json.JSONException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,11 +24,12 @@ public class InternetDataController {
 	/*
 	 * screen页面(分屏页面)后台处理
 	 */
+
 	@RequestMapping(value="/screen")
 	public ModelAndView screen(ModelAndView mv) throws JSONException
 	{
-		windjson=wea.HoursFutureWeather(null); //获取未来24小时的天气数据(此处主要使用风力及风向数据)
-	    aqijson=wea.NowWeather(null,null); //从WeatherApi中获取空气质量指数数据
+		windjson=wea.HoursFutureWeather(""); //获取未来24小时的天气数据(此处主要使用风力及风向数据)
+	    aqijson=wea.NowWeather("",""); //从WeatherApi中获取空气质量指数数据
 	    weatherjson=windjson;
 	    
 	    
