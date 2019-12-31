@@ -122,7 +122,7 @@ public class LogController extends BaseController{
 			}
 			dataMap.put("varList", varList);
 			ObjectExcelView erv = new ObjectExcelView();					//执行excel操作
-//			mv = new ModelAndView(erv,dataMap);
+			mv = new ModelAndView(erv,dataMap);
 		} catch(Exception e){
 			logger.error(e.toString(), e);
 		}
