@@ -90,15 +90,15 @@
 										<td class='center' style="width: 30px;">
 												<label><input type='checkbox' name='ids'  id="${var.lid }"  class="ace"/><span class="lbl"></span></label>
 										</td>
-											<td class='center' style="width: 30px;">${vs.index+1}</td>
-											<td class='center'>${var.lid}</td>
-											<td class='center'>${var.logtype}</td>
-											<td class='center'>${var.username}</td>
-											<td class='center'>${var.functions}</td>
-											<td class='center'>${var.logcontent}</td>
-											<td class='center'>${var.logtime}</td>
-											<td class='center'>${var.ip}</td>
-											<td class='center'>${var.remark}</td>
+											<td class='center' style="width: 30px;vertical-align: middle">${vs.index+1}</td>
+											<td class='center' style="vertical-align: middle">${var.lid}</td>
+											<td class='center' style="vertical-align: middle">${var.logtype}</td>
+											<td class='center' style="vertical-align: middle">${var.username}</td>
+											<td class='center' style="vertical-align: middle">${var.functions}</td>
+											<td class='center' style="vertical-align: middle">${var.logcontent}</td>
+											<td class='center' style="vertical-align: middle">${var.logtime}</td>
+											<td class='center' style="vertical-align: middle">${var.ip}</td>
+											<td class='center' style="vertical-align: middle;word-break: break-all">${var.remark}</td>
 										</tr>
 									
 									</c:forEach>
