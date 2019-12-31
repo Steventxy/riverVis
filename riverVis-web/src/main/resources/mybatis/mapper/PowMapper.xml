@@ -22,18 +22,18 @@
 		extendpow,
 		solarpow,
 		charge,
-		work,
-		time,
+		workstatus,
+		worktime,
 		IP
 		from <include refid="powTable"/>
-		where IMEI=#{id} and time between #{begintime} AND #{endtime}
-		order by time asc
+		where IMEI=#{id} and worktime between #{begintime} AND #{endtime}
+		order by worktime asc
 	</select>
 	<select id="getnowPow" parameterType="pd" resultType="Pow">
 		SELECT *
 		from <include refid="powTable"/>
 		where IMEI=#{id}
-		order by time desc
+		order by worktime desc
 		limit 0,1
 	</select>
 	
@@ -50,8 +50,8 @@
 			extendpow,
 			solarpow,
 			charge,
-			work,
-			time,
+			workstatus,
+			worktime,
 			IP		 
 		from <include refid="powTable"/>
 		<where>
@@ -67,25 +67,25 @@
 					and ${pd.key3} LIKE CONCAT(CONCAT('%', #{pd.val3}),'%') 
 			</if> 
 		</where> 
-		order by time desc
+		order by worktime desc
 	</select>
 	<select id="getdataview" parameterType="pd" resultType="Pow">
 		select  
 			IMEI,
 			pow1,
-		grouppow,
-		outv1,
-		outv2,
-		v24,
-		v28,
-		extendpow,
-		solarpow,
-		time
+			grouppow,
+			outv1,
+			outv2,
+			v24,
+			v28,
+			extendpow,
+			solarpow,
+			worktime
 		from 
 			<include refid="powTable"></include>
 		where IMEI=#{IMEI}
 				
-		order by time asc
+		order by worktime asc
 
 	</select>
 </mapper>
