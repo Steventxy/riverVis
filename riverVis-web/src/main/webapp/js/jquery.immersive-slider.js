@@ -148,7 +148,7 @@
     el.addClass("immersive_slider")
     el.find(settings.slideSelector).addClass("is-slide");
     
-    // Use CSS to blur the first image the plugin found automatically 
+    // Use CSS to blur the first image the com.hunau.plugin found automatically
     if (settings.cssBlur == true) {
       el.find(".is-slide img:first-child").each(function( index ) {
         var activeclass = ""

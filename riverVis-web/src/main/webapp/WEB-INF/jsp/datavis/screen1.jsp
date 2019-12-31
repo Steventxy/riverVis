@@ -145,13 +145,9 @@
             })()
         }
     ]
-			
             });
-            
-            
-            
+    }
 
-    }    
 </script>
   
   
@@ -159,7 +155,7 @@
 <script type="text/javascript">
 		var obj=${message};
 		var level="${warn.leveal}";
-		var data=${warn.data};
+		var data="${warn.data}";
 		$(top.hangge());//关闭加载状态
 		//rain(100,50,70,60,40,24);
 		rain(obj[5].flow,obj[4].flow,obj[3].flow,obj[2].flow,obj[1].flow,obj[0].flow,obj[5].time,obj[4].time,obj[3].time,obj[2].time,obj[1].time,obj[0].time,obj[5].wlevel,obj[4].wlevel,obj[3].wlevel,obj[2].wlevel,obj[1].wlevel,obj[0].wlevel);
@@ -168,7 +164,7 @@
 		$(document).ready(function() {
 			init1();
 		});
-		
+
 		function init1() {
 			
 	  	    
@@ -1166,17 +1162,12 @@
 	  	        
 	  	       	
 		}
-		if(obj[0].wlevel>data){
-		alert('当前水位预警级别为:'+level+'。 已超过预警值!请发送预警信息');
+		if(obj[0].wlevel>data)
+		{
+		   alert('当前水位预警为:'+obj[0].wlevel+'。 已超过预警值!请发送预警信息');
 		}
-</script>
 
-  
-  
-  
-  
-  
- 
+</script>
 
 
 

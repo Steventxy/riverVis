@@ -42,10 +42,10 @@ public class WeatherApi {
 		String datatojson = null;
 		String aqijson=null;
 
-		String host = "http://saweather.market.alicloudapi.com";
-		String path = "/gps-to-weather";
-		String method = "GET";
-		String appcode = "5e50e5dead574ca2b4fc17b3c06400a3";
+		String host = "http://apifreelat.market.alicloudapi.com";
+		String path = "/whapi/json/aliweather/briefforecast3days";
+		String method = "POST";
+		String appcode = "4b14ee6745e845debf82de7892c5cdbf";
 		Map<String, String> headers = new HashMap<String, String>();
 		//最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
 		headers.put("Authorization", "APPCODE " + appcode);
@@ -362,10 +362,10 @@ public class WeatherApi {
 	{
 		String str2 = null;
 
-		String host = "http://saweather.market.alicloudapi.com";
+		String host = "http://apifreelat.market.alicloudapi.com";
 		String path = "/hour24";
-		String method = "GET";
-		String appcode = "5e50e5dead574ca2b4fc17b3c06400a3";
+		String method = "POST";
+		String appcode = "4b14ee6745e845debf82de7892c5cdbf";
 		Map<String, String> headers = new HashMap<String, String>();
 		//最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
 		headers.put("Authorization", "APPCODE " + appcode);
@@ -400,7 +400,9 @@ public class WeatherApi {
 		}
 
 //	          1.创建JSON解析对象(两条规则的提现:大括号用JSONObject,注意传入数据对象)
+
 		JSONObject jObj = new JSONObject(str2);
+
 //	          2.实例化Person对象获取对应的值--->这里是获得外面大括号{}的name值 思考?里面{}如何获得?
 		Hours24Weather hours24weather=new Hours24Weather();
 		String code = jObj.getString("showapi_res_code");
@@ -434,8 +436,8 @@ public class WeatherApi {
 		String rareaid=hours24WeatherBody.getAreaid();
 		JSONArray rhourList=hours24WeatherBody.getHourList();
 
-		//System.out.println("*********************");
-		//System.out.println(rcode+"?"+rerror+"?"+rret_code+"?"+rarea+"?"+rareaid+"?"+rhourList);
+//		System.out.println("*********************");
+//		System.out.println(rcode+"?"+rerror+"?"+rret_code+"?"+rarea+"?"+rareaid+"?"+rhourList);
 
 		//将JSON数组转化成JSON对象
 		String aqihoursjson=rhourList.toString();

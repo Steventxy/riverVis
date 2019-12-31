@@ -73,7 +73,7 @@
 		var myChart = echarts.init(document.getElementById('main'));
         myChart.setOption({
           title : {
-        text: '1号监测点',
+        text: '3号监测点',
         subtext: ''
      },
             tooltip : {
@@ -85,7 +85,7 @@
             toolbox: {
                 show : true,
                 feature : {
-                    mark : {show: false},
+                    mark : {show: true},
                     dataView : {show: false, readOnly: false},
                     magicType : {show: true, type: ['line', 'bar']},
                     restore : {show: false},

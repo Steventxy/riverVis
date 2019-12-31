@@ -62,16 +62,30 @@
 		from
 		<include refid="tableName"></include>
 		<where>
-			<if test="pd.val1 != null and pd.val1 != ''"> 
-				and ${pd.key1} LIKE CONCAT(CONCAT('%', #{pd.val1}),'%') 
+			<if test="pd.val1 != null and pd.val1 != ''">
+				and id  LIKE CONCAT(CONCAT('%', #{pd.val1}),'%')
 			</if> 
-			<if test="pd.val2 != null and pd.val2 != ''"> 
-					and ${pd.key2} LIKE CONCAT(CONCAT('%', #{pd.val2}),'%') 
-			</if> 
-			<if test="pd.val3 != null and pd.val3 != ''"> 
-					and ${pd.key3} LIKE CONCAT(CONCAT('%', #{pd.val3}),'%') 
-			</if> 
+			<if test="pd.val2 != null and pd.val2 != ''">
+				and rain LIKE CONCAT(CONCAT('%', #{pd.val2}),'%')
+			</if>
+			<if test="pd.val3 != null and pd.val3 != ''">
+				and temp LIKE CONCAT(CONCAT('%', #{pd.val3}),'%')
+			</if>
+			<if test="pd.val4 != null and pd.val4 != ''">
+				and hum LIKE CONCAT(CONCAT('%', #{pd.val4}),'%')
+			</if>
 		</where> 
 		order by time desc 
 	</select>
+
+	<!-- 批量删除数据 -->
+	<delete id="deleteAllData" parameterType="String" >
+		delete from <include refid="tableName"></include>
+		where
+		id in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+
 </mapper>

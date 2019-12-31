@@ -55,6 +55,7 @@
 								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
 								<td style="vertical-align:top; padding-left:12px">
 										<a class="btn btn-sm btn-success" onclick="addUser();" style="vertical-align:top;height: 30px;">新增</a>
+									    <a class="btn btn-xs btn-success" onclick="goback();">返回主页</a>
 									</td>
 							</tr>
 						</table>
@@ -188,7 +189,7 @@
 	<!-- 日期框 -->
 	<script src="static/ace/js/date-time/bootstrap-datepicker.js"></script>
 	<!--提示框-->
-	<script type="text/javascript" src="static/js/jquery.tips.js"></script>
+	<script type="text/javascript" src="../../static/js/jquery.tips.js"></script>
 	<script type="text/javascript">
 		$(top.hangge());//关闭加载状态
 		//检索
@@ -249,6 +250,11 @@ function delUser(userId,msg){
 		};
 	});
 }
+
+//返回
+function goback(){
+			window.location.href="<%=basePath%>users/listAllUsers.do";
+		}
 //修改用户
 function editUser(userid){
 	 top.jzts();
@@ -295,18 +301,17 @@ var checkedidlist =[];
 				  }
 			}
 			if(checkedidlist==''){
-				$(object).tips({
-					side:3,
-		            msg:'您没有选择任何内容',
-		            bg:'#AE81FF',
-		            time:3
-		        });
+				bootbox.dialog({
+					message: "<span class='bigger-110'>您没有选择任何内容!</span>",
+					buttons:
+							{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
+				});
 				$("#zcheckbox").tips({
-					side:2,
-		            msg:'点这里全选',
-		            bg:'#AE81FF',
-		            time:8
-		        });
+					side:3,
+					msg:'点这里全选',
+					bg:'#AE81FF',
+					time:8
+				});
 				$("#zcheckbox").focus();
 				return;
 			}else{

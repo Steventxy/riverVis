@@ -64,16 +64,16 @@
 										<span>&nbsp; 选择皮肤</span>
 									</div>
 									<!-- #section:settings.skins -->
-<!-- 									<div class="ace-settings-item"> -->
-<!-- 										<div class="pull-left"> -->
-<!-- 											<select id="skin-fontsizepicker" class="hide"> -->
-<!-- 												<option data-size="small" value="small">小</option> -->
-<!-- 												<option data-size="default" value="default">默认</option> -->
-<!-- 												<option data-size="large" value="large">大</option> -->
-<!-- 											</select> -->
-<!-- 										</div> -->
-<!-- 										<span>&nbsp; 选择字体大小</span> -->
-<!-- 									</div> -->
+<%--									<div class="ace-settings-item">--%>
+<%--										<div class="pull-left">--%>
+<%--											<select id="skin-fontsizepicker" class="hide">--%>
+<%--												<option data-size="small" value="small">小</option>--%>
+<%--												<option data-size="default" value="default">默认</option>--%>
+<%--												<option data-size="large" value="large">大</option>--%>
+<%-- 											</select>--%>
+<%-- 										</div>--%>
+<%-- 										<span> 字体大小</span>--%>
+<%--									</div>--%>
 									<!-- #section:settings.breadcrumbs -->
 									<div class="ace-settings-item">
 										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
@@ -135,7 +135,7 @@
 		<!-- 页面底部js¨ -->
 		<%@ include file="foot.jsp"%>
 		
-		<!-- page specific plugin scripts -->
+		<!-- page specific com.hunau.plugin scripts -->
 
 		<!-- ace scripts -->
 		<script src="static/ace/js/ace/elements.scroller.js"></script>

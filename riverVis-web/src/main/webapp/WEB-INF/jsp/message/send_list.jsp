@@ -7,6 +7,7 @@
 	String basePath = request.getScheme() + "://"
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
+	Object rid=request.getSession().getAttribute("");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,11 +36,26 @@
 						<!-- 检索  -->
 						<form action="smsbroad/listSendMessage.do" method="post" name="Form" id="Form">
 						<table style="margin-top:5px;">
-							<tr>
 							<td style="vertical-align:top;padding-left:2px;">
 									<div class="nav-search">
 									<span class="input-icon">
 										<input class="nav-search-input"  autocomplete="off" id="tnamekey" type="text" name="tnamekey" value="${pd.tnamekey }" placeholder="这里输入收信区域 " />
+											<i class="ace-icon fa fa-search nav-search-icon"></i>
+									</span>
+									</div>
+							</td>
+<%--							<td style="vertical-align:top;padding-left:2px;">--%>
+<%--								<div class="nav-search">--%>
+<%--									<span class="input-icon">--%>
+<%--										<input class="nav-search-input"  autocomplete="off" id="smobilekey" type="text" name="smobilekey" value="${pd.smobilekey }" placeholder="电话查询" />--%>
+<%--											<i class="ace-icon fa fa-search nav-search-icon"></i>--%>
+<%--									</span>--%>
+<%--								</div>--%>
+<%--								</td>--%>
+								<td style="vertical-align:top;padding-left:2px;">
+									<div class="nav-search">
+									<span class="input-icon">
+										<input class="nav-search-input"  autocomplete="off" id="smobilekey" type="text" name="smobilekey" value="${pd.smobilekey }" placeholder="这里输入手机号码 " />
 											<i class="ace-icon fa fa-search nav-search-icon"></i>
 									</span>
 									</div>
@@ -70,34 +86,37 @@
 									<th class="center">发送时间</th>
 									<th class="center">是否发送</th>														
 									<th class="center">备注</th>
-									<th class="center">删除</th>
+									<c:if test="${rid == 1}">
+										<th class="center">删除</th>
+									</c:if>
 
-									
-							
-									</tr>
-								</thead>
+								</tr>
+							</thead>
 								<tbody>
 								<c:choose>
 									<c:when test="${not empty sendlist}">
 									<c:forEach items="${sendlist}" var="send" varStatus="vs">
 									<tr >
 										<td class='center'>${vs.index+1}</td>
-										<td class='center'>${send.tname}</td>											
-										<td class='center'>${send.smobile}</td>	
+										<td class='center'>${send.aname}</td>
+										<td class='center'>${send.smobile}</td>
 										<td class='center'>${send.scontent}</td>	
 										<td class='center'>${send.sendtime}</td>	
 										<td class='center'>${send.issend?'已发送':'未发送'}</td> 																																																	
 						                <td class='center'>${send.remark}</td>
-										<td class="center">
-											<div class="hidden-sm hidden-xs btn-group">
-												<a class="btn btn-xs btn-danger" onclick="delMsg(${send.smid});">
-													<i class="ace-icon fa fa-trash-o bigger-120" title="删除"></i>
-												</a>
-											</div>
-
+										<c:if test="${rid == 1}">
+											<td class="center">
+												<div  class="hidden-sm hidden-xs btn-group">
+													<a class="btn btn-xs btn-danger" onclick="delMsg(${send.smid});">
+														<i class="ace-icon fa fa-trash-o bigger-120" title="删除"></i>
+													</a>
+												</div>
+											</td>
+										</c:if>
 									</tr>
 									</c:forEach>
 									</c:when>
+
 										<c:otherwise>
 											<tr>
 											<td colspan="100" class='center'>没有相关数据</td>
@@ -126,8 +145,9 @@
 		<!-- /.main-content -->
 
 		<!-- 返回顶部 -->
-		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-			<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+		<a href="#" id="btn-scroll-up"
+		   class="btn-scroll-up btn btn-sm btn-inverse"><i
+				class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 		</a>
 
 	</div>
@@ -170,7 +190,10 @@
 				});
 			}
 		});
+		//删除
 		function delMsg(smid){
+			 // console.log(rid);
+
 			bootbox.confirm("确定要删除吗?", function(result) {
 				if(result) {
 					top.jzts();
@@ -180,6 +203,7 @@
 					});
 				};top.hangge();
 			});
+
 		}
 
 		//检索

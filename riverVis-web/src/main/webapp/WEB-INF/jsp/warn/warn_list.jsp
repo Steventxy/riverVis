@@ -53,7 +53,7 @@
 								  	</select>
 								</td>
 								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
-								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
+<%--								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>--%>
 								<td style="vertical-align:top; padding-left:12px">
 										<a class="btn btn-sm btn-success" onclick="addWarn();" style="vertical-align:top;height: 30px;">新增</a>
 									</td>
@@ -72,7 +72,6 @@
 									<th class="center">预警级别</th>
 									<th class="center">预警值</th>
 									<th class="center">预警策略</th>
-									
 									<th class="center">操作</th>
 								</tr>
 							</thead>

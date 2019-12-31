@@ -59,7 +59,7 @@
 	<!--根据用户编号列表查询节目单及终端 -->
 	<select id="getOrgnzlistPage" parameterType="Page" resultType="Organization">
 		select  DISTINCT
-			tid,
+				tid,
 			o.aid as aid,
 			aname,
 			o.userid as userid,
@@ -197,7 +197,7 @@
 	<!-- 批量删除用户 -->
 	<delete id="deleteAllOS" parameterType="String" >
 		delete from <include refid="tableName"></include>
-		where 
+		where
 			tid in
   			 <foreach item="item" index="index" collection="array" open="(" separator="," close=")">
                   #{item}
@@ -206,7 +206,7 @@
 	
 	<!--编辑机构 -->
 	<update id="updateOrgnz" parameterType="pd">
-		update 
+		update
 		<include refid="tableName"></include> 
 		set 
 			tname=#{tname},
@@ -222,7 +222,7 @@
 			intertime=#{intertime},
 			createdtime=#{createdtime},
 			isuse=#{isuse}
-		where 
+		where
 			tid=#{tid}
 	</update>
 	
