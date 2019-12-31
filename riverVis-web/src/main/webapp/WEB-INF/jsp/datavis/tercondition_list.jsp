@@ -27,7 +27,7 @@
 	<meta http-equiv="description" content="This is my page">
 	<!-- 设置页面刷新的时间间隔 -->
 	<meta http-equiv="refresh" content="3600">
-    <meta charset="utf-8" >
+<%--    <meta charset="utf-8" >--%>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -53,14 +53,14 @@
 									<select class="chosen-select form-control" name="key1" id="key1" data-placeholder="关键词" style="vertical-align:top;width: 100px; height: 30px;">
 										<option value="">全部</option>
 <!-- 										<option value="all"  <c:if test="${pd.key1=='all' }">selected</c:if>>全部年份</option> -->
+										<option value="2019"  <c:if test="${pd.key1=='2019' }">selected</c:if>>2019</option>
+										<option value="2018"  <c:if test="${pd.key1=='2018' }">selected</c:if>>2018</option>
 										<option value="2017"  <c:if test="${pd.key1=='2017' }">selected</c:if>>2017</option>
 										<option value="2016"  <c:if test="${pd.key1=='2016' }">selected</c:if>>2016</option>
-										<option value="2015"  <c:if test="${pd.key1=='2015' }">selected</c:if>>2015</option>								
+										<option value="2015"  <c:if test="${pd.key1=='2015' }">selected</c:if>>2015</option>
 										<option value="2014"  <c:if test="${pd.key1=='2014' }">selected</c:if>>2014</option>
 										<option value="2013"  <c:if test="${pd.key1=='2013' }">selected</c:if>>2013</option>
 										<option value="2012"  <c:if test="${pd.key1=='2012' }">selected</c:if>>2012</option>
-										<option value="2011"  <c:if test="${pd.key1=='2011' }">selected</c:if>>2011</option>
-										<option value="2010"  <c:if test="${pd.key1=='2010' }">selected</c:if>>2010</option>
 								  	</select>
 								  </td>
 								
@@ -145,7 +145,7 @@
     
     <!--Step:2 Import echarts.js-->
     <!--Step:2 引入echarts.js-->
-    <script src="js/echarts.js"></script>
+    <script src="<%=path%>/js/echarts.js"></script>
     
     <script type="text/javascript">
     $(top.hangge());//关闭加载状态
@@ -390,7 +390,7 @@
 			});
 		});
 	}
-	复选框全选控制
+	// 复选框全选控制
 // 	var active_class = 'active';
 	
 		});	
