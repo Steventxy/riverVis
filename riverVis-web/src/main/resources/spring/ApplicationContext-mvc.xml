@@ -29,7 +29,7 @@
 	<mvc:resources mapping="/admin/**" location="./admin/" />
 	<mvc:resources mapping="/static/**" location="./WEB-INF/static/" />
 	<mvc:resources mapping="/plugins/**" location="./plugins/" />
-	<mvc:resources mapping="/uploadFiles/**" location="./WEB-INF/static/" />
+	<mvc:resources mapping="/uploadFiles/**" location="./uploadFiles/" />
 
 	<!-- 访问拦截  -->  
   	<mvc:interceptors>
@@ -52,6 +52,8 @@
 		  <property name="maxUploadSize" value="104857600"/>
 		  <property name="maxInMemorySize" value="4096"/>
 		  <property name="defaultEncoding" value="utf-8"/>
-    </bean>  
+    </bean>
+
+
 	
 </beans>
