@@ -5,21 +5,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import com.hunau.entity.Users;
 import com.hunau.service.*;
 import com.infopublic.util.DTree;
-
 import javax.annotation.Resource;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.hunau.entity.Area;
 import com.hunau.entity.Page;
 import com.hunau.entity.Terminal;
@@ -31,9 +26,7 @@ import com.infopublic.util.DateUtil;
 import com.hunau.util.Jurisdiction;
 import com.infopublic.util.PageData;
 //import com.infopublic.util.SmsMain;
-
 import java.io.IOException;
-
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
