@@ -11,13 +11,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base href="<%=basePath%>">
-<!-- 下拉框 -->
-<link rel="stylesheet" href="static/ace/css/chosen.css" />
-<!-- jsp文件头和头部 -->
-<%@ include file="../index/top.jsp"%>
-<!-- 日期框 -->
-<link rel="stylesheet" href="static/ace/css/datepicker.css" />
+	<base href="<%=basePath%>">
+	<!-- 下拉框 -->
+	<link rel="stylesheet" href="static/ace/css/chosen.css" />
+	<!-- jsp文件头和头部 -->
+	<%@ include file="../index/top.jsp"%>
+	<!-- 日期框 -->
+	<link rel="stylesheet" href="static/ace/css/datepicker.css" />
+
 </head>
 <body class="no-skin">
 
@@ -69,7 +70,7 @@
 <%--								<th class="center" style="width:35px;">--%>
 <%--									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>--%>
 <%--								</th>--%>
-									<th class="center" style="width:50px;">序号</th>
+									<th class="center" style="width:50px">序号</th>
 									<th class="center">日志编号</th>
 									<th class="center">日志类别</th>
 									<th class="center">操作用户</th>
@@ -91,14 +92,14 @@
 <%--												<label><input type='checkbox' name='ids'  id="${var.lid }"  class="ace"/><span class="lbl"></span></label>--%>
 <%--										</td>--%>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
-											<td class='center'>${var.lid}</td>
-											<td class='center'>${var.logtype}</td>
-											<td class='center'>${var.username}</td>
-											<td class='center'>${var.functions}</td>
-											<td class='center'>${var.logcontent}</td>
-											<td class='center'>${var.logtime}</td>
-											<td class='center'>${var.ip}</td>
-											<td class='center'>${var.remark}</td>
+											<td class='center' style="vertical-align: middle">${var.lid}</td>
+											<td class='center' style="vertical-align: middle">${var.logtype}</td>
+											<td class='center' style="vertical-align: middle">${var.username}</td>
+											<td class='center' style="vertical-align: middle">${var.functions}</td>
+											<td class='center' style="vertical-align: middle">${var.logcontent}</td>
+											<td class='center' style="vertical-align: middle">${var.logtime}</td>
+											<td class='center' style="vertical-align: middle">${var.ip}</td>
+											<td class='center' style="word-break: break-all;width:10.5%;vertical-align: middle">${var.remark}</td>
 										</tr>
 									
 									</c:forEach>
@@ -112,12 +113,12 @@
 							</tbody>
 						</table>
 						<div class="page-header position-relative">
-					<table style="width:100%;">
-						<tr>
-							<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
-						</tr>
-					</table>
-					</div>
+						<table style="width:100%;">
+							<tr>
+								<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
+							</tr>
+						</table>
+						</div>
 						</form>
 					
 						</div>

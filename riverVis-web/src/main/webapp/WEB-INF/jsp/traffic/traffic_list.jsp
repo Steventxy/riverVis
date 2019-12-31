@@ -91,13 +91,13 @@
 									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
 									</th>
 										<th class="center">终端IEMI</th>
-									<th class="center">终端名称</th>
-									<th class="center">所属分组</th>
-									<th class="center">所属用户</th>
-									<th class="center">已使用流量</th>
-									<th class="center">流量限制</th>
-									<th class="center">最后统计时间</th>
-									<th class="center">启用状态</th>
+										<th class="center">终端名称</th>
+										<th class="center">所属分组</th>
+										<th class="center">所属用户</th>
+										<th class="center">已使用流量</th>
+										<th class="center">流量限制</th>
+										<th class="center">最后统计时间</th>
+										<th class="center">启用状态</th>
 									</tr>
 								</thead>
 								<tbody>
