@@ -14,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.annotation.Resource;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -122,7 +121,7 @@ public class LogController extends BaseController{
 			}
 			dataMap.put("varList", varList);
 			ObjectExcelView erv = new ObjectExcelView();					//执行excel操作
-//			mv = new ModelAndView(erv,dataMap);
+			mv = new ModelAndView(erv,dataMap);
 		} catch(Exception e){
 			logger.error(e.toString(), e);
 		}
