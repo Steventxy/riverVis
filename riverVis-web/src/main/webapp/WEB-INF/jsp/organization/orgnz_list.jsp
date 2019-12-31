@@ -57,8 +57,7 @@
 										<c:if test="${pd.area!='' }"><a class="btn btn-xs btn-success" onclick="addorgnz('${pd.area.aid}');">新增</a></c:if>
 								        <c:if test="${pd.area=='' }"><a class="btn btn-xs btn-success" onclick="addorgnz('');">新增</a></c:if>
 									    <a class="btn btn-xs btn-success" onclick="goback();">返回所有终端列表</a>
-<%--								        <c:if test="${pd.area!='' }"><a class="btn btn-xs btn-success" onclick="goback();">所有终端列表</a></c:if>--%>
-<%--									    <c:if test="${pd.area=='' }"><a class="btn btn-xs btn-success" onclick="goback();">返回所有终端列表</a></c:if>--%>
+
 
 									</td>
 							</tr>
@@ -142,7 +141,7 @@
 												
 <%--												<li><a href="javascript:readorgnz('${orgnz.tid }');" class="tooltip-success" data-rel="tooltip" title="Read">--%>
 <%--															<span class="blue">--%>
-<%--																<i class="ace-icon fa fa-folder-o bigger-120" title="修改与查看"></i>--%>
+<%--																<i class="ace-icon fa fa-folder-o bigger-120" title="查看"></i>--%>
 <%--															</span>--%>
 <%--														</a></li>--%>
 														<li><a href="javascript:editorgnz('${orgnz.tid }');" class="tooltip-success" data-rel="tooltip" title="Edit">

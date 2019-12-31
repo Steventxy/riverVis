@@ -1,6 +1,7 @@
 package com.hunau.controller;
 
 import com.hunau.service.impl.TrafficService;
+
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;

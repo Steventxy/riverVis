@@ -46,6 +46,7 @@
 								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								<td style="vertical-align:top; padding-left:12px">
 										<a class="btn btn-sm btn-success" onclick="addRole();" style="vertical-align:top;height: 30px;">新增</a>
+									    <a class="btn btn-xs btn-success" onclick="goback();">返回主页</a>
 									</td>
 							</tr>
 						</table>
@@ -274,6 +275,12 @@ function editRole(rid,rname,roletype){
 	 };
 	 diag.show();
 }
+
+//返回
+function goback(){
+			window.location.href="<%=basePath%>users/listRole.do";
+		}
+
 //添加
 function addRole(){
 	 top.jzts();

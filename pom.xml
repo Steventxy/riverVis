@@ -9,7 +9,6 @@
         <module>riverVis-entity</module>
         <module>riverVis-web</module>
         <module>riverVis-common</module>
-        <module>riverVis-system</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -88,7 +87,6 @@
             <artifactId>netty-all</artifactId>
             <version>4.1.44.Final</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -99,5 +97,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
