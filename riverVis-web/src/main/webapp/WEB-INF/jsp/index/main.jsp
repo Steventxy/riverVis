@@ -135,7 +135,7 @@
 		<!-- 页面底部js¨ -->
 		<%@ include file="foot.jsp"%>
 		
-		<!-- page specific plugin scripts -->
+		<!-- page specific com.hunau.plugin scripts -->
 
 		<!-- ace scripts -->
 		<script src="static/ace/js/ace/elements.scroller.js"></script>
