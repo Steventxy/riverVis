@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/orgnz")
+@RequestMapping(value="/orgnz")
 public class OrganizationController  extends BaseController{
 	private static final String FUNCTION ="终端管理";
 	@Resource(name="organizationService")
@@ -40,7 +40,7 @@ public class OrganizationController  extends BaseController{
 	private PowService powService;
 	/**
 	 * 终端列表(终端选择)
-	 * @param model
+	 * @param
 	 * @return
 	 */
 	@RequestMapping(value="/listOrgnz")
@@ -99,38 +99,37 @@ public class OrganizationController  extends BaseController{
 	}
 	/**
 	 * 显示终端数据
-	 * @param model
+	 * @param
 	 * @return
 	 */
-	@RequestMapping("/listdata")
+	@RequestMapping(value="/listdata")
 	public ModelAndView listdata(Page page)throws Exception{
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		
+
 		try{
-			
-			//List<PageData> orgnzList = new ArrayList<PageData>();
-			//List<PageData> orgnzList =new ArrayList<PageData>();
+
+//			List<PageData> orgnzList = new ArrayList<PageData>();
+//			List<PageData> orgnzList =new ArrayList<PageData>();
 			List<Pow> orgnzList =new ArrayList<Pow>();
 			String aid = (null == pd.get("aid") || "".equals(pd.get("aid").toString()))?"":pd.get("aid").toString();
 			if(null == aid || "".equals(aid)){
-				//orgnzList = organizationService.listAllOrgnzdata(page);
+				//orgnzList = organizationService.listAllOrgnz(page);
 				pd.put("area", "");
 				pd.put("aid", "");
 			}else{
 				//orgnzList = organizationService.listAllOrgnzByAid(aid);
-				//orgnzList = organizationService.getOrgnzdata(page);
-				
+				//orgnzList = organizationService.getOrgnz(page);
+
 				Area area = areaService.getAreaByAid(aid);
 				pd.put("area", area);
 				pd.put("aid", aid);
-				
 			}
 			page.setPd(pd);
 			 orgnzList = powService.getOrgnzdata(page);
 			mv.addObject("pd", pd);	//传入父区域所有信息
-			
+
 			mv.addObject("orgnzList", orgnzList);
 			mv.addObject("editQX", true);
 			mv.setViewName("organization/orgnz_listdata");
@@ -141,7 +140,7 @@ public class OrganizationController  extends BaseController{
 	}
 	/**
 	 * 显示终端列表
-	 * @param model
+	 * @param
 	 * @return
 	 */
 	@RequestMapping("/list")
@@ -149,9 +148,9 @@ public class OrganizationController  extends BaseController{
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		
+
 		try{
-			
+
 			//List<PageData> orgnzList = new ArrayList<PageData>();
 			List<Organization> orgnzList =new ArrayList<Organization>();
 			String aid = (null == pd.get("aid") || "".equals(pd.get("aid").toString()))?"":pd.get("aid").toString();
@@ -162,7 +161,7 @@ public class OrganizationController  extends BaseController{
 			}else{
 				//orgnzList = organizationService.listAllOrgnzByAid(aid);
 				//orgnzList = organizationService.getOrgnz(page);
-				
+
 				Area area = areaService.getAreaByAid(aid);
 				pd.put("area", area);
 				pd.put("aid", aid);
@@ -181,7 +180,7 @@ public class OrganizationController  extends BaseController{
 
 	/**
 	 * 请求新增终端页面
-	 * @param model
+	 * @param
 	 * @return
 	 */
 	@RequestMapping(value="/toAdd")
@@ -206,7 +205,7 @@ public class OrganizationController  extends BaseController{
 	/**
 	 * 添加终端信息
 	 * @param orgnz
-	 * @param model
+	 * @param
 	 * @return
 	 */
 	@RequestMapping(value="/add")
@@ -239,8 +238,8 @@ public class OrganizationController  extends BaseController{
 	
 	/**
 	 * 删除终端
-	 * @param oid
-	 * @param out
+	 * @param
+	 * @param
 	 */
 	@RequestMapping(value="/delete")
 	@ResponseBody
@@ -369,8 +368,8 @@ public class OrganizationController  extends BaseController{
 	
 	/**
 	 * 查看授权号码
-	 * @param telid
-	 * @param out
+	 * @param
+	 * @param
 	 */
 	@RequestMapping(value="/showTel")
 		public ModelAndView showTel(Page page)throws Exception{
@@ -390,7 +389,7 @@ public class OrganizationController  extends BaseController{
 	}
 	/**
 	 * 删除授权号码
-	 * @param out
+	 * @param
 	 */
 	@RequestMapping(value="/deletetel")
 	@ResponseBody

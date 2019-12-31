@@ -52,45 +52,60 @@
 							<tr>
 								<td style="vertical-align:top;padding-left:5px">
 									<select class="chosen-select form-control" name="key1" id="key1" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
-										<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>终端IMEI</option>
-										<option value="aname"  <c:if test="${pd.key1=='rain' }">selected</c:if>>雨量</option>
-										<option value="IP"  <c:if test="${pd.key1=='temp' }">selected</c:if>>温度</option>
-										<option value="time"  <c:if test="${pd.key1=='hum' }">selected</c:if>>湿度</option>
+										<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>数据编号</option>
+<%--										<option value="aname"  <c:if test="${pd.key1=='rain' }">selected</c:if>>雨量</option>--%>
+<%--										<option value="IP"  <c:if test="${pd.key1=='temp' }">selected</c:if>>温度</option>--%>
+<%--										<option value="time"  <c:if test="${pd.key1=='hum' }">selected</c:if>>湿度</option>--%>
 								  	</select>
 								  </td>
 
 								<td style="padding-left:2px;">
 									<div class="nav-search">
-											<input class="nav-search-input" autocomplete="off" id="nav-search-input1" type="text" name="val1" value="${pd.val1 }" placeholder="输入内容"  style="width: 80px;"/>
+											<input class="nav-search-input" autocomplete="off" id="val1" type="text" name="val1" value="${pd.val1 }" placeholder="输入内容"  style="width: 80px;"/>
 									</div>
 								</td>
 
 								<td style="vertical-align:top;padding-left:5px">
 									<select class="chosen-select form-control" name="key2" id="key2" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
-								  		<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>终端IMEI</option>
-										<option value="aname"  <c:if test="${pd.key1=='rain' }">selected</c:if>>雨量</option>
-										<option value="IP"  <c:if test="${pd.key1=='temp' }">selected</c:if>>温度</option>
-										<option value="time"  <c:if test="${pd.key1=='hum' }">selected</c:if>>湿度</option>								  	</select>
+<%--								  		<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>IMIE数据编号</option>--%>
+										    <option value="aname"  <c:if test="${pd.key2=='rain' }">selected</c:if>>雨量</option>
+<%--										<option value="IP"  <c:if test="${pd.key2=='temp' }">selected</c:if>>温度</option>--%>
+<%--										<option value="time"  <c:if test="${pd.key2=='hum' }">selected</c:if>>湿度</option>								  	</select>--%>
 								  	</td>
 
 								<td style="padding-left:2px;">
 									<div class="nav-search">
-											<input class="nav-search-input" autocomplete="off" id="nav-search-input2" type="text" name="val2" value="${pd.val2 }" placeholder="输入内容" style="width: 80px;" />
+											<input class="nav-search-input" autocomplete="off" id="val2" type="text" name="val2" value="${pd.val2 }" placeholder="输入内容" style="width: 80px;" />
 									</div>
 								</td>
 
 								<td style="vertical-align:top;padding-left:5px">
 									<select class="chosen-select form-control" name="key3" id="key3" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
-										<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>终端IMEI</option>
-										<option value="aname"  <c:if test="${pd.key1=='rain' }">selected</c:if>>雨量</option>
-										<option value="IP"  <c:if test="${pd.key1=='temp' }">selected</c:if>>温度</option>
-										<option value="time"  <c:if test="${pd.key1=='hum' }">selected</c:if>>湿度</option>
+<%--										<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>数据编号</option>--%>
+<%--										<option value="aname"  <c:if test="${pd.key3=='rain' }">selected</c:if>>雨量</option>--%>
+										    <option value="IP"  <c:if test="${pd.key3=='temp' }">selected</c:if>>温度</option>
+<%--										<option value="time"  <c:if test="${pd.key3=='hum' }">selected</c:if>>湿度</option>--%>
 								  	</select>
 								  	</td>
-								
+
 								<td style="padding-left:2px;">
 									<div class="nav-search">
-											<input class="nav-search-input" autocomplete="off" id="nav-search-input3" type="text" name="val3" value="${pd.val3 }" placeholder="输入内容" style="width: 80px;" />
+											<input class="nav-search-input" autocomplete="off" id="val3" type="text" name="val3" value="${pd.val3 }" placeholder="输入内容" style="width: 80px;" />
+									</div>
+								</td>
+
+								<td style="vertical-align:top;padding-left:5px">
+									<select class="chosen-select form-control" name="key3" id="key4" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
+										<%--										<option value="IMEI"  <c:if test="${pd.key4=='IMEI' }">selected</c:if>>数据编号</option>--%>
+										<%--										<option value="aname"  <c:if test="${pd.key4=='rain' }">selected</c:if>>雨量</option>--%>
+<%--											                                    <option value="IP"  <c:if test="${pd.key4=='temp' }">selected</c:if>>温度</option>--%>
+																				    <option value="time"  <c:if test="${pd.key4=='hum' }">selected</c:if>>湿度</option>
+									</select>
+								</td>
+
+								<td style="padding-left:2px;">
+									<div class="nav-search">
+										<input class="nav-search-input" autocomplete="off" id="val4" type="text" name="val4" value="${pd.val4 }" placeholder="输入内容" style="width: 80px;" />
 									</div>
 								</td>
 
@@ -121,7 +136,7 @@
 									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
 									</th>
 <%--										<th class='center' style="width:300px;">操作</th>--%>
-										<th class="center" >终端IMEI</th>
+										<th class="center" >数据编号</th>
 										<th class="center" >雨量</th>										
 										<th class='center'>流量</th>
 										<th class="center" >水位</th>
@@ -151,7 +166,7 @@
 <%--												</c:if>--%>
 <%--											</div>--%>
 <%--										</td>--%>
-										<td class='center'>1111</td>
+										<td class='center'>${orgnz.id}</td>
 										<td class='center'>${orgnz.rain}</td>
 										<td class='center'>${orgnz.flow}</td>
 										<td class='center'>${orgnz.wlevel}</td>
