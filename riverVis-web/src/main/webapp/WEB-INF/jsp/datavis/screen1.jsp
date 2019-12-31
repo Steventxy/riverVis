@@ -164,11 +164,7 @@
 		$(document).ready(function() {
 			init1();
 		});
-		if(obj[0].wlevel>data)
-		{
-			alert('当前水位预警级别为:'+obj[0].wlevel+'。 已超过预警值!请发送预警信息');
-		}
-		obj[0].wlevel=0
+
 		function init1() {
 			
 	  	    
@@ -1166,10 +1162,10 @@
 	  	        
 	  	       	
 		}
-		// if(obj[0].wlevel>data)
-		// {
-		//    alert('当前水位预警级别为:'+obj[0].wlevel+'。 已超过预警值!请发送预警信息');
-		// }
+		if(obj[0].wlevel>data)
+		{
+		   alert('当前水位预警为:'+obj[0].wlevel+'。 已超过预警值!请发送预警信息');
+		}
 
 </script>
 
