@@ -32,7 +32,7 @@
 
 
 (function($ , undefined) {
-	//sometimes we try to use 'tap' event instead of 'click' if jquery mobile plugin is available
+	//sometimes we try to use 'tap' event instead of 'click' if jquery mobile com.hunau.plugin is available
 	ace['click_event'] = ace.vars['touch'] && $.fn.tap ? 'tap' : 'click';
 })(jQuery);
 
