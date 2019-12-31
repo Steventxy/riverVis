@@ -14639,7 +14639,7 @@ div.ColVis_collectionBackground {
 }
 /**
 .chosen-select {
-  display: inline !important; //for validation plugin to work it must be displayed
+  display: inline !important; //for validation com.hunau.plugin to work it must be displayed
   visibility: hidden;
   opacity: 0;
   position: absolute;

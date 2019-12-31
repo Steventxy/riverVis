@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="static/js/jquery.min.js"></script>
 	<link type="text/css" rel="stylesheet" href="plugins/zTree/3.5/zTreeStyle.css"/>
 	<script type="text/javascript" src="plugins/zTree/3.5/jquery.ztree.core-3.5.js"></script>
-<body>
+<body  class="no-skin">
 	
 <table style="width:100%;" border="0">
 	<tr>
