@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
@@ -62,6 +61,7 @@
 											<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="下载 Adobe Flash player 插件" /></a></p>
 									</div>
 									<div >
+
 									<button id="selectter" class="btn btn-success btn-xs" onclick="selectter(this);" style="margin-right:12px;margin-bottom:10px;"  title="选择终端">
 										<i  class="ace-icon fa fa-check bigger-110 "></i>&nbsp;选择终端</button>
 									<button id="start" class="btn btn-primary btn-xs" style="margin-bottom:10px;"  onclick="startlive(this);"  >

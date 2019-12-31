@@ -27,19 +27,17 @@
 		<typeAlias type="com.hunau.entity.RainStatistics" alias="RainStatistics"/>
 		<typeAlias type="com.hunau.entity.River3DVis" alias="River3DVis"/>
 
-
 		<typeAlias type="com.infopublic.util.PageData" alias="pd"/>
 		<!-- 分页 -->
 		<typeAlias type="com.hunau.entity.Page" alias="Page"/>
 	    <typeAlias type="com.hunau.entity.Warn" alias="Warn"/>
 	</typeAliases>
-	
-<!--	<plugins>-->
-	<!--		<plugin interceptor="com.hunau.plugin.PagePlugin">-->
-	<!--			<property name="dialect" value="mysql"/>-->
-	<!--			<property name="pageSqlId" value=".*listPage.*"/>-->
-	<!--		</plugin>-->
-	<!--	</plugins>-->
-	
+
+	<plugins>
+		<plugin interceptor="com.hunau.plugin.PagePlugin">
+			<property name="dialect" value="mysql"/>
+			<property name="pageSqlId" value=".*listPage.*"/>
+		</plugin>
+	</plugins>
 
 </configuration>

@@ -36,8 +36,8 @@
 			//
 		//	var str="";
 		/*
-			if(${pd.chartData4!=''}){
-			chartData4= eval(${pd.chartData4})
+			<%--if(${pd.chartData4!=''}){--%>
+			<%--chartData4= eval(${pd.chartData4})--%>
 			
            console.info(chartData4)
 
@@ -138,8 +138,26 @@
 </select>
 </div> 
  
- <div id="container"style="width:600px;height:510px;border:1px solid red">
- </div>  
- 
+ <div id="container"style="width:600px;height:510px;border:1px solid #3dff15">
+ </div>
+<%-- <script type="text/javascript">--%>
+ <%--    function xx(){--%>
+ <%--        var obt=document.getElementById("bt");--%>
+ <%--        var odiv=document.getElementById("div1");--%>
+
+ <%--        if(odiv.style.display=="none"){--%>
+ <%--            odiv.style.display="block";--%>
+ <%--            obt.value="隐藏模块";--%>
+ <%--        }--%>
+ <%--        else{--%>
+ <%--            odiv.style.display="none";--%>
+ <%--            obt.value="显示模块";--%>
+ <%--        }--%>
+
+ <%--    }--%>
+ <%--</script>--%>
+ <%--<input type="button" id="div1" value="隐藏" οnclick="xx()"/>--%>
+ <%--<div id="tb" ></div>--%>
+
  </body>  
 </html>  

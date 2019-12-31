@@ -35,10 +35,6 @@
 			<div class="main-content-inner">
 				<div class="page-content">
 				<div class="page-header">
-					<div class="row">
-						<div class="col-xs-12">
-							<form action="orgnz/listdata.do" method="post" name="Form" id="Form">
-
 							<h1>
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
@@ -49,7 +45,9 @@
 
 							</h1>
                     </div><!-- /.page-header -->
-
+				<div class="row">
+						<div class="col-xs-12">
+							<form action="orgnz/listdata.do" method="post" name="Form" id="Form">
 
 						<input type="hidden" id="parentaid" name="aid" value="${pd.area==''?'':pd.area.aid}">
 						<table style="margin-top:5px;margin-bottom:5px;">
@@ -74,9 +72,10 @@
 										<option value="IP"  <c:if test="${pd.key1=='IP' }">selected</c:if>>地址</option>
 										<option value="worktime"  <c:if test="${pd.key1=='worktime' }">selected</c:if>>采集日期</option>								  	</select>
 								  	</td>
+
 								<td style="padding-left:2px;">
 									<div class="nav-search">
-											<input class="nav-search-input" autocomplete="off" id="nav-search-input" type="text" name="val2" value="${pd.val2 }" placeholder="输入内容" style="width: 80px;" />
+											<input class="nav-search-input" autocomplete="off" id="nav-search-input2" type="text" name="val2" value="${pd.val2 }" placeholder="输入内容" style="width: 80px;" />
 									</div>
 								</td>
 								<td style="vertical-align:top;padding-left:5px">
@@ -90,7 +89,7 @@
 
 								<td style="padding-left:2px;">
 									<div class="nav-search">
-											<input class="nav-search-input" autocomplete="off" id="nav-search-input" type="text" name="val3" value="${pd.val3 }" placeholder="输入内容" style="width: 80px;" />
+											<input class="nav-search-input" autocomplete="off" id="nav-search-input3" type="text" name="val3" value="${pd.val3 }" placeholder="输入内容" style="width: 80px;" />
 									</div>
 								</td>
 								<td style="vertical-align:top;padding-left:5px">
@@ -100,10 +99,11 @@
 										<option value="0" <c:if test="${pd.isuse=='0' }">selected</c:if>>停用</option>
 								  	</select>
 								</td>
-								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
+								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon1" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								<c:if test="${editQX }">
-								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="fromExcel();" title="从EXCEL导入"><i id="nav-search-icon" class="ace-icon fa fa-cloud-upload bigger-110 nav-search-icon blue"></i></a></td>
+								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="fromExcel();" title="从EXCEL导入"><i id="nav-search-icon2" class="ace-icon fa fa-cloud-upload bigger-110 nav-search-icon blue"></i></a></td>
 								</c:if>
+								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-sm btn-danger" onclick="deleteAll('确定要删除选定的数据吗');" style="vertical-align:top;height: 30px;">批量删除</a></td>
 							</tr>
 	                   </table>
 							   <table id="simple-table" data-toggle="table"   class="table table-striped table-hover" style="margin-top:5px;">
@@ -122,11 +122,11 @@
 										<th class="center" >18v2输出电压</th>
 										<th class="center" >24v输出电压</th>
 										<th class="center" >28v输出电压</th>
-										<th class="center" >外部电压</th>
-										<th class="center" >太阳能电压</th>
-										<th class="center" >充电状态</th>
-										<th class="center" >工作状态</th>
-										<th class="center" >采集时间</th>
+<%--										<th class="center" >外部电压</th>--%>
+<%--										<th class="center" >太阳能电压</th>--%>
+<%--										<th class="center" >充电状态</th>--%>
+<%--										<th class="center" >工作状态</th>--%>
+<%--										<th class="center" >采集时间</th>--%>
 									</tr>
 								</thead>
 								<tbody >
@@ -147,19 +147,28 @@
 												</c:if>
 											</div>
 										</td>
-										<td class='center'>${orgnz.IMEI}</td>
-										<td class='center'>${orgnz.IP}</td>
-										<td class='center'><a onclick="dataview('pow1','${orgnz.IMEI}');">${orgnz.pow1}</a></td>
-										<td class='center'><a onclick="dataview('grouppow','${orgnz.IMEI}');">${orgnz.grouppow}</a></td>
-										<td class='center'><a onclick="dataview('outv1','${orgnz.IMEI}');">${orgnz.outv1}</a></td>
-										<td class='center'><a onclick="dataview('outv2','${orgnz.IMEI}');">${orgnz.outv2} </a></td>
-										<td class='center'><a onclick="dataview('v24','${orgnz.IMEI}');">${orgnz.v24} </a></td>
-										<td class='center'><a onclick="dataview('v28','${orgnz.IMEI}');">${orgnz.v28}</a></td>
-										<td class='center'><a onclick="dataview('extendpow','${orgnz.IMEI}');">${orgnz.extendpow}</a></td>
-										<td class='center'><a onclick="dataview('solarpow','${orgnz.IMEI}');">${orgnz.solarpow}</a></td>
-										<td class='center'>${orgnz.charge}</td>
-										<td class='center'>${orgnz.workstatus?'是':'否'}</td>
-										<td >${orgnz.worktime}</td>
+<%--										<td class='center'>${orgnz.IMEI}</td>--%>
+<%--										<td class='center'>${orgnz.IP}</td>--%>
+<%--										<td class='center'><a onclick="dataview('pow1','${orgnz.IMEI}');">${orgnz.pow1}</a></td>--%>
+<%--										<td class='center'><a onclick="dataview('grouppow','${orgnz.IMEI}');">${orgnz.grouppow}</a></td>--%>
+<%--										<td class='center'><a onclick="dataview('outv1','${orgnz.IMEI}');">${orgnz.outv1}</a></td>--%>
+<%--										<td class='center'><a onclick="dataview('outv2','${orgnz.IMEI}');">${orgnz.outv2} </a></td>--%>
+<%--										<td class='center'><a onclick="dataview('v24','${orgnz.IMEI}');">${orgnz.v24} </a></td>--%>
+<%--										<td class='center'><a onclick="dataview('v28','${orgnz.IMEI}');">${orgnz.v28}</a></td>--%>
+<%--										<td class='center'><a onclick="dataview('extendpow','${orgnz.IMEI}');">${orgnz.extendpow}</a></td>--%>
+<%--										<td class='center'><a onclick="dataview('solarpow','${orgnz.IMEI}');">${orgnz.solarpow}</a></td>--%>
+<%--										<td class='center'>${orgnz.charge}</td>--%>
+<%--										<td class='center'>${orgnz.workstatus?'是':'否'}</td>--%>
+<%--										<td >${orgnz.worktime}</td>--%>
+											<td class='center'>${orgnz.IMEI}</td>
+											<td class='center'>${orgnz.IP}</td>
+											<td class='center'>${orgnz.pow1}</td>
+											<td class='center'>${orgnz.grouppow}</td>
+											<td class='center'>${orgnz.outv1}</td>
+											<td class='center'>${orgnz.outv2}</td>
+											<td class='center'>${orgnz.v24}</td>
+											<td class='center'>${orgnz.v28}</td>
+
 
 									</tr>
 									</c:forEach>
