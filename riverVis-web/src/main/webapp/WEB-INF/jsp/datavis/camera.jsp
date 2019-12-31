@@ -108,7 +108,7 @@ function setAction(action, time){
               <tr>
                 <td  align="center">
                   <OBJECT id="remote" name="remote" classid="clsid:1E125331-B4E3-4EE3-B3C1-24AD1A3E5DEB" WIDTH="320" HEIGHT="311">
-                    <FONT COLOR=red SIZE=5> Not installed plugin,Please click<a href='http://cn-download.eyecloud.so/download/application/ipcamax.exe'>here</a>download and install.</FONT>
+                    <FONT COLOR=red SIZE=5> Not installed com.hunau.plugin,Please click<a href='http://cn-download.eyecloud.so/download/application/ipcamax.exe'>here</a>download and install.</FONT>
                   </OBJECT>
                 </td>
               </tr>

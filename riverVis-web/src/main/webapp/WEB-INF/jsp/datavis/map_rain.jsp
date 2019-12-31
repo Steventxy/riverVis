@@ -969,21 +969,21 @@
 					    var layer1 = e.target;
 						map.fitBounds(e.target.getBounds());
 						if(layer1.feature.properties.name=="开慧镇")
-						{
-						  $.ajax({
-								    async : false,
-								    cache : false,
-								    type : 'POST',
-								    url : "sensordata/ajax?aid="+7320,  //开慧镇的区域编号为7320
-								    error : function() {
-								        alert('更新数据失败 ');
-								    },
-								    success : function(data) {
-								    
-								    
-								   
-								   window.location.href="<%=basePath%>sensordata/rain?data="+data;
-								    
+						<%--{--%>
+						<%--  $.ajax({--%>
+						<%--		    async : false,--%>
+						<%--		    cache : false,--%>
+						<%--		    type : 'POST',--%>
+						<%--		    url : "sensordata/ajax?aid="+7320,  //开慧镇的区域编号为7320--%>
+						<%--		    error : function() {--%>
+						<%--		        alert('更新数据失败 ');--%>
+						<%--		    },--%>
+						<%--		    success : function(data) {--%>
+						<%--		    --%>
+						<%--		    --%>
+						<%--		   --%>
+						<%--		   window.location.href="<%=basePath%>sensordata/rain?data="+data;--%>
+						<%--		    --%>
 								 /*    $.ajax({
 								    async : false,
 								    cache : false,
@@ -997,44 +997,44 @@
 					
 								   
 								      //解析json
-								      alert(data);
-								    }
-								});
-						}
+						// 		      alert(data);
+						// 		    }
+						// 		});
+						// }
 						if(layer1.feature.properties.name=="北山镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics"; 
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics"; --%>
 						if(layer1.feature.properties.name=="黄花镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="金井镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5//waterstatistics";--%>
 						   if(layer1.feature.properties.name=="福临镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="高桥镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="青山铺镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="安山镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="路口镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="果园镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="黄兴镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="江背镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="春华镇")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="长龙街道")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="星沙街道")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="湘龙街道")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="泉塘街道")
-						   window.location.href="<%=basePath%>chart5/rainstatistics";
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics";--%>
 						   if(layer1.feature.properties.name=="泉塘街道")
-						   window.location.href="<%=basePath%>chart5/rainstatistics"; 
+						   <%--window.location.href="<%=basePath%>chart5/rainstatistics"; --%>
 					}
 					
 				

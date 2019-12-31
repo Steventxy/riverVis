@@ -1,6 +1,6 @@
 /**
-  <b>Bootstrap 2 typeahead plugin.</b> With Bootstrap <u>3</u> it's been dropped in favor of a more advanced separate plugin.
-  Pretty good for simple cases such as autocomplete feature of the search box and required for <u class="text-danger">Tag input</u> plugin.
+  <b>Bootstrap 2 typeahead com.hunau.plugin.</b> With Bootstrap <u>3</u> it's been dropped in favor of a more advanced separate com.hunau.plugin.
+  Pretty good for simple cases such as autocomplete feature of the search box and required for <u class="text-danger">Tag input</u> com.hunau.plugin.
 */
 
 /* =============================================================

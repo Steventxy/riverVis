@@ -25,10 +25,10 @@
 		<where>
 			<if test="pd.anamekey != null and pd.anamekey != ''">
 				and w.aname LIKE CONCAT(CONCAT('%', #{pd.anamekey}),'%')
-			</if> 
+			</if>
 			<if test="pd.leveal != null and pd.leveal != ''">
 				and leveal =#{pd.leveal}
-			</if> 
+			</if>
 			
 		</where> 
 	</select>
