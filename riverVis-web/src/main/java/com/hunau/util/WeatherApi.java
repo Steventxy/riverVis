@@ -23,7 +23,7 @@ public class WeatherApi {
 	 */
 	public String NowWeather(String lat,String lng)
 	{
-		String str1 = null;
+		String str1 = "";
 		int rpm25;
 		double rco;
 		int rno2;
@@ -39,8 +39,8 @@ public class WeatherApi {
 		String rweatherpic;
 		String rweather;
 		String rtemperature;
-		String datatojson = null;
-		String aqijson=null;
+		String datatojson = "";
+		String aqijson="";
 
 		String host = "http://apifreelat.market.alicloudapi.com";
 		String path = "/whapi/json/aliweather/briefforecast3days";
@@ -51,7 +51,7 @@ public class WeatherApi {
 		headers.put("Authorization", "APPCODE " + appcode);
 		Map<String, String> querys = new HashMap<String, String>();
 		querys.put("from", "5");
-		if(lat==null||lng==null)
+		if(lat==""||lng=="")
 		{
 			querys.put("lat", "28.303652");   //长沙县政府的经度值
 			querys.put("lng", "113.182124");  //长沙县政府的纬度值
@@ -360,7 +360,7 @@ public class WeatherApi {
 	 */
 	public String HoursFutureWeather(String address) throws JSONException
 	{
-		String str2 = null;
+		String str2 = "";
 
 		String host = "http://apifreelat.market.alicloudapi.com";
 		String path = "/hour24";
@@ -370,7 +370,7 @@ public class WeatherApi {
 		//最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
 		headers.put("Authorization", "APPCODE " + appcode);
 		Map<String, String> querys = new HashMap<String, String>();
-		if(address==null)  //默认情况下为查询长沙的数据
+		if(address=="")  //默认情况下为查询长沙的数据
 		{
 			querys.put("area", "长沙");
 		}

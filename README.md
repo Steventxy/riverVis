@@ -76,6 +76,16 @@
 
 ![pic yyf1](https://Steventxy.github.io/pic/yyf1.png)
 
+5. 修复将数据导出为Excel表
+
+![pic yyf1](https://Steventxy.github.io/pic/yyf8.png)
+
+6. 修复雨量地图界面
+
+![pic yyf1](https://Steventxy.github.io/pic/yyf9.png)
+
+![pic yyf1](https://Steventxy.github.io/pic/yyf10.png)
+
 #### 唐嵩
 
 1. 用户授权界面新增角色不起作用，经分析发现role表中的主键类型为varchar，并设有默认值，所以每次添加都是失败的。将其改为int类型，并将主键设为自动递增
@@ -84,6 +94,10 @@
 
 ![pic ts2](https://Steventxy.github.io/pic/ts2.png)
 
+2. 修复进行保存编辑等操作时页面一直加载的问题
+
+![pic wwp7](https://Steventxy.github.io/pic/wwp7.png)
+
 #### 伍文平
 
 1. 数据采集展示页面的删除和导出按钮位置不合理，且功能都无法使用
@@ -91,6 +105,18 @@
 ![pic wwp1](https://Steventxy.github.io/pic/wwp1.png)
 
 ![pic wwp2](https://Steventxy.github.io/pic/wwp2.png)
+
+2. 为terminals表增加触发器
+
+![pic wwp6](https://Steventxy.github.io/pic/wwp6.png)
+
+![pic wwp3](https://Steventxy.github.io/pic/wwp3.png)
+
+3. 解决系统日志界面，备注数据太长显示问题
+
+![pic wwp4](https://Steventxy.github.io/pic/wwp4.png)
+
+![pic ww5](https://Steventxy.github.io/pic/wwp5.png)
 
 #### 肖霆锋
 
@@ -129,3 +155,7 @@
 ![pic xtf11](https://Steventxy.github.io/pic/xtf11.png)
 
 ![pic xtf10](https://Steventxy.github.io/pic/xtf10.png)
+
+7. 修复数据采集页面搜索功能
+
+![pic xtf10](https://Steventxy.github.io/pic/xtf12.png)
