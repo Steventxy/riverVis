@@ -17,7 +17,7 @@
 <script type="text/javascript" src="static/stream/swfobject.min.js"></script>
 <script type="text/javascript">
 		swfobject.embedSWF("static/stream/RtmpStreamer.swf", "rtmp-streamer", "270", "190", "9", "static/stream/src/expressInstall.swf",{},{bgcolor:"#e5eaf1",wmode:"opaque"},{});
-		//wmode,tranparent:透明，opaque:不透明,表示将Flash置于最底层
+		// wmode,tranparent:透明，opaque:不透明,表示将Flash置于最底层
 		</script>
 <!-- 下拉框 -->
 <link rel="stylesheet" href="static/ace/css/chosen.css" />
