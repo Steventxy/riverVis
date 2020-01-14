@@ -194,8 +194,8 @@ public class OrganizationController  extends BaseController{
 			if(area!=null){
 				mv.addObject("aname", area.getAname());					//传入区域名称，作为终端的父区域名称用
 			}
-			mv.addObject("aid", aid);					//传入区域ID，作为终端的父区域ID用
-			mv.addObject("MSG", "add");							//执行状态 add 为添加
+			mv.addObject("aid", aid);								//传入区域ID，作为终端的父区域ID用
+			mv.addObject("MSG", "add");				//执行状态 add 为添加
 			mv.setViewName("organization/orgnz_edit");
 		} catch(Exception e){
 			logger.error(e.toString(), e);
@@ -362,7 +362,7 @@ public class OrganizationController  extends BaseController{
 		} catch(Exception e){
 			logger.error(e.toString(), e);
 		}
-		mv.setViewName("redirect:list?aid="+orgnz.getAid()); //保存成功跳转到列表页面
+		mv.setViewName("redirect:list?aid=+orgnz.getAid()"); //保存成功跳转到列表页面
 		return mv;
 	}
 	

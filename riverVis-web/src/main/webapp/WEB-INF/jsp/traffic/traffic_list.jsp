@@ -66,13 +66,18 @@
 								  	</select>
 								</td>
 								
-								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
+									<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								
 									<td style="vertical-align:top; padding-left:12px">
 										<a class="btn btn-sm btn-success" onclick="setTrafficLimit();" style="vertical-align:top;height: 30px;">批量设置流量限制</a>
 									</td>
+
 									<td style="vertical-align:top; padding-left:12px">
-										<a class="btn btn-sm btn-primary" onclick="setTerIsuse(this);" style="vertical-align:top;height: 30px;" title="请先选择终端，在设置终端启用">批量设置终端启用</a>
+										<a class="btn btn-sm btn-primary" onclick="setTerIsuseOn(this);" style="vertical-align:top;height: 30px;" title="请先选择终端，在设置终端启用">批量设置终端启用</a>
+									</td>
+
+									<td style="vertical-align:top; padding-left:12px">
+										<a class="btn btn-sm btn-primary" onclick="setTerIsuseOff(this);" style="vertical-align:top;height: 30px;" title="请先选择终端，在设置终端停用">批量设置终端停用</a>
 									</td>
 								
 							</tr>
@@ -163,6 +168,8 @@
 	<!-- basic scripts -->
 	<!-- 页面底部js¨ -->
 	<%@ include file="../index/foot.jsp"%>
+	<!-- 删除时确认窗口 -->
+	<script src="static/ace/js/bootbox.js"></script>
 	<!-- ace scripts -->
 	<script src="static/ace/js/ace/ace.js"></script>
 	<!--引入弹窗组件start-->
@@ -242,7 +249,7 @@
 			 };
 			 diag.show();
 			}
-		function setTerIsuse(object){
+		function setTerIsuseOn(object){
 			var i=0;
 			var checkedidlist = '';
 				for(var i=0;i < document.getElementsByName('ids').length;i++) {
@@ -260,17 +267,54 @@
 			        });
 					return;
 				}else{
-					$.post("<%=basePath%>traffic/setTerIsuse.do",{checkedidlist:checkedidlist},function(data){
+					$.post("<%=basePath%>traffic/setTerIsuseOn.do",{checkedidlist:checkedidlist},function(data){
 						if("success"==data.result){
-							nextPage(${page.currentPage});
-							Dialog.alert("设置终端启用成功！");
+							bootbox.dialog({
+								message: "<span class='bigger-110'>设置终端启用成功！</span>",
+								buttons:
+										{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
+							});
 						}else{
 							nextPage(${page.currentPage});
 							Dialog.alert("设置终端启用失败！");
-						}
+						}Dialog.close();
 					})
 		}
 		}
+
+		function setTerIsuseOff(object){
+			var i=0;
+			var checkedidlist = '';
+			for(var i=0;i < document.getElementsByName('ids').length;i++) {
+				if(document.getElementsByName('ids')[i].checked){
+					if(checkedidlist=='') checkedidlist += document.getElementsByName('ids')[i].id;
+					else checkedidlist += ',' + document.getElementsByName('ids')[i].id;
+				}
+			}
+			if(checkedidlist==''){
+				$(object).tips({
+					side:3,
+					msg:'您没有选择任何内容',
+					bg:'#AE81FF',
+					time:3
+				});
+				return;
+			}else{
+				$.post("<%=basePath%>traffic/setTerIsuseOff.do",{checkedidlist:checkedidlist},function(data){
+					if("success"==data.result){
+						bootbox.dialog({
+							message: "<span class='bigger-110'>设置终端停用成功！</span>",
+							buttons:
+									{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
+						});
+					}else{
+						nextPage(${page.currentPage});
+						Dialog.alert("设置终端停用失败！");
+					}Dialog.close();
+				})
+			}
+		}
+
 // 导出excel
 // function toExcel(object){
 // 	var i=0;
