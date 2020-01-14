@@ -23,7 +23,7 @@ public class WeatherApi {
 	 */
 	public String NowWeather(String lat,String lng)
 	{
-		String str1 = "";
+		String str1 = null;
 		int rpm25;
 		double rco;
 		int rno2;
@@ -39,8 +39,8 @@ public class WeatherApi {
 		String rweatherpic;
 		String rweather;
 		String rtemperature;
-		String datatojson = "";
-		String aqijson="";
+		String datatojson = null;
+		String aqijson=null;
 
 		String host = "http://apifreelat.market.alicloudapi.com";
 		String path = "/whapi/json/aliweather/briefforecast3days";
@@ -89,10 +89,12 @@ public class WeatherApi {
 
 /**********************************************************/
 		try {
-//	          1.创建JSON解析对象(两条规则的提现:大括号用JSONObject,注意传入数据对象)
+			//1.创建JSON解析对象(两条规则的提现:大括号用JSONObject,注意传入数据对象)
 			JSONObject jObj = new JSONObject(str1);
-//	          2.实例化Person对象获取对应的值--->这里是获得外面大括号{}的name值 思考?里面{}如何获得?
+
+			//2.实例化Person对象获取对应的值--->这里是获得外面大括号{}的name值 思考?里面{}如何获得?
 			Weather weather=new Weather();
+
 			int showapi_res_code = jObj.getInt("showapi_res_code");
 			weather.setShowapi_res_code(showapi_res_code);
 
@@ -334,11 +336,6 @@ public class WeatherApi {
 			rweather=weather.getShowapi_res_body().getNow().getWeather();
 			rtemperature=weather.getShowapi_res_body().getNow().getTemperature();
 
-
-
-
-
-
 			System.out.println(rpm25+"*a*"+rco+"*b*"+rno2+"*c*"+ro3+"*d*"+ro38h+"*e*"+rpm10+"*f*"+rtemperaturetime+"*i*"+rwindpower+"*j*"+rsd+"*k*"+rweatherpic+"*l*"+rweather+"*m*"+rtemperature+"*n*"+rweathercode+"*o"+rwinddirection);
 
 			datatojson="{"+"\""+"pm2_5"+"\""+":"+"\""+rpm25+"\""+","+"\""+"temperature"+"\""+":"+"\""+rtemperature+"\""+","+"\""+"wind_direction"+"\""+":"+"\""+rwinddirection+"\""+","+"\""+"wind_power"+"\""+":"+"\""+rwindpower+"\""+","+"\""+"weather_pic"+"\""+":"+"\""+rweatherpic+"\"" +","+"\""+"weather"+"\""+":"+"\""+rweather+"\""+"}";
@@ -360,8 +357,7 @@ public class WeatherApi {
 	 */
 	public String HoursFutureWeather(String address) throws JSONException
 	{
-		String str2 = "";
-
+		String str2 = null;
 		String host = "http://apifreelat.market.alicloudapi.com";
 		String path = "/hour24";
 		String method = "POST";
@@ -399,12 +395,11 @@ public class WeatherApi {
 			e.printStackTrace();
 		}
 
-//	          1.创建JSON解析对象(两条规则的提现:大括号用JSONObject,注意传入数据对象)
-
+		//1.创建JSON解析对象(两条规则的提现:大括号用JSONObject,注意传入数据对象)
 		JSONObject jObj = new JSONObject(str2);
-
-//	          2.实例化Person对象获取对应的值--->这里是获得外面大括号{}的name值 思考?里面{}如何获得?
+		//2.实例化Person对象获取对应的值--->这里是获得外面大括号{}的name值 思考?里面{}如何获得?
 		Hours24Weather hours24weather=new Hours24Weather();
+
 		String code = jObj.getString("showapi_res_code");
 		hours24weather.setCode(code);
 
@@ -412,7 +407,6 @@ public class WeatherApi {
 		hours24weather.setError(error);
 
 		JSONObject jObj1 = jObj.getJSONObject("showapi_res_body");  //进入嵌套的第二个json对象中了
-
 		Hours24WeatherBody hours24WeatherBody=new Hours24WeatherBody();
 
 		String ret_code=jObj1.getString("ret_code");
@@ -430,15 +424,13 @@ public class WeatherApi {
 		String rcode=hours24weather.getCode();
 		String rerror=hours24weather.getError();
 
-
 		String rret_code=hours24WeatherBody.getRet_code();
 		String rarea=hours24WeatherBody.getArea();
 		String rareaid=hours24WeatherBody.getAreaid();
 		JSONArray rhourList=hours24WeatherBody.getHourList();
 
-//		System.out.println("*********************");
-//		System.out.println(rcode+"?"+rerror+"?"+rret_code+"?"+rarea+"?"+rareaid+"?"+rhourList);
-
+		//System.out.println("*********************");
+		//System.out.println(rcode+"?"+rerror+"?"+rret_code+"?"+rarea+"?"+rareaid+"?"+rhourList);
 		//将JSON数组转化成JSON对象
 		String aqihoursjson=rhourList.toString();
 		return aqihoursjson;

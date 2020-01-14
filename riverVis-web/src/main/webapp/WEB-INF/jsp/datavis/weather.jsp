@@ -101,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <script language="javascript" src="<%=path%>/js/jquery-1.3.2.min.js"></script>
   <script type="text/javascript">
     $(top.hangge());//关闭加载状态
-	//alert(${message});
+	<%--alert(${message});--%>
 
 	var d = new Date();
 	month1=d.getMonth();
@@ -112,6 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	var weatherpic="http://app1.showapi.com/weather/icon/day/"+obj[0].weather_code+".png";
     alert("http://app1.showapi.com/weather/icon/day/"+obj[0].weather_code+".png");
+
     var obj1=${message1};
     var weatherpicf2=weatherpicf2+"http://app1.showapi.com/weather/icon/day/"+obj1.weather_picf2+".png";
     var weatherpicf3=weatherpicf3+"http://app1.showapi.com/weather/icon/day/"+obj1.weather_picf3+".png";
