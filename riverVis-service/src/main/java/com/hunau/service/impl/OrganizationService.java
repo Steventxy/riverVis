@@ -156,9 +156,12 @@ public class OrganizationService implements OrganizationManager {
 	}
 	
 	@Override
-	public void setTerIsuse(List<String> pdlist) throws Exception {
-		dao.batchUpdate("OrganizationMapper.setTerIsuse", pdlist);
+	public void setTerIsuseOn(List<String> pdlist) throws Exception {
+		dao.batchUpdate("OrganizationMapper.setTerIsuseOn", pdlist);
 	}
 
-
+	@Override
+	public void setTerIsuseOff(List<String> pdlist) throws Exception {
+		dao.batchUpdate("OrganizationMapper.setTerIsuseOff", pdlist);
+	}
 }
