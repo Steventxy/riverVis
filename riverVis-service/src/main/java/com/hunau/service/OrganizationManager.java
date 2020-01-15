@@ -91,9 +91,13 @@ public interface OrganizationManager {
 	 * @param pdlist
 	 * @throws Exception
 	 */
-	public void setTerIsuse(List<String> pdlist) throws Exception;
+	public void setTerIsuseOn(List<String> pdlist) throws Exception;
 
-	
-	
+	/**
+	 * 批量设置终端停用
+	 * @param pdlist
+	 * @throws Exception
+	 */
+	public void setTerIsuseOff(List<String> pdlist) throws Exception;
 
 }
