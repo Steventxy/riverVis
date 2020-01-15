@@ -16,6 +16,8 @@ public class SensorData {
 	private String pm; //空气质量
 	private String temp; //温度
 	private String hum; //湿度
+	private String soilHum;//土壤湿度
+	private String isBody;
 	private String aid; //数据采集区域编号
 	private String time; //数据采集时间
 	private boolean remark; //数据是否有效
@@ -49,7 +51,23 @@ public class SensorData {
 	public void setPh(String ph) {
 		this.ph = ph;
 	}
-	
+
+	public String getSoilHum() {
+		return soilHum;
+	}
+
+	public void setSoilHum(String soilHum) {
+		this.soilHum = soilHum;
+	}
+
+	public String getIsBody() {
+		return isBody;
+	}
+
+	public void setIsBody(String isBody) {
+		this.isBody = isBody;
+	}
+
 	/**
 	 * @return pm
 	 */

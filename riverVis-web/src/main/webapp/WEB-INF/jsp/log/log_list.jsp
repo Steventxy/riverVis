@@ -101,7 +101,7 @@
 											<td class='center' style="vertical-align: middle">${var.logcontent}</td>
 											<td class='center' style="vertical-align: middle">${var.logtime}</td>
 											<td class='center' style="vertical-align: middle">${var.ip}</td>
-											<td class='center' style="word-break: break-all;width:10.5%;vertical-align: middle">${var.remark}</td>
+											<td class='center' style="word-break: break-all;width:35%;vertical-align: middle">${var.remark}</td>
 										</tr>
 									
 									</c:forEach>

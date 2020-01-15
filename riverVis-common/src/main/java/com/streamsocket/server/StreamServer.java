@@ -27,7 +27,7 @@ public class StreamServer {
 //		StreamServer server= new StreamServer();
 //		server.bind();
 //	}
-	private int PORT = 8800;//终端端口
+	private int PORT = 5000;//终端端口
 	private static int Socketbacklog = 1000; //允许客户端数量
 	final static String UTF_8 = "utf-8";
 	public static ExecutorService executorService =  Executors.newCachedThreadPool();
@@ -35,7 +35,7 @@ public class StreamServer {
      public String EndChar = "cc";
      // 消息的开始判断符
      public String BeginChar = "aa";
-     
+
      protected Logger logger = Logger.getLogger("streamsocket");//正常日志
      private List<Stream> streamlist;
      private List<TerStream> terstreamlist;
@@ -65,7 +65,7 @@ public class StreamServer {
 			bootstrap.option(ChannelOption.SO_REUSEADDR, true);  //允许重复使用本地地址和端口
 //			bootstrap.childOption(ChannelOption.SO_KEEPALIVE, true); //长连接
 			bootstrap.childHandler(new NettyChannelHandler());
-			
+
 			ChannelFuture channelFuture = bootstrap.bind(PORT).sync();
 			if (channelFuture.isSuccess()) {
 				System.out.println("启动流媒体监听");
@@ -73,7 +73,7 @@ public class StreamServer {
 			}
 			// 关闭连接
 			channelFuture.channel().closeFuture().sync();
-			
+
 		} catch (Exception e) {
 			logger.info("启动流媒体服务异常，异常信息：" + e.getMessage());
 		} finally {
@@ -83,12 +83,12 @@ public class StreamServer {
 	}
 
 	private class NettyChannelHandler extends ChannelInitializer<SocketChannel> {
-		  
-        @Override  
+
+        @Override
         protected void initChannel(SocketChannel socketChannel)
-                throws Exception {  
+                throws Exception {
         	// 自己的逻辑Handler
-        	socketChannel.pipeline().addLast(new NettyServerHandler(streamlist,terstreamlist));  
-        }  
-    }  
+        	socketChannel.pipeline().addLast(new NettyServerHandler(streamlist,terstreamlist));
+        }
+    }
 }
