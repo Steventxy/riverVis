@@ -300,13 +300,10 @@
 
   exports.alert = function() {
     var options;
-
     options = mergeDialogOptions("alert", ["ok"], ["message", "callback"], arguments);
-
     if (options.callback && !$.isFunction(options.callback)) {
       throw new Error("alert requires callback property to be a function when provided");
     }
-
     /**
      * overrides
      */
@@ -316,22 +313,18 @@
       }
       return true;
     };
-
     return exports.dialog(options);
   };
 
   exports.confirm = function() {
     var options;
-
     options = mergeDialogOptions("confirm", ["cancel", "confirm"], ["message", "callback"], arguments);
-
     /**
      * overrides; undo anything the user tried to set they shouldn't have
      */
     options.buttons.cancel.callback = options.onEscape = function() {
       return options.callback(false);
     };
-
     options.buttons.confirm.callback = function() {
       return options.callback(true);
     };
