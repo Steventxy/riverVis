@@ -12,6 +12,8 @@
 		pm,
 		temp,
 		hum,
+		soilHum,
+		isBody,
 		aid,
 		time,
 		remark
@@ -43,7 +45,7 @@
 		<include refid="Field"></include>
 		from
 		<include refid="tableName"></include>
-		order by id desc limit 6;   <!--查询最后的几条记录(即实时数据)-->
+		order by id desc limit 10;   <!--查询最后的几条记录(即实时数据)-->
 	<!-- where  type=2   ORDER BY id   -->
 	</select>
 	

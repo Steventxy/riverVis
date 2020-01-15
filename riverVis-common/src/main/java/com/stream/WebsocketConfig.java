@@ -38,7 +38,7 @@ public class WebsocketConfig extends WebMvcConfigurerAdapter implements WebSocke
 		registry.addHandler(streamWebSocketHandler(), "/stream"); //提供符合W3C标准的Websocket数据  
 	}
 	 @Bean
-	    public WebSocketHandler streamWebSocketHandler() {  
+	    public WebSocketHandler streamWebSocketHandler() {
 	        return new StreamHandler();  
 	    }
 }

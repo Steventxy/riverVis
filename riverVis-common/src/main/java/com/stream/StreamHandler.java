@@ -24,7 +24,7 @@ public class StreamHandler implements WebSocketHandler {
 				if(streamids.size()>i){
 					String sid = streamids.get(i);
 					streamids.remove(i);
-					if(streamstates.size()>i){						
+					if(streamstates.size()>i){
 						if(streamstates.get(i)){
 							//ws连接结束，并直播未关闭则关闭直播
 							sendCMDtoSocket(session,"end:"+sid);

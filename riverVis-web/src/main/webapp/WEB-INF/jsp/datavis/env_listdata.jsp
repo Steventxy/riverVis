@@ -67,10 +67,8 @@
 
 								<td style="vertical-align:top;padding-left:5px">
 									<select class="chosen-select form-control" name="key2" id="key2" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
-<%--								  		<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>IMIE数据编号</option>--%>
 										    <option value="aname"  <c:if test="${pd.key2=='rain' }">selected</c:if>>雨量</option>
-<%--										<option value="IP"  <c:if test="${pd.key2=='temp' }">selected</c:if>>温度</option>--%>
-<%--										<option value="time"  <c:if test="${pd.key2=='hum' }">selected</c:if>>湿度</option>								  	</select>--%>
+									</select>
 								  	</td>
 
 								<td style="padding-left:2px;">
@@ -81,10 +79,7 @@
 
 								<td style="vertical-align:top;padding-left:5px">
 									<select class="chosen-select form-control" name="key3" id="key3" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
-<%--										<option value="IMEI"  <c:if test="${pd.key1=='IMEI' }">selected</c:if>>数据编号</option>--%>
-<%--										<option value="aname"  <c:if test="${pd.key3=='rain' }">selected</c:if>>雨量</option>--%>
 										    <option value="IP"  <c:if test="${pd.key3=='temp' }">selected</c:if>>温度</option>
-<%--										<option value="time"  <c:if test="${pd.key3=='hum' }">selected</c:if>>湿度</option>--%>
 								  	</select>
 								  	</td>
 
@@ -96,10 +91,7 @@
 
 								<td style="vertical-align:top;padding-left:5px">
 									<select class="chosen-select form-control" name="key3" id="key4" data-placeholder="关键词" style="vertical-align:top;width: 100px;height: 30px;">
-										<%--										<option value="IMEI"  <c:if test="${pd.key4=='IMEI' }">selected</c:if>>数据编号</option>--%>
-										<%--										<option value="aname"  <c:if test="${pd.key4=='rain' }">selected</c:if>>雨量</option>--%>
-<%--											                                    <option value="IP"  <c:if test="${pd.key4=='temp' }">selected</c:if>>温度</option>--%>
-																				    <option value="time"  <c:if test="${pd.key4=='hum' }">selected</c:if>>湿度</option>
+										<option value="time"  <c:if test="${pd.key4=='hum' }">selected</c:if>>湿度</option>
 									</select>
 								</td>
 
@@ -121,7 +113,7 @@
 								<c:if test="${editQX }">
 									<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="fromExcel();" title="从EXCEL导入"><i id="nav-search-icon2" class="ace-icon fa fa-cloud-upload bigger-110 nav-search-icon blue"></i></a></td>
 								</c:if>
-								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon3" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>
+<%--								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon3" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td>--%>
 								<c:if test="${rid == 1}">
 									<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-sm btn-danger" onclick="deleteAll('确定要删除选定的数据吗');" style="vertical-align:top;height: 30px;">批量删除</a></td>
 								</c:if>
@@ -144,6 +136,8 @@
 										<th class="center" >空气质量数据</th>
 										<th class="center" >温度</th>
 										<th class="center" >湿度</th>
+									    <th class="center" >土壤湿度</th>
+									  	<th class="center" >是否有人</th>
 										<th class="center" >采集时间</th>
 									</tr>
 								</thead>
@@ -166,7 +160,7 @@
 <%--												</c:if>--%>
 <%--											</div>--%>
 <%--										</td>--%>
-										<td class='center'>${orgnz.id}</td>
+										<td class='center'>${vs.index+1}</td>
 										<td class='center'>${orgnz.rain}</td>
 										<td class='center'>${orgnz.flow}</td>
 										<td class='center'>${orgnz.wlevel}</td>
@@ -174,9 +168,9 @@
 										<td class='center'>${orgnz.pm}</td>
 										<td class='center'>${orgnz.temp}</td>
 										<td class='center'>${orgnz.hum}</td>
+										<td class='center'>${orgnz.soilHum}</td>
+										<td class='center'>${(orgnz.isBody)?'有人':'无人'}</td>
 										<td class='center'>${orgnz.time}</td>
-
-										
 									</tr>
 									</c:forEach>
 									</c:when>
@@ -361,7 +355,7 @@ function fromExcel(){
 	 diag.show();
 }	
 //导出到excel
-function toExcel( object){
+function toExcel(object){
 	var checkedidlist =[];
 	var i=0;
 		var checkedidlist = '';
@@ -383,7 +377,7 @@ function toExcel( object){
 					bg:'#AE81FF',
 					time:8
 				});
-				return;
+
 			}else{
 					window.location.href='<%=basePath%>orgnz/excel.do?checkedidlist='+checkedidlist;
 			}
