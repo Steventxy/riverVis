@@ -24,25 +24,18 @@ public class InternetDataController {
 	/*
 	 * screen页面(分屏页面)后台处理
 	 */
-
 	@RequestMapping(value="/screen")
 	public ModelAndView screen(ModelAndView mv) throws JSONException
 	{
-		windjson=wea.HoursFutureWeather(""); //获取未来24小时的天气数据(此处主要使用风力及风向数据)
-	    aqijson=wea.NowWeather("",""); //从WeatherApi中获取空气质量指数数据
+		windjson=wea.HoursFutureWeather(null); //获取未来24小时的天气数据(此处主要使用风力及风向数据)
+	    aqijson=wea.NowWeather(null,null); //从WeatherApi中获取空气质量指数数据
 	    weatherjson=windjson;
-	    
-	    
 	    JSONObject jsonObj;
 	    jsonObj= JSONObject.fromObject(aqijson);
 	    mv.addObject("message1",jsonObj);   //传输到weather.jsp中的json数据
 		mv.addObject("message",weatherjson); //传输到weather.jsp中的json数据
-		
 		mv.addObject("aqi",aqijson);
-		
 		mv.addObject("wind",windjson);
-		
-		
 	    mv.setViewName("datavis/screen");
 		return mv;
 	}
@@ -55,12 +48,9 @@ public class InternetDataController {
 	public String ajax(HttpServletRequest request, HttpServletResponse response) throws JSONException  //对ajax局部交互
 	{
 		String area=request.getParameter("area");  //接收前台页面传输过来的数据(地区名)
-		
 	    //System.out.println(area);
-	    
 	    WeatherApi address=new WeatherApi();
 	    String getdata=address.HoursFutureWeather(area);
-	    
 		System.out.println("screen_ajax_address test success!");
 		return getdata;
 	}
@@ -76,10 +66,8 @@ public class InternetDataController {
 		String[] jwd1=jwd.split(",");
 	    System.out.println(jwd1[0]);
 	    System.out.println(jwd1[1]);
-	    
 	    WeatherApi jwdcx=new WeatherApi();
 	    String getjwd=jwdcx.NowWeather(jwd1[0],jwd1[1]);
-	   
 		System.out.println("screen_ajax_jwd success!");
 		return getjwd;
 	}
@@ -96,9 +84,6 @@ public class InternetDataController {
 		 * 获取气象数据
 		 */
         //String weatherjson="{"+"\""+"pm2_5"+"\""+":"+"\""+rpm25+"\""+","+"\""+"temperature"+"\""+":"+"\""+rtemperature+"\""+","+"\""+"wind_direction"+"\""+":"+"\""+rwinddirection+"\""+","+"\""+"wind_power"+"\""+":"+"\""+rwindpower+"\""+","+"\""+"weather_pic"+"\""+":"+"\""+rweatherpic+"\"" +","+"\""+"weather"+"\""+":"+"\""+rweather+"\""+"}";
-	   
-	    
-	    
 	    JSONObject jsonObj;
 	    jsonObj= JSONObject.fromObject(aqijson);
 	    //用"键"获取值

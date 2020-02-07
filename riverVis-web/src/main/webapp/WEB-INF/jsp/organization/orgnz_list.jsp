@@ -87,11 +87,10 @@
 										<th class="center" >IMEI</th>
 										<th class="center" >终端设备名称</th>
 										<c:if test="${pd.area=='' }"><th class='center'>所属区域</th></c:if>
-<!-- 										<c:if test="${pd.area=='' }"><th class='center'>所属用户</th></c:if> -->
-<!-- 										<th class="center" >终端地址</th> -->
-<!-- 										<th class="center" >终端创建时间</th> -->
+<%-- 									<c:if test="${pd.area=='' }"><th class='center'>所属用户</th></c:if> --%>
+<%--									<th class="center" >终端地址</th> --%>
+<%--									<th class="center" >终端创建时间</th> --%>
 										<th class="center" >是否启用</th>
-
 										<th class='center' >操作</th>
 									</tr>
 								</thead>
@@ -111,10 +110,10 @@
 										<td class='center'>${orgnz.tname}</td>
 										<c:if test="${pd.area=='' }"><td class='center'>${orgnz.aname}</td></c:if>
 
-<!-- 										<td class='center'>${orgnz.address}</td> -->
-<!-- 										<td class='center'>${orgnz.createdtime}</td> -->
+<%--									<td class='center'>${orgnz.address}</td> --%>
+<%--									<td class='center'>${orgnz.createdtime}</td>--%>
 										<td class='center'>${orgnz.isuse?'是':'否'}</td>
-<!-- 										<td >${orgnz.note}</td> -->
+<%--									<td >${orgnz.note}</td> -->--%>
 										<td class='center'>
 											<div class="hidden-sm hidden-xs action-buttons">
 
