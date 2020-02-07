@@ -274,14 +274,20 @@
 			</choose>
 		</where>
 	</select>
-	<update id="setTerIsuse" parameterType="String">
+
+	<update id="setTerIsuseOn" parameterType="String">
 		update 
 		<include refid="tableName"></include> 
 		set isuse=1
 		where  tid=#{tid}
 	</update>
-	
-	
+
+	<update id="setTerIsuseOff" parameterType="String">
+		update
+		<include refid="tableName"></include>
+		set isuse=0
+		where  tid=#{tid}
+	</update>
 	
 
 </mapper>

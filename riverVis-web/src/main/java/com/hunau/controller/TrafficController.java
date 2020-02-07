@@ -170,9 +170,9 @@ public class TrafficController extends BaseController {
 	 * @param 
 	 * @return
 	 */
-	@RequestMapping(value="/setTerIsuse")
+	@RequestMapping(value="/setTerIsuseOn")
 	@ResponseBody
-	public Object setTerIsuse(){
+	public Object setTerIsuseOn(){
 		Map<String,String> map = new HashMap<String,String>();
 		PageData pd = new PageData();
 		pd = this.getPageData();
@@ -183,7 +183,7 @@ public class TrafficController extends BaseController {
 		}
 		//批量设置
 		try {
-			organizationService.setTerIsuse(pdlist);
+			organizationService.setTerIsuseOn(pdlist);
 			map.put("result", "success");
 		} catch (Exception e) {
 			map.put("result", "error");
@@ -192,6 +192,34 @@ public class TrafficController extends BaseController {
 		try {
 			String idstr =pd.getString("checkedidlist");
 			logService.saveLog(Const.LOGTYPE[1], "流量信息", "批量设置终端启用", this.getRemortIP(), idstr.length()>200?idstr.substring(0, 190)+"...等":idstr);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return AppUtil.returnObject(new PageData(), map);
+	}
+
+	@RequestMapping(value="/setTerIsuseOff")
+	@ResponseBody
+	public Object setTerIsuseOff(){
+		Map<String,String> map = new HashMap<String,String>();
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		String[] tids = pd.getString("checkedidlist").split(",");
+		List<String> pdlist = new ArrayList<String>();
+		for(int i=0;i<tids.length;i++){
+			pdlist.add(tids[i]);
+		}
+		//批量设置
+		try {
+			organizationService.setTerIsuseOff(pdlist);
+			map.put("result", "success");
+		} catch (Exception e) {
+			map.put("result", "error");
+			e.printStackTrace();
+		};
+		try {
+			String idstr =pd.getString("checkedidlist");
+			logService.saveLog(Const.LOGTYPE[1], "流量信息", "批量设置终端停用", this.getRemortIP(), idstr.length()>200?idstr.substring(0, 190)+"...等":idstr);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

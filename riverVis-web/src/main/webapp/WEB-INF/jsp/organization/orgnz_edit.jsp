@@ -55,12 +55,12 @@
 								</div>
 							</div>
 							
-							<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> IMEI号 : </label>
-									<div class="col-sm-9">
-										<input type="number" name="tid" id="tid" value="${pd.orgnz.tid}" placeholder="这里输入15位IMEI号"  title="请输入正整数" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
+<%--							<div class="form-group">--%>
+<%--									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> IMEI号 : </label>--%>
+<%--									<div class="col-sm-9">--%>
+<%--										<input type="number" name="tid" id="tid" value="${pd.orgnz.tid}" placeholder="这里输入15位IMEI号"  title="请输入正整数" class="col-xs-10 col-sm-5" />--%>
+<%--									</div>--%>
+<%--								</div>--%>
 							
 							</c:if>
 							<c:if test="${MSG=='edit' }">
