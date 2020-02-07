@@ -14,7 +14,7 @@ import java.util.List;
 //import com.socket.entity.SocketInfo;
 
 public class NettyServerHandler extends ChannelInboundHandlerAdapter {
-	String address = "";//连接的客户端地址
+	String address = "192.168.4.1";//连接的客户端地址
 	final static String UTF8 = "UTF8";
 	// 消息的中止判断符
 	public String EndChar = "cc";

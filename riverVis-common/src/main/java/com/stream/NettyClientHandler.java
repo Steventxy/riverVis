@@ -49,7 +49,7 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 			logger.info("正常日志  记录：前台直播结束命令  信息：直播编号" +streamid);
 			break;
 		}
-       
+
     }
 
     @Override
@@ -130,7 +130,7 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 				String check = Convert.checksum(checkData);
 				encoded.writeByte(Convert.hexStringToBytes(check)[0]);//将校验复制到发送数据中去
 				encoded.writeByte(Convert.hexStringToBytes(EndChar)[0]);//将结束标示复制到发送数据中去
-				
+
 				ctx.writeAndFlush(encoded);
 			} catch (Exception ex) {
 				logger.error("出错日志  记录："+ex.getMessage()+"  信息：ClientSocket错误,SendToByte  byteType:" + byteType + ",byteOrder:" + byteOrder);
