@@ -11,7 +11,7 @@
     <packaging>war</packaging>
     <groupId>com.hunau</groupId>
     <artifactId>rivervis-web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>rivervis-web</name>
     <description>Demo project for Spring Boot</description>
 
@@ -60,19 +60,19 @@
         <dependency>
             <groupId>com.hunau</groupId>
             <artifactId>riverVis-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.hunau</groupId>
             <artifactId>riverVis-entity</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.hunau</groupId>
             <artifactId>riverVis-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version>f
+            <version>1.0</version>f
             <scope>compile</scope>
         </dependency>
         <dependency>
